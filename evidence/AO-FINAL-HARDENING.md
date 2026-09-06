@@ -40,3 +40,7 @@ The Accountant Review renderer derives its active-review count from study sessio
 ## Continuation: read-only red-team mission
 
 The final AO mission used sessions closeloop-9 (controls), closeloop-10 (recovery), closeloop-11 (provenance), and closeloop-12 (independent claim review). All sessions were read-only and reported no files modified. The reviewer confirmed the current 39/39 suite and npm run check, bounded approval identity to simulated roles, and rejected claims of universal Neatlogs persistence, multi-process run-start locking, run-wide evidence snapshots, hosted PR review, or AO ownership of the finance runtime. Full findings are in evidence/AO-RED-TEAM-2026-09-06.md.
+
+## Judge-facing evidence index
+
+The Connections/System page surfaces a compact AO record. Supporting repository artifacts are AO-EVIDENCE-MAP.md, AO-DECISION-LEDGER.md, and AO-RELEASE-GATE.md. These records make the session → workstream → artifact → verification → Meridian control relationship explicit while keeping current release measurements separate from historical AO session results.
