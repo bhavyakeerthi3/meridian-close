@@ -58,7 +58,7 @@ The product uses synthetic data and a sandbox ledger. Dodo cash evidence is opti
 
 ## K. Final state
 
-The close remains **6/7 reconciled** with **IC-1047 open** because signed service acceptance is missing and disputed. Workpaper **v8 requires refresh**. Historical journals and approvals remain preserved. No legacy project references were found in the repository scan. Git history was not rewritten.
+The close remains **6/7 reconciled** with **IC-1047 open** because signed service acceptance is missing and disputed. The latest local workpaper version and freshness are derived from the current database and currently require refresh; the recorded v8 package remains a historical snapshot. Historical journals and approvals remain preserved. No legacy project references were found in the repository scan. Git history was not rewritten.
 
 ## L. Final commit
 

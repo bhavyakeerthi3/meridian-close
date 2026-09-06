@@ -19,7 +19,7 @@ Keep actual latency visible. A full seven-invoice live run can take several minu
 
 A later USD 250.37 credit required USD 250.37 and GBP 200.30 reductions, preserving rounding of the net target. The live worker was terminated after one checkpoint; resume processed the remaining six. Repeated approval created no second journal. Final balances are USD 12,492.80 and GBP 9,994.24.
 
-The first resumed run held IC-1043 after the model used its tool budget without a verified finding. This failure remains recorded. Required-tool sequencing and immediate stopping after an accepted finding were added, then a real live rerun reconciled IC-1043. Final workpaper v8 is current: six of seven pairs reconcile, with the genuinely disputed IC-1047 still open.
+The first resumed run held IC-1043 after the model used its tool budget without a verified finding. This failure remains recorded. Required-tool sequencing and immediate stopping after an accepted finding were added, then a real live rerun reconciled IC-1043. The recorded late-credit snapshot used workpaper v8: six of seven pairs reconcile, with the genuinely disputed IC-1047 still open. The live UI derives its latest report version and freshness from the local database.
 
 Evidence: `live-stage-challenge.json`, `live-agent-recovery.json`, `judge-final-verification.json`, and `judge-final-workpaper.json` in `evidence/`. These are synthetic automated verification results, not accountant feedback.
 

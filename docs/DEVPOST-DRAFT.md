@@ -30,7 +30,7 @@ TensorMux's GLM-4.7-Flash actually called the evidence, ledger, policy, independ
 
 These observations do not establish a general live-model accuracy rate or human time savings. The accountant-review screen records randomized matched tasks, raw elapsed time, accuracy and feedback, but no completed accountant review is claimed. Dodo account access remains unverified.
 
-The live late-credit challenge terminated a real worker after one checkpoint and resumed six remaining bundles. Final new-case balances were USD 12,492.80 and GBP 9,994.24, with historical journals retained and no duplicate posting on retry. One other invoice initially exhausted the live tool budget and stayed blocked; after tightening required-tool sequencing, its real live rerun reconciled. Both observations remain in the audit. Final workpaper v8 retains the disputed service exception.
+The live late-credit challenge terminated a real worker after one checkpoint and resumed six remaining bundles. Final new-case balances were USD 12,492.80 and GBP 9,994.24, with historical journals retained and no duplicate posting on retry. One other invoice initially exhausted the live tool budget and stayed blocked; after tightening required-tool sequencing, its real live rerun reconciled. Both observations remain in the audit. The captured workpaper v8 snapshot retains the disputed service exception; the live UI derives the latest report version and freshness from the local database.
 
 ## Challenges and next steps
 

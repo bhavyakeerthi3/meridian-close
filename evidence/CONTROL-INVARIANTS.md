@@ -12,8 +12,8 @@ These are implementation-backed properties checked by the current test suite or 
 | Worker interruption leaves the ledger unchanged | `src/runner.js` | real termination case in `tests/judge-lab.test.js` | PASS |
 | Resume skips completed checkpoints and processes remaining bundles | `src/runner.js` | resume case in `tests/judge-lab.test.js` | PASS |
 | Only a current proposal with controller approval can post | `src/workflow.js` | approval guardrail cases in `tests/workflow.test.js`, `tests/judge-lab.test.js` | PASS |
-| Workpaper export preserves historical snapshots and marks stale output | `src/workflow.js` | frozen-export case in `tests/workflow.test.js`; current v8 state | PASS |
+| Workpaper export preserves historical snapshots and marks stale output | `src/workflow.js` | frozen-export case in `tests/workflow.test.js`; captured release snapshot v8 | PASS |
 | Cash evidence is read-only and cannot affect intercompany balances | `src/dodo.js` | `tests/dodo.test.js` | PASS |
 | Judge Lab challenge paths are executable against fresh inputs | `src/judge-lab.js`, `public/lab.js` | `tests/judge-lab.test.js`; browser Judge Lab check | PASS |
 
-Current runtime state remains 6/7 reconciled, IC-1047 open for evidence, and workpaper v8 refresh required.
+Current runtime state remains 6/7 reconciled with IC-1047 open for evidence. Workpaper freshness and version are derived from the latest local report; the captured v8 snapshot is historical evidence, not a hardcoded current version.

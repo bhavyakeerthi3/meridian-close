@@ -38,6 +38,16 @@ npm run demo
 
 Save `TENSORMUX_API_KEY` and `NEATLOGS_API_KEY` in `.env.local`, then restart. Optional `DODO_PAYMENTS_API_KEY` must be a test-mode key. Keys stay on the server. Without TensorMux credentials the app uses labeled deterministic rehearsal; a failed live call records failure without silently substituting a rehearsal result.
 
+## Judge Quick Start
+
+1. Start Meridian.
+2. Open **Close Overview**.
+3. Open **IC-1047** and inspect the evidence conflict.
+4. Open **Judge Lab** and run an adversarial challenge.
+5. Show recovery: checkpoint retained and ledger unchanged.
+6. Open **Connections** and show the AO Engineering Record.
+7. Verify **103/103 tests** and the **7/7 controls** scorecard.
+
 ## What works
 
 - Missing counterparts, duplicate bookings, policy-rate differences and unreflected credits across USD, GBP and INR entity ledgers.
@@ -66,11 +76,15 @@ npm run check:traces
 
 The final implementation is documented in [DECISIONS.md](DECISIONS.md), [control invariants](evidence/CONTROL-INVARIANTS.md), [Judge Lab evaluations](evidence/JUDGE-EVALUATIONS.md), [adversarial validation](evidence/ADVERSARIAL-VALIDATION.md), [engineering metrics](evidence/ENGINEERING-METRICS.md), and the [final engineering report](evidence/FINAL-ENGINEERING-REPORT.md). Agent Orchestrator is the engineering operating plane; Meridian is the finance execution plane.
 
+## Agent Orchestrator engineering record
+
+AO was used as the engineering operating plane: closeloop-1 recorded the initial design checkpoint and five acceptance themes; closeloop-2 coordinated final hardening; scoped controls, UX, and recovery work was recorded in isolated AO worktrees; and independent review/red-team sessions bounded the final claims. AO did not author the historical Meridian implementation and does not run the finance workflow. The session-to-artifact trail is in the [AO evidence map](evidence/AO-EVIDENCE-MAP.md), the [decision ledger](evidence/AO-DECISION-LEDGER.md), and the [release gate](evidence/AO-RELEASE-GATE.md).
+
 ## Judge flow
 
 Close Overview → IC-1047 → Judge Lab → Recovery → Approval Guardrail → Workpaper. The authoritative suite remains in `tests/`; it is intentionally not rearranged into a port-style tree. Docker is not part of the release contract because the tested local Node command is the real application runtime.
 
-Current evidence: 36 workflow/agent/connector tests; 30/30 held-out arithmetic/validator cases; actual TensorMux tool execution and actual Neatlogs traces read back through the authenticated API. The isolated live case produced the expected GBP 10,194.54 adjustment; its 11 persisted spans and 9,951 tokens were verified. A real stale-approval rejection is visible remotely as a guardrail error. See [live sponsor proof](evidence/live-sponsor-verification.json), [failure proof](evidence/live-guardrail-failure.json) and the [build log](evidence/BUILD-LOG.md).
+Current release evidence: **103/103 automated tests pass**, including workflow, accounting, API, recovery, and connector cases. Earlier sponsor receipts remain preserved as historical snapshots: the isolated live case produced the expected GBP 10,194.54 adjustment, with its 11 persisted spans and 9,951 tokens verified, and a real stale-approval rejection recorded remotely. See [engineering metrics](evidence/ENGINEERING-METRICS.md), [live sponsor proof](evidence/live-sponsor-verification.json), [failure proof](evidence/live-guardrail-failure.json), and the [build log](evidence/BUILD-LOG.md).
 
 AI SDK contract tests use a mock transport. The deterministic benchmark is not a live-model accuracy score, and automated browser timings are not human time savings. [The accountant protocol](docs/ACCOUNTANT-REVIEW.md) is ready; actual participant feedback is still needed.
 
