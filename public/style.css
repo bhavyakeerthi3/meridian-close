@@ -120,6 +120,13 @@
 @media(max-width:1050px){.connection-status-strip{grid-template-columns:repeat(2,1fr)}.connection-status-strip>div:nth-child(2n){border-right:0}.connection-status-strip>div:nth-child(n+3){border-top:1px solid #263555}.verified-behavior-grid{grid-template-columns:repeat(3,1fr)}.verified-behavior-grid>div:nth-child(3n){border-right:0}.verified-behavior-grid>div:nth-child(n+4){border-top:1px solid #263555}}
 @media(max-width:680px){.connection-status-strip{grid-template-columns:1fr 1fr}.connection-status-strip>div{padding:15px 12px}.connection-status-strip strong{font-size:19px}.connection-status-strip span{font-size:8px}.architecture-card,.connection-controls,.connection-verified{padding:17px}.architecture-branches{display:flex;flex-direction:column;gap:8px}.architecture-branches:before{display:none}.architecture-branches>div{margin-top:0;text-align:left}.connection-grid{display:flex;flex-direction:column;gap:12px}.connection-card{padding:17px}.connection-card-head{display:block}.connection-state{display:inline-block;margin-top:11px}.control-boundary-grid{grid-template-columns:1fr}.control-boundary-grid>div{border-right:0;border-bottom:1px solid #263555}.control-boundary-grid>div:last-child{border-bottom:0}.verified-behavior-grid{grid-template-columns:1fr 1fr}.verified-behavior-grid>div:nth-child(3n){border-right:1px solid #263555}.verified-behavior-grid>div:nth-child(2n){border-right:0}.verified-behavior-grid>div:nth-child(n+3){border-top:1px solid #263555}.connection-technical{padding:17px}.connection-technical>summary span{float:none;display:block;margin-top:7px}}
 
+/* Shared status rail inspired by the Dogfood Hack editorial shell. */
+.global-ticker{height:28px;display:flex;align-items:center;gap:72px;overflow:hidden;white-space:nowrap;padding:0 22px;border-bottom:1px solid #ff3d78;background:#080d1b;color:#ff3d78;font:9px "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase}
+.global-ticker span{flex:0 0 auto}
+.global-ticker span::after{content:"·";margin-left:28px;color:#516488}
+.global-ticker span:last-child::after{content:""}
+@media(max-width:680px){.global-ticker{gap:30px;padding-inline:14px;font-size:8px;letter-spacing:.12em}}
+
 /* Final hardening: keep provenance and control consequences visible without adding runtime behavior. */
 .home-ao-note{display:block;margin-top:12px;color:#7184ad;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
 .ao-build-proof{padding:22px;margin-bottom:20px;background:#0b1224;border-color:#00b9ae}
