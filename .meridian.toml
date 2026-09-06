@@ -5,5 +5,5 @@ repository = "closeloop local workspace"
 final_commit = "22632f3 Add Meridian engineering discipline release package"
 test_count = 39
 ao_project = "closeloop"
-ao_sessions = ["closeloop-1", "closeloop-2", "closeloop-4", "closeloop-5", "closeloop-6", "closeloop-7", "closeloop-8"]
+ao_sessions = ["closeloop-1", "closeloop-2", "closeloop-4", "closeloop-5", "closeloop-6", "closeloop-7", "closeloop-8", "closeloop-9", "closeloop-10", "closeloop-11", "closeloop-12"]
 validation_date = "2026-09-06"

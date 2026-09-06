@@ -29,3 +29,4 @@
 - Updated build runs at http://127.0.0.1:4320 with a preserved copy of the workspace. Automatic approval review blocked restarting the earlier server with “blocked by policy”; no attempt was made to override that decision. Old workspace and servers were preserved. Local .env selects the final port/database.
 
 - Final source-dispute rerun retained the block while using explicit formatted currency evidence. Workpaper v8 is current, with six matched pairs and one unresolved service-acceptance exception.
+- 2026-09-06: AO red-team mission `closeloop-9` through `closeloop-12` completed read-only control, recovery and provenance audits. The independent reviewer confirmed 39/39 tests and `npm run check`; it rejected claims of authenticated reviewer identity, multi-process run-start locking, universal Neatlogs persistence and hosted PR review. See `AO-RED-TEAM-2026-09-06.md`.

@@ -37,3 +37,6 @@ On 2026-09-06 the Connections/System AO Engineering Record was expanded to list 
 The judging environment is the local application at http://127.0.0.1:4320/. Local workpaper, study-result, and failure-context links were therefore left unchanged and are documented as local demo links; no hosted origin was assumed.
 
 The Accountant Review renderer derives its active-review count from study sessions (sessions.filter(s => !s.isTest && !s.complete).length), so the earlier broken review-count wording cannot appear in the current UI. The current page displays 0 active review and keeps engineering rehearsals excluded.
+## Continuation: read-only red-team mission
+
+The final AO mission used sessions closeloop-9 (controls), closeloop-10 (recovery), closeloop-11 (provenance), and closeloop-12 (independent claim review). All sessions were read-only and reported no files modified. The reviewer confirmed the current 39/39 suite and npm run check, bounded approval identity to simulated roles, and rejected claims of universal Neatlogs persistence, multi-process run-start locking, run-wide evidence snapshots, hosted PR review, or AO ownership of the finance runtime. Full findings are in evidence/AO-RED-TEAM-2026-09-06.md.

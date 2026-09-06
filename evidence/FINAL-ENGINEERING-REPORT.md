@@ -21,7 +21,7 @@ The judge path is Close Overview → IC-1047 → Judge Lab → Recovery → Appr
 
 ## C. AO engineering process
 
-AO is the engineering operating plane. The recorded sessions are listed in `evidence/AO-FINAL-HARDENING.md`; Meridian is the finance execution plane. No claim is made that AO authored historical Meridian work.
+AO is the engineering operating plane. The recorded sessions are listed in `evidence/AO-FINAL-HARDENING.md` and the read-only red-team mission in `evidence/AO-RED-TEAM-2026-09-06.md`; Meridian is the finance execution plane. No claim is made that AO authored historical Meridian work.
 
 ## D. Architecture
 
@@ -33,7 +33,7 @@ See [CONTROL-INVARIANTS.md](CONTROL-INVARIANTS.md). Each invariant maps to imple
 
 ## F. Adversarial validation
 
-See [JUDGE-EVALUATIONS.md](JUDGE-EVALUATIONS.md) and [ADVERSARIAL-VALIDATION.md](ADVERSARIAL-VALIDATION.md). The capability, regression, source-conflict, late-evidence, interruption/recovery, approval-attack, and duplicate-retry paths are existing Judge Lab/workflow tests. Randomized fuzzing is explicitly not completed.
+See [JUDGE-EVALUATIONS.md](JUDGE-EVALUATIONS.md), [AO-RED-TEAM-2026-09-06.md](AO-RED-TEAM-2026-09-06.md), and [ADVERSARIAL-VALIDATION.md](ADVERSARIAL-VALIDATION.md). The capability, regression, source-conflict, late-evidence, interruption/recovery, approval-attack, and duplicate-retry paths are existing Judge Lab/workflow tests. Randomized fuzzing is explicitly not completed.
 
 ## G. Tests
 
