@@ -138,6 +138,11 @@
 .ao-record-locations b,.ao-record-locations span{display:block}
 .ao-record-locations b{color:#9db0d7;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
 .ao-record-locations span{margin-top:5px;color:#dce3f8;font:10px "IBM Plex Mono",monospace;overflow-wrap:anywhere}
+.ao-session-record{display:grid;gap:8px;margin-top:14px}
+.ao-session-record>div{padding:9px 12px;border-left:2px solid #334766;background:#0e172b}
+.ao-session-record b,.ao-session-record span{display:block}
+.ao-session-record b{color:#00d8c8;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em}
+.ao-session-record span{margin-top:4px;color:#dce3f8;font:10px "IBM Plex Mono",monospace;line-height:1.45}
 .ao-build-proof>.form-note{margin-top:15px}
 .investigation-control-story{margin:0 0 16px;color:#ffb3c8;font-size:13px;line-height:1.45;font-weight:600}
 .workpaper-cause-chain{grid-column:1/-1;margin:17px 0 0;padding:12px 14px;border-left:2px solid #ff3d78;background:#171225;color:#ffb3c8;font:10px "IBM Plex Mono",monospace;line-height:1.5;letter-spacing:.03em}

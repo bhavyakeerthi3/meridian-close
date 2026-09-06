@@ -29,3 +29,11 @@ The integrated product state remains 6/7 reconciled, IC-1047 open as an evidence
 ## Truthful limitation
 
 The AO record demonstrates engineering coordination, isolated worktrees, acceptance criteria, evidence audits, and independent review activity. It does not prove that AO authored the historical Meridian implementation, performed the finance investigation at runtime, or completed a hosted PR review.
+
+## Continuation: UI/evidence alignment
+
+On 2026-09-06 the Connections/System AO Engineering Record was expanded to list the recorded sessions and their actual roles: historical closeloop-1; final-hardening orchestrator closeloop-2; controls, UX, and recovery workers closeloop-4, closeloop-5, and closeloop-6; and independent reviewers closeloop-7 and closeloop-8. The UI preserves the distinction between historical work and final hardening, and states that AO coordinates engineering while Meridian coordinates finance.
+
+The judging environment is the local application at http://127.0.0.1:4320/. Local workpaper, study-result, and failure-context links were therefore left unchanged and are documented as local demo links; no hosted origin was assumed.
+
+The Accountant Review renderer already derives its active-review count from study sessions (sessions.filter(s => !s.isTest && !s.complete).length), so no literal "undefined human reviews completed" path remains in the current UI. The current page displays 0 active review and keeps engineering rehearsals excluded.
