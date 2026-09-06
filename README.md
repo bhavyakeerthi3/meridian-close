@@ -1,108 +1,215 @@
-# Meridian
-
-Autonomous month-end close for accounting and finance teams.
+# Meridian — Autonomous Month-End Close
 
 **AI investigates. Code verifies. Controller decides.**
 
-The repository package remains `closeloop`; Meridian is the product submitted for Track 2.
+Meridian investigates intercompany accounting differences, prepares evidence-backed corrections for a controller, and carries changes through to versioned workpapers and an audit trail. When evidence is missing, contradictory, or stale, it stops the affected work instead of presenting an unsupported clean close.
 
-Syndicate by Maximor, Track 2: Autonomous Office of the CFO.
+Built for **Syndicate by Maximor · Track 2: Autonomous Office of the CFO**.
 
-Build started September 5, 2026, after the official 21:30 IST opening.
-Working local prototype. Sponsor status distinguishes code readiness, configured credentials, and verified calls.
+[![Verification](https://github.com/bhavyakeerthi3/meridian-close/actions/workflows/verify.yml/badge.svg)](https://github.com/bhavyakeerthi3/meridian-close/actions)
 
-## Product
+[Run locally](#clone-and-run) · [Product walkthrough](#explore-the-product) · [Control proof](#what-we-test) · [AO engineering record](#how-we-used-agent-orchestrator) · [Three-minute video script](docs/VIDEO-SCRIPT.md)
 
-Three wholly owned service entities reconcile their internal invoices. CloseLoop investigates source evidence, drafts corrections, obtains human approval, posts to a sandbox ledger, and prepares reconciliation and elimination workpapers. A late credit note invalidates affected conclusions and report versions. Approved entries are corrected through additional entries, never silently rewritten.
+## The problem we solve
 
-## Scope
+A month-end close is not finished when the spreadsheet balances. Someone must establish which source is authoritative, explain missing or duplicate entries, apply policy, review a correction, and update the accounting package when evidence arrives late.
 
-Synthetic data, service transactions, explicit policies, and a sandbox ledger. This is an intercompany close workpaper, not a complete statutory consolidation or production accounting system. Unsupported accounting and ambiguous evidence must remain unresolved.
+Meridian connects that work across three synthetic subsidiaries: US, UK, and India. Transaction amounts are in USD; each entity books in its functional currency using explicit synthetic policy rates. The workflow handles missing payables, duplicate balances, incorrect booking rates, unreflected credits, and disputed services.
 
-## Sponsor plan
+**Meridian automates the investigation and verification around the controller’s judgment.** It gives the controller a reviewable finding and makes the reason for stopping visible.
 
-See [research and rules](docs/HACKATHON.md), [sponsor integrations](docs/SPONSORS.md), and [build evidence](evidence/BUILD-LOG.md).
+## Clone and run
 
-## Run Meridian
+The repository is **public**. No access code, GitHub token, or API key is required for deterministic rehearsal.
 
-Node 22.13 or newer (tested on Node 22.20.0, Windows). Native `node:sqlite` emits an experimental warning on this version.
+Requires Git and **Node.js 22.13+**. Tested with Node 22.20.0 on Windows.
 
-```powershell
+```sh
+git clone https://github.com/bhavyakeerthi3/meridian-close.git
+cd meridian-close
 npm ci
-# First setup only; preserve an existing environment file.
-if (!(Test-Path .env.local)) { Copy-Item .env.example .env.local }
 npm run demo
 ```
 
-**One-command demo startup:** `npm run demo` starts the local Meridian server with the demo default `http://127.0.0.1:4320/`, prints the URL, and exits clearly if Node or the server prerequisites are unavailable. Set `PORT` or `CLOSELOOP_DB` when an isolated local instance is needed. SQLite saves the workspace under `data/`; restarting preserves evidence, approvals and report versions. To rehearse from scratch without deleting history, follow [the demo guide](docs/DEMO.md).
+Open **http://127.0.0.1:4320/**. Keep the terminal running; press Ctrl+C to stop.
 
-Save `TENSORMUX_API_KEY` and `NEATLOGS_API_KEY` in `.env.local`, then restart. Optional `DODO_PAYMENTS_API_KEY` must be a test-mode key. Keys stay on the server. Without TensorMux credentials the app uses labeled deterministic rehearsal; a failed live call records failure without silently substituting a rehearsal result.
+- No `.env.local` is needed for the default rehearsal.
+- SQLite creates your workspace in `data/`; restarting preserves evidence and journals.
+- A fresh clone includes **six synthetic invoice cases**. The recorded seven-case demo includes an additional Judge Lab invoice. The private local database is not committed.
+- This is a local application. A GitHub repository URL is not a hosted demo URL.
 
-## Judge Quick Start
+See [the complete setup guide](docs/GETTING-STARTED.md) for first-run steps, live keys, ports, and troubleshooting.
 
-1. Start Meridian.
-2. Open **Close Overview**.
-3. Open **IC-1047** and inspect the evidence conflict.
-4. Open **Judge Lab** and run an adversarial challenge.
-5. Show recovery: checkpoint retained and ledger unchanged.
-6. Open **Connections** and show the AO Engineering Record.
-7. Verify **103/103 tests** and the **7/7 controls** scorecard.
+## Follow a complete close
 
-## What works
+```mermaid
+flowchart LR
+    E[Source evidence and ledger] --> I[Investigation]
+    I --> V[Independent accounting validation]
+    V --> D{Evidence sufficient and proposal current?}
+    D -->|No| B[Keep open and request evidence]
+    D -->|Yes| C[Controller review]
+    C -->|Approved| P[Transactional sandbox posting]
+    P --> W[Versioned workpaper]
+    W --> A[Audit and frozen evidence]
+    L[Late source change] --> S[Invalidate affected downstream state]
+    S --> I
+```
 
-- Missing counterparts, duplicate bookings, policy-rate differences and unreflected credits across USD, GBP and INR entity ledgers.
-- Tool-driven investigator and accountant Q&A through the TensorMux-compatible endpoint. Runtime tools cannot approve or post.
-- Independent source-to-ledger checks, simulated controller review, atomic postings, approval retries and actual process-crash recovery tests.
-- Credit references and versions: retries deduplicate; revisions replace active contributions and retain prior evidence.
-- Late evidence invalidates affected conclusions. Historical approved journals remain intact; compensating entries need new review.
-- Failed/interrupted runs resume unfinished or changed invoice bundles from saved checkpoints.
-- Versioned reconciliation and USD elimination workpapers with frozen source, ledger, policy and approval snapshots. Disputed services keep the close provisional.
-- Read-only Dodo sandbox balance-ledger import, bounded pagination, deduplication and row balance checks in a separate cash evidence view.
-- Neatlogs workflow, agent and tool spans; reviewer rejection labels and failure-context export.
-- Judge-entered invoices and opening balances, conflicting source imports, and revision-bound controller source decisions. All competing documents stay visible.
-- Judge lab with real worker-process termination, checkpoint resume, posting retries, and authenticated Neatlogs trace read-back.
-- Accountant review with randomized manual/assisted task order, server timing, answer accuracy and feedback. Automated rehearsals are excluded from human counts.
+1. **Read the evidence.** The investigator uses scoped tools to inspect documents, booked balances, and policy.
+2. **Explain the difference.** It produces an evidence-linked finding. The model has no posting or approval tool.
+3. **Verify independently.** Code recomputes obligations and checks accounts, currencies, entities, source references, arithmetic, and resulting balances. Balanced entries alone are insufficient.
+4. **Ask the controller.** A current proposal and simulated group-controller approval are required before posting.
+5. **Commit and retain proof.** Journal, approval, and audit event commit together. A posting retry returns the existing journal.
+6. **Recover from change.** Late credits or source revisions make affected conclusions and reports stale. Historical journals remain; compensating corrections need fresh review.
 
-## Verify
+### One case that resolves
 
-```powershell
+IC-1042 starts with USD 12,000 booked by the seller and no buyer payable. Under the configured synthetic GBP rate of 0.8, the expected buyer balance is GBP 9,600. Meridian prepares expense/payable lines, validates them, and waits for controller approval.
+
+### One case that must remain open
+
+IC-1047 has disputed service acceptance. Signed confirmation is missing. Meridian exposes the blocker and the policy boundary; it does not turn uncertainty into an approved correction. A workpaper containing unresolved cases remains provisional and excludes them from eliminations.
+
+### A recorded live challenge
+
+A browser-entered invoice, **JUDGE-LIVE-731**, began at USD 12,743.17. A competing source required a controller source decision. A later USD 250.37 credit changed the net obligation to USD 12,492.80 and GBP 9,994.24. A worker was terminated after a checkpoint and unfinished work resumed. The records preserve prior journals, compensation, and a duplicate-safe approval retry.
+
+This is a recorded synthetic demonstration, not a general model-accuracy or production reliability claim. [Challenge record](docs/DEMO.md) · [Frozen revised workpaper](evidence/judge-revised-workpaper.json)
+
+## Explore the product
+
+| Screen | Question it answers | What is implemented |
+| --- | --- | --- |
+| **Close Overview** | What is happening, and what needs the controller? | Current reconciliation, controlled exceptions, workpaper freshness, priority blocker, close pipeline, recent activity, and a short walkthrough. |
+| **Control Tower** | What needs attention next? | Evidence/reconciliation/approval/workpaper readiness, posting queue, controller priorities, and latest evidence-change impact. |
+| **Investigations** | Why is the close different? | Filterable case list, selected case, deterministic display priority, source/ledger comparison, policy evaluation, proposed entries, independent checks, and dependency view. |
+| **Evidence Room** | What proves the finding? | Source documents, invoice relationships, revisions, conflicts, imported email/meeting text, and downstream impact. |
+| **Workpapers** | What accounting package results? | Versioned reconciliation and USD elimination workpapers, frozen evidence and ledger snapshots, provisional exceptions, freshness warnings, and JSON export. |
+| **Judge Lab** | Does the workflow hold under failure? | New invoices and opening balances, competing sources, controller source selection, late credits, real process interruption, checkpoint resume, and trace verification. |
+| **Accountant Review** | Does assistance help a human reviewer? | Randomized manual/assisted tasks, server timing, answer accuracy, feedback, consent, and rehearsal exclusion. No completed accountant productivity study is claimed. |
+| **Run History** | What did the system actually do? | Run outcomes, event replay and details, checkpoints, interrupted/resumed work, guardrail evidence, and failure-context export. |
+| **Cash Evidence** | Is optional provider evidence available? | Read-only Dodo test-mode import with bounded pagination, deduplication, and row balance checks. Not required for the close. |
+| **Connections** | What powers and verifies Meridian? | Runtime/provider status, trace evidence, architecture, AO session provenance, decision ledger, and release records. |
+
+Priority scores are deterministic UI aids, not calibrated financial-risk predictions. Evidence-request text is a draft; importing conversations does not connect or send messages through Gmail, Slack, or a meeting service.
+
+## What is autonomous, and what is controlled?
+
+| Meridian can perform | Controller or explicit user action remains required |
+| --- | --- |
+| Investigate available evidence and reconcile records | Establish authority when sources conflict |
+| Apply configured accounting policy and independently validate proposals | Confirm missing service acceptance |
+| Detect stale dependencies and preserve historical records | Approve a current correction before posting |
+| Persist checkpoints and resume unfinished work when requested | Start challenges, import evidence, and initiate recovery |
+| Prepare versioned workpapers when requested | Review provisional exceptions and refreshed workpapers |
+
+The system cannot approve its own judgment, bypass validation, erase a dispute, or change accounting policy based on an instruction embedded in source evidence.
+
+## What we test
+
+The current release passes **103 automated tests**. GitHub Actions runs the suite, type/syntax checks, deterministic evaluation, and local trace diagnostic on pushes and pull requests.
+
+```sh
 npm test
 npm run check
 npm run evaluate
 npm run check:traces
 ```
 
-## Engineering discipline
+| Control | Representative checks |
+| --- | --- |
+| Evidence integrity | Unknown references, source-version deduplication, conflicting invoices, fabricated source rejection. |
+| Deterministic accounting | Integer money, rounding, wrong accounts/entities/currencies, and balanced-but-wrong proposals. |
+| Approval protection | Blocked cases, stale revisions, wrong simulated roles, and imported instructions cannot authorize posting. |
+| Duplicate safety | Approval replay, concurrent approvals, and process kills before/after commit. |
+| Failure recovery | Actual worker termination, checkpoint retention, restart, and unfinished-bundle resume. |
+| Freshness | In-flight source changes, late credits, invalidated downstream state, and frozen historical exports. |
+| Audit and API boundaries | Atomic journal/approval/events, persistence after reopen, malformed input, and cross-origin write rejection. |
 
-The final implementation is documented in [DECISIONS.md](DECISIONS.md), [control invariants](evidence/CONTROL-INVARIANTS.md), [Judge Lab evaluations](evidence/JUDGE-EVALUATIONS.md), [adversarial validation](evidence/ADVERSARIAL-VALIDATION.md), [engineering metrics](evidence/ENGINEERING-METRICS.md), and the [final engineering report](evidence/FINAL-ENGINEERING-REPORT.md). Agent Orchestrator is the engineering operating plane; Meridian is the finance execution plane.
+The separate held-out arithmetic/validator evaluation passed **30/30 cases**. AI SDK contract tests use mock model transport. These results do not establish a live-model success rate, measured human time savings, or production certification.
 
-## Agent Orchestrator engineering record
+[Coverage matrix](evidence/TEST-COVERAGE-MATRIX.md) · [Control invariants](evidence/CONTROL-INVARIANTS.md) · [Judge evaluations](evidence/JUDGE-EVALUATIONS.md) · [Adversarial validation](evidence/ADVERSARIAL-VALIDATION.md)
 
-AO was used as the engineering operating plane: closeloop-1 recorded the initial design checkpoint and five acceptance themes; closeloop-2 coordinated final hardening; scoped controls, UX, and recovery work was recorded in isolated AO worktrees; and independent review/red-team sessions bounded the final claims. AO did not author the historical Meridian implementation and does not run the finance workflow. The session-to-artifact trail is in the [AO evidence map](evidence/AO-EVIDENCE-MAP.md), the [decision ledger](evidence/AO-DECISION-LEDGER.md), and the [release gate](evidence/AO-RELEASE-GATE.md).
+## Runtime architecture
 
-## Judge flow
+- **Client:** browser JavaScript and CSS; shared controller workspace and progressive disclosure.
+- **API:** local Node HTTP server with input and write-origin checks.
+- **Investigator:** AI SDK ToolLoopAgent with a TensorMux-compatible model endpoint, plus explicitly labeled deterministic rehearsal.
+- **Accounting:** independent proposal and validation modules using integer minor units and explicit policies.
+- **Execution:** an isolated child process with persisted invoice checkpoints.
+- **Persistence:** SQLite, WAL, FULL synchronous durability, and transactional approval/posting.
+- **Observability:** optional Neatlogs workflow, model, tool, and guardrail spans; selected traces verified by authenticated read-back.
 
-Close Overview → IC-1047 → Judge Lab → Recovery → Approval Guardrail → Workpaper. The authoritative suite remains in `tests/`; it is intentionally not rearranged into a port-style tree. Docker is not part of the release contract because the tested local Node command is the real application runtime.
-
-Current release evidence: **103/103 automated tests pass**, including workflow, accounting, API, recovery, and connector cases. Earlier sponsor receipts remain preserved as historical snapshots: the isolated live case produced the expected GBP 10,194.54 adjustment, with its 11 persisted spans and 9,951 tokens verified, and a real stale-approval rejection recorded remotely. See [engineering metrics](evidence/ENGINEERING-METRICS.md), [live sponsor proof](evidence/live-sponsor-verification.json), [failure proof](evidence/live-guardrail-failure.json), and the [build log](evidence/BUILD-LOG.md).
-
-AI SDK contract tests use a mock transport. The deterministic benchmark is not a live-model accuracy score, and automated browser timings are not human time savings. [The accountant protocol](docs/ACCOUNTANT-REVIEW.md) is ready; actual participant feedback is still needed.
-
-Optional live checks consume sponsor tokens and export synthetic telemetry:
-
-```powershell
-node --env-file-if-exists=.env.local scripts/verify-live.js
-node --env-file-if-exists=.env.local scripts/verify-failure-trace.js
+```text
+public/          Product UI and Judge Lab interactions
+src/agent.js     Tool-using investigator and provider setup
+src/accounting.js  Source obligations and correction proposals
+src/validator.js   Independent accounting checks
+src/workflow.js    Approval, posting, invalidation, reports, and recovery
+src/runner.js      Worker lifecycle and interruption
+src/store.js       SQLite persistence and transactions
+src/cases.js       New cases and controller source decisions
+src/study.js       Manual/assisted review protocol
+src/dodo.js        Optional read-only cash evidence
+src/fixture.js     Synthetic starting cases
+scripts/          Demo launcher, evaluation, and live verification
+ tests/           Automated control and API tests
+ evidence/        Recorded checks, sponsor receipts, and AO provenance
+ docs/            Setup, demo, sponsor notes, and submission material
 ```
 
-## Architecture and limits
+## How we used Agent Orchestrator
 
-Static browser client → local Node HTTP API → isolated investigation worker → synchronous SQLite transaction store. AI SDK 7 `ToolLoopAgent` reads scoped evidence and proposes findings; policy code computes entries and an independent checker verifies the economic result. Journal, approval and audit event commit together under `BEGIN IMMEDIATE` with SQLite WAL and FULL synchronous durability. The judge lab terminates an actual child process. Investigation checkpoints and posting idempotency are tested separately.
+**AO coordinates engineering. Meridian coordinates finance execution.**
 
-The demo uses simulated reviewer roles, synthetic FX booking rates, wholly owned service entities and USD transaction currency. It does not connect production ERP, bank, Gmail or Slack accounts. Email/meeting evidence is manually imported text. Dodo movements do not imply recognized revenue or reconciled bank cash. The app binds to loopback and is not ready for a public multi-user deployment.
+| Recorded session | Contribution |
+| --- | --- |
+| `closeloop-1` | Initial design review and five acceptance themes: independent validation, credit/duplicate safety, stale approvals, crash recovery, and fail-closed approval. No files changed in that review. |
+| `closeloop-2` | Final-hardening orchestration, scoped assignments, and evidence routing. |
+| `closeloop-4`, `closeloop-5`, `closeloop-6` | Controls, UX, and recovery work in isolated worktrees, with scoped evidence and verification records. |
+| `closeloop-7`, `closeloop-8` | Independent review: one approval after evidence corrections; a wording-request limitation was retained. |
+| `closeloop-9` through `closeloop-12` | Read-only control, recovery, provenance, and claim audits. |
 
-The dependency audit has no high/critical findings after two narrow transitive overrides, but 12 moderate OpenTelemetry dependency advisories remain. Local trace compatibility passes; see [dependency status and draft reports](docs/SPONSOR-BUG-DRAFTS.md) before deployment.
+AO evidence does not mean AO authored all historical implementation, ran finance investigations, or completed a hosted PR review. Historical 36- and 39-test artifacts are retained separately from the later 103-test suite. The package/session name remains `closeloop`; the submitted product is Meridian.
 
-## Demo and submission
+[Design review](evidence/AO-DESIGN-REVIEW.md) · [Final hardening record](evidence/AO-FINAL-HARDENING.md) · [Evidence map](evidence/AO-EVIDENCE-MAP.md) · [Decision ledger](evidence/AO-DECISION-LEDGER.md) · [Red-team findings](evidence/AO-RED-TEAM-2026-09-06.md)
 
-Use [the demo script](docs/DEMO.md), [Devpost draft](docs/DEVPOST-DRAFT.md), [event requirements](docs/HACKATHON.md), and [sponsor usage status](docs/SPONSORS.md). Public repository, video/social post, registration and final Devpost submission are still outstanding. No winning odds, unique idea claim, or unverified sponsor bonus is asserted.
+## Sponsors and optional live execution
+
+| System | Actual role and boundary |
+| --- | --- |
+| **Agent Orchestrator** | Engineering coordination and review evidence; not the finance runtime. |
+| **TensorMux** | Live tool-using investigator. Recorded GLM-4.7-Flash calls exercised source, ledger, policy, checker, and finding tools. No posting authority. |
+| **Neatlogs** | Optional observability. Selected real traces were read back from its authenticated API; universal trace delivery is not claimed. |
+| **Dodo Payments** | Optional read-only test-mode cash connector. Account access is not claimed verified; mock transport is tested. |
+| **AI Grants India** | Optional configuration exists; not used by the current close workflow. |
+| **Maximor** | CFO domain and hackathon context; informational reference, not a runtime integration. |
+
+For live execution, create `.env.local` from `.env.example`, add your own TensorMux key and optionally a Neatlogs key, then restart. Keep keys local. Failed live calls remain failures; they do not silently substitute rehearsal.
+
+```sh
+# Optional: consumes provider credits and exports synthetic telemetry when configured.
+npm run verify:live
+npm run verify:failure
+```
+
+[Live sponsor receipt](evidence/live-sponsor-verification.json) · [Guardrail failure receipt](evidence/live-guardrail-failure.json) · [Sponsor details](docs/SPONSORS.md)
+
+## Scope and known limits
+
+Meridian is a local synthetic intercompany-services sandbox. It is not statutory consolidation, production ERP, or a public multi-user accounting deployment. Reviewer roles are simulated; real authentication and segregation of duties are not implemented. Email and meeting excerpts are manually imported. Currency rates are synthetic policy values, not market quotations.
+
+Recovery claims are bounded to the tested process and transaction paths. Multi-process run-start locking and a run-wide atomic evidence snapshot are not claimed. Optional provider availability varies. The recorded dependency audit reports 12 moderate advisories; see [dependency observations](docs/SPONSOR-BUG-DRAFTS.md).
+
+No completed accountant productivity study or ROI measurement is claimed. The review protocol is implemented so that actual feedback can be collected and labeled accurately.
+
+## Judge and contributor reading path
+
+1. [Clone and complete the first investigation](docs/GETTING-STARTED.md).
+2. [Record or follow the three-minute demo](docs/VIDEO-SCRIPT.md), including exact fresh-invoice fields.
+3. Inspect IC-1047, run a Judge Lab challenge, and follow recovery and workpaper consequences.
+4. Read [architectural decisions](DECISIONS.md), [the build log](evidence/BUILD-LOG.md), and [engineering report](evidence/FINAL-ENGINEERING-REPORT.md).
+5. Verify the source and tests directly. For a change, preserve accounting invariants and run the checks above before opening a pull request.
+
+The public repository is available now. Video publication and final hackathon submission are separate steps. The core product thesis remains: **Meridian knows when to act, when to ask for evidence, and when it must stop.**
