@@ -1,0 +1,14 @@
+{
+  "measuredAt": "2026-09-06",
+  "environment": "Windows PowerShell, Node 22.20.0, local synthetic Meridian workspace",
+  "runs": 1,
+  "warmState": true,
+  "results": {
+    "npm test": { "tests": 39, "passed": 39, "failed": 0, "durationMs": 1767, "shellElapsedMs": 2492 },
+    "npm run check": { "status": "passed", "shellElapsedMs": 1051 },
+    "GET /api/state": { "status": 200, "elapsedMs": 65 },
+    "npm run demo startup": { "status": "functionally verified on isolated port 4399", "elapsedMs": null, "note": "Cold-start timing not measured as a stable benchmark." },
+    "Judge Lab recovery": { "status": "passed", "detail": "Existing focused recovery evidence 8/8; full suite 39/39" }
+  },
+  "notMeasured": ["human time saved", "ROI", "throughput", "p99 latency", "memory/RSS", "live sponsor reliability"]
+}

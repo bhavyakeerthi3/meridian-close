@@ -1,0 +1,9 @@
+project_name = "Meridian"
+track = "2"
+product = "Meridian"
+repository = "closeloop local workspace"
+final_commit = "release commit recorded in the final engineering report"
+test_count = 39
+ao_project = "closeloop"
+ao_sessions = ["closeloop-1", "closeloop-2", "closeloop-4", "closeloop-5", "closeloop-6", "closeloop-7", "closeloop-8"]
+validation_date = "2026-09-06"

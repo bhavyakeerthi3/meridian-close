@@ -36,4 +36,4 @@ On 2026-09-06 the Connections/System AO Engineering Record was expanded to list 
 
 The judging environment is the local application at http://127.0.0.1:4320/. Local workpaper, study-result, and failure-context links were therefore left unchanged and are documented as local demo links; no hosted origin was assumed.
 
-The Accountant Review renderer already derives its active-review count from study sessions (sessions.filter(s => !s.isTest && !s.complete).length), so no literal "undefined human reviews completed" path remains in the current UI. The current page displays 0 active review and keeps engineering rehearsals excluded.
+The Accountant Review renderer derives its active-review count from study sessions (sessions.filter(s => !s.isTest && !s.complete).length), so the earlier broken review-count wording cannot appear in the current UI. The current page displays 0 active review and keeps engineering rehearsals excluded.

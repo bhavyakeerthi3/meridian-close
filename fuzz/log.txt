@@ -1,0 +1,4 @@
+Finance Control Adversarial Harness
+Status: Not completed.
+
+The release uses the existing Judge Lab and deterministic control tests documented in evidence/ADVERSARIAL-VALIDATION.md. A 60-second randomized campaign was not run, so no zero-divergence claim is made.

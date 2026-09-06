@@ -1,6 +1,10 @@
-# CloseLoop
+# Meridian
 
-An intercompany close that can explain and recover from change.
+Autonomous month-end close for accounting and finance teams.
+
+**AI investigates. Code verifies. Controller decides.**
+
+The repository package remains `closeloop`; Meridian is the product submitted for Track 2.
 
 Syndicate by Maximor, Track 2: Autonomous Office of the CFO.
 
@@ -19,7 +23,7 @@ Synthetic data, service transactions, explicit policies, and a sandbox ledger. T
 
 See [research and rules](docs/HACKATHON.md), [sponsor integrations](docs/SPONSORS.md), and [build evidence](evidence/BUILD-LOG.md).
 
-## Development
+## Run Meridian
 
 Node 22.13 or newer (tested on Node 22.20.0, Windows). Native `node:sqlite` emits an experimental warning on this version.
 
@@ -27,10 +31,10 @@ Node 22.13 or newer (tested on Node 22.20.0, Windows). Native `node:sqlite` emit
 npm ci
 # First setup only; preserve an existing environment file.
 if (!(Test-Path .env.local)) { Copy-Item .env.example .env.local }
-npm run dev
+npm run demo
 ```
 
-Open the address printed by the server (default http://127.0.0.1:4317; this workstation's verified judge build uses http://127.0.0.1:4320). SQLite saves the workspace under `data/`; restarting preserves evidence, approvals and report versions. To rehearse from scratch without deleting history, follow [the demo guide](docs/DEMO.md).
+**One-command demo startup:** `npm run demo` starts the local Meridian server with the demo default `http://127.0.0.1:4320/`, prints the URL, and exits clearly if Node or the server prerequisites are unavailable. Set `PORT` or `CLOSELOOP_DB` when an isolated local instance is needed. SQLite saves the workspace under `data/`; restarting preserves evidence, approvals and report versions. To rehearse from scratch without deleting history, follow [the demo guide](docs/DEMO.md).
 
 Save `TENSORMUX_API_KEY` and `NEATLOGS_API_KEY` in `.env.local`, then restart. Optional `DODO_PAYMENTS_API_KEY` must be a test-mode key. Keys stay on the server. Without TensorMux credentials the app uses labeled deterministic rehearsal; a failed live call records failure without silently substituting a rehearsal result.
 
@@ -57,6 +61,14 @@ npm run check
 npm run evaluate
 npm run check:traces
 ```
+
+## Engineering discipline
+
+The final implementation is documented in [DECISIONS.md](DECISIONS.md), [control invariants](evidence/CONTROL-INVARIANTS.md), [adversarial validation](evidence/ADVERSARIAL-VALIDATION.md), [engineering metrics](evidence/ENGINEERING-METRICS.md), and the [final engineering report](evidence/FINAL-ENGINEERING-REPORT.md). Agent Orchestrator is the engineering operating plane; Meridian is the finance execution plane.
+
+## Judge flow
+
+Close Overview → IC-1047 → Judge Lab → Recovery → Approval Guardrail → Workpaper. The authoritative suite remains in `tests/`; it is intentionally not rearranged into a port-style tree. Docker is not part of the release contract because the tested local Node command is the real application runtime.
 
 Current evidence: 36 workflow/agent/connector tests; 30/30 held-out arithmetic/validator cases; actual TensorMux tool execution and actual Neatlogs traces read back through the authenticated API. The isolated live case produced the expected GBP 10,194.54 adjustment; its 11 persisted spans and 9,951 tokens were verified. A real stale-approval rejection is visible remotely as a guardrail error. See [live sponsor proof](evidence/live-sponsor-verification.json), [failure proof](evidence/live-guardrail-failure.json) and the [build log](evidence/BUILD-LOG.md).
 
