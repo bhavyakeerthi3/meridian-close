@@ -33,7 +33,7 @@ See [CONTROL-INVARIANTS.md](CONTROL-INVARIANTS.md). Each invariant maps to imple
 
 ## F. Adversarial validation
 
-See [ADVERSARIAL-VALIDATION.md](ADVERSARIAL-VALIDATION.md). The source-conflict, late-evidence, interruption/recovery, approval-attack, and duplicate-retry paths are existing Judge Lab/workflow tests. Randomized fuzzing is explicitly not completed.
+See [JUDGE-EVALUATIONS.md](JUDGE-EVALUATIONS.md) and [ADVERSARIAL-VALIDATION.md](ADVERSARIAL-VALIDATION.md). The capability, regression, source-conflict, late-evidence, interruption/recovery, approval-attack, and duplicate-retry paths are existing Judge Lab/workflow tests. Randomized fuzzing is explicitly not completed.
 
 ## G. Tests
 

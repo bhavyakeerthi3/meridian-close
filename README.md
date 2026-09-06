@@ -64,7 +64,7 @@ npm run check:traces
 
 ## Engineering discipline
 
-The final implementation is documented in [DECISIONS.md](DECISIONS.md), [control invariants](evidence/CONTROL-INVARIANTS.md), [adversarial validation](evidence/ADVERSARIAL-VALIDATION.md), [engineering metrics](evidence/ENGINEERING-METRICS.md), and the [final engineering report](evidence/FINAL-ENGINEERING-REPORT.md). Agent Orchestrator is the engineering operating plane; Meridian is the finance execution plane.
+The final implementation is documented in [DECISIONS.md](DECISIONS.md), [control invariants](evidence/CONTROL-INVARIANTS.md), [Judge Lab evaluations](evidence/JUDGE-EVALUATIONS.md), [adversarial validation](evidence/ADVERSARIAL-VALIDATION.md), [engineering metrics](evidence/ENGINEERING-METRICS.md), and the [final engineering report](evidence/FINAL-ENGINEERING-REPORT.md). Agent Orchestrator is the engineering operating plane; Meridian is the finance execution plane.
 
 ## Judge flow
 
