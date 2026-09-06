@@ -1,7 +1,7 @@
 export const entities = [
-  { id: 'US', name: 'Northstar US', country: 'United States', currency: 'USD', rate: { n: 1, d: 1 } },
-  { id: 'UK', name: 'Northstar UK', country: 'United Kingdom', currency: 'GBP', rate: { n: 4, d: 5 } },
-  { id: 'IN', name: 'Northstar India', country: 'India', currency: 'INR', rate: { n: 83, d: 1 } },
+  { id: 'US', name: 'Meridian US', country: 'United States', currency: 'USD', rate: { n: 1, d: 1 } },
+  { id: 'UK', name: 'Meridian UK', country: 'United Kingdom', currency: 'GBP', rate: { n: 4, d: 5 } },
+  { id: 'IN', name: 'Meridian India', country: 'India', currency: 'INR', rate: { n: 83, d: 1 } },
 ];
 
 export function initialState() {
@@ -25,7 +25,7 @@ export function initialState() {
   documents.push({ id: 'CN-1045', invoiceId: 'IC-1045', kind: 'credit_note', seller: 'US', buyer: 'IN', currency: 'USD', amount: 50_000, version: 1, title: 'August service credit', source: 'Synthetic credit note', body: 'Credit of USD 500.00 against IC-1045 for agreed downtime. Both entities must reflect the credit.', period: '2026-08' });
   add('IC-1046', 'UK', 'US', 500_000, 'Design systems retainer', 400_000, 500_000);
   add('IC-1047', 'IN', 'US', 225_000, 'Unconfirmed advisory services', 18_675_000, null, { disputed: true, body: 'The invoice reference conflicts with the meeting notes. The recipient has not confirmed delivery. Escalate until the underlying service is confirmed.' });
-  documents.push({ id: 'MAIL-1042', invoiceId: 'IC-1042', kind: 'email', version: 1, title: 'UK controller: invoice missed the import', source: 'Synthetic email', body: 'From: controller-uk@northstar.example\nSubject: IC-1042\nWe received the August engineering invoice, but the payable was omitted from our ledger import. Please prepare an evidence-backed correction for review.' });
+  documents.push({ id: 'MAIL-1042', invoiceId: 'IC-1042', kind: 'email', version: 1, title: 'UK controller: invoice missed the import', source: 'Synthetic email', body: 'From: controller-uk@meridian.example\nSubject: IC-1042\nWe received the August engineering invoice, but the payable was omitted from our ledger import. Please prepare an evidence-backed correction for review.' });
   documents.push({ id: 'MEET-1047', invoiceId: 'IC-1047', kind: 'meeting', version: 1, title: 'Close meeting: confirm advisory delivery', source: 'Synthetic meeting transcript', body: 'UK controller: Do not clear the India advisory item yet. The service acceptance is still disputed. Group controller: Keep the exception open until signed evidence arrives.' });
-  return { schema: 1, revision: 1, period: '2026-08', group: 'Northstar Group', entities: structuredClone(entities), policy: { id: 'POL-IC-01', version: 1, name: 'Wholly owned intercompany services', description: 'Synthetic policy: USD service invoices, documented invoice and credit amounts, entity-specific fixed functional booking rates. Reviewer approval is required for all corrections. Disputed services stay open.', rateSource: 'Synthetic fixture rates, not market quotes' }, documents, journals, investigations: [], reports: [], events: [{ id: 'EV-OPEN', type: 'workspace.created', at, message: 'Synthetic August close workspace created. No production accounts connected.' }], runs: [], feedback: [], sponsorEvidence: [] };
+  return { schema: 1, revision: 1, period: '2026-08', group: 'Meridian Group', entities: structuredClone(entities), policy: { id: 'POL-IC-01', version: 1, name: 'Wholly owned intercompany services', description: 'Synthetic policy: USD service invoices, documented invoice and credit amounts, entity-specific fixed functional booking rates. Reviewer approval is required for all corrections. Disputed services stay open.', rateSource: 'Synthetic fixture rates, not market quotes' }, documents, journals, investigations: [], reports: [], events: [{ id: 'EV-OPEN', type: 'workspace.created', at, message: 'Synthetic August close workspace created. No production accounts connected.' }], runs: [], feedback: [], sponsorEvidence: [] };
 }

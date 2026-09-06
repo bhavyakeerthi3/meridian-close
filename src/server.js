@@ -12,11 +12,13 @@ import { readNeatlogsTrace } from './trace-delivery.js';
 import { flushAllDetailed } from 'neatlogs';
 import { importCase, chooseInvoiceSource } from './cases.js';
 import { createStudy, studyView, startTrial, assistTrial, finishTrial, recordStudyFeedback, studySummary, exportStudy } from './study.js';
+import { brandWorkspace, decisionDesk, draftEvidenceRequest } from './decisions.js';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const port = Number(process.env.PORT || 4317);
 const databasePath = process.env.CLOSELOOP_DB || join(root, 'data', 'closeloop.sqlite');
 const store = openStore(databasePath);
+brandWorkspace(store);
 recoverInterrupted(store);
 await initializeTracing();
 const runner = createRunner(store, databasePath);
@@ -59,7 +61,7 @@ const server = createServer(async (req, res) => {
       integrations.tensorMux.verifiedAt ||= live?.createdAt ?? null;
       const exported = state.runs.filter(r => r.traceDelivery?.readback?.verified).at(-1);
       if (exported) integrations.neatlogs.status = `Application trace read back from Neatlogs: ${exported.traceDelivery.readback.spanCount} persisted spans`;
-      return json(res, { ...state, studySessions: studySummary(state), workerActiveRunId: runner.activeRunId, ...summary(state), integrations });
+      return json(res, { ...state, studySessions: studySummary(state), workerActiveRunId: runner.activeRunId, ...summary(state), decisions: decisionDesk(state), integrations });
     }
     if (url.pathname === '/api/run' && req.method === 'POST') {
       if (runner.activeRunId) return json(res, { error: 'An investigation is already running' }, 409);
@@ -72,6 +74,12 @@ const server = createServer(async (req, res) => {
     if (interruption && req.method === 'POST') return json(res, await traced('Deliberate worker interruption', 'GUARDRAIL', { runId: interruption[1] }, () => runner.interrupt(interruption[1]), { sessionId: interruption[1] }));
     if (url.pathname === '/api/cases' && req.method === 'POST') return json(res, importCase(store, await body(req)));
     if (url.pathname === '/api/source-choice' && req.method === 'POST') return json(res, chooseInvoiceSource(store, await body(req)));
+    if (url.pathname === '/api/evidence-requests' && req.method === 'POST') return json(res, draftEvidenceRequest(store, await body(req)));
+    if (url.pathname === '/api/quality' && req.method === 'GET') {
+      const readEvidence = async file => { try { return JSON.parse(await readFile(join(root, 'evidence', file), 'utf8')); } catch { return null; } };
+      const [arithmetic, live] = await Promise.all([readEvidence('evaluation.json'), readEvidence('random-live-challenge.json')]);
+      return json(res, { arithmetic: arithmetic && { generatedAt: arithmetic.generatedAt, passed: arithmetic.passed, total: arithmetic.cases, scope: arithmetic.scope }, live: live && { generatedAt: live.generatedAt, completedAt: live.completedAt, passed: live.passed, total: live.total, complete: live.complete, scope: live.scope, manifestHash: live.manifestHash, results: live.results.map(r => ({ kind: r.kind, passed: r.passed, checks: r.checks, expected: r.expected, actual: r.actual, processingMs: r.processingMs, traceId: r.traceId })) } });
+    }
     const traceCheck = url.pathname.match(/^\/api\/traces\/([0-9a-f]{32})\/verify$/);
     if (traceCheck && req.method === 'POST') {
       const traceId = traceCheck[1]; const state = store.read();

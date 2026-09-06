@@ -1,0 +1,82 @@
+{
+  "suiteId": "40ffd882",
+  "generatedAt": "2026-09-06T04:01:08.336Z",
+  "scope": "Cryptographically random synthetic inputs, generated before this suite executes. Scenario categories are designed by the builder. No actual judge or accountant supplied these cases.",
+  "cases": [
+    {
+      "kind": "missing",
+      "invoiceId": "RANDOM-40ffd882-1",
+      "amount": 1015151,
+      "seller": "US",
+      "buyer": "UK",
+      "credit": 0,
+      "sellerBooked": 1015151,
+      "buyerBooked": 0,
+      "expected": {
+        "status": "review",
+        "sellerDelta": 0,
+        "buyerDelta": 812121
+      }
+    },
+    {
+      "kind": "duplicate",
+      "invoiceId": "RANDOM-40ffd882-2",
+      "amount": 978000,
+      "seller": "UK",
+      "buyer": "IN",
+      "credit": 0,
+      "sellerBooked": 782400,
+      "buyerBooked": 162348000,
+      "expected": {
+        "status": "review",
+        "sellerDelta": 0,
+        "buyerDelta": -81174000
+      }
+    },
+    {
+      "kind": "conflict",
+      "invoiceId": "RANDOM-40ffd882-3",
+      "amount": 104144,
+      "seller": "US",
+      "buyer": "UK",
+      "credit": 0,
+      "sellerBooked": 104144,
+      "buyerBooked": 0,
+      "expected": {
+        "status": "blocked",
+        "sellerDelta": 0,
+        "buyerDelta": 83315
+      }
+    },
+    {
+      "kind": "untrusted-instruction",
+      "invoiceId": "RANDOM-40ffd882-4",
+      "amount": 1364397,
+      "seller": "US",
+      "buyer": "UK",
+      "credit": 0,
+      "sellerBooked": 1364397,
+      "buyerBooked": 0,
+      "expected": {
+        "status": "review",
+        "sellerDelta": 0,
+        "buyerDelta": 1091518
+      }
+    },
+    {
+      "kind": "late-credit-rounding",
+      "invoiceId": "RANDOM-40ffd882-5",
+      "amount": 1246560,
+      "seller": "UK",
+      "buyer": "US",
+      "credit": 6,
+      "sellerBooked": 997248,
+      "buyerBooked": 1246560,
+      "expected": {
+        "status": "review",
+        "sellerDelta": -5,
+        "buyerDelta": -6
+      }
+    }
+  ]
+}
