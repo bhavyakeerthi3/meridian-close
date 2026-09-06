@@ -143,8 +143,13 @@
 .ao-session-record b,.ao-session-record span{display:block}
 .ao-session-record b{color:#00d8c8;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em}
 .ao-session-record span{margin-top:4px;color:#dce3f8;font:10px "IBM Plex Mono",monospace;line-height:1.45}
+.proof-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.proof-mini-grid>div{padding:11px 12px;border:1px solid #263555;background:#101a31}
+.proof-mini-grid b{display:block;color:#00d8c8;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em}
+.proof-mini-grid span,.proof-mini-grid strong{display:block;margin-top:6px;color:#dce3f8;font:10px "IBM Plex Mono",monospace;line-height:1.45}
+.proof-mini-grid strong{color:#ffb3c8}
 .ao-build-proof>.form-note{margin-top:15px}
 .investigation-control-story{margin:0 0 16px;color:#ffb3c8;font-size:13px;line-height:1.45;font-weight:600}
 .workpaper-cause-chain{grid-column:1/-1;margin:17px 0 0;padding:12px 14px;border-left:2px solid #ff3d78;background:#171225;color:#ffb3c8;font:10px "IBM Plex Mono",monospace;line-height:1.5;letter-spacing:.03em}
 .lab-control-story{margin:-2px 0 17px;color:#ffb3c8;font:10px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
-@media(max-width:680px){.ao-build-proof{padding:17px}.ao-build-proof .section-head{display:block}.ao-build-proof .section-head>.mono{display:block;margin-top:10px}.ao-build-flow{display:flex;flex-direction:column;align-items:stretch}.ao-build-flow i{text-align:center;line-height:1}.ao-record-locations{grid-template-columns:1fr}.workpaper-cause-chain{font-size:9px}.home-ao-note{line-height:1.5}}
+@media(max-width:680px){.ao-build-proof{padding:17px}.ao-build-proof .section-head{display:block}.ao-build-proof .section-head>.mono{display:block;margin-top:10px}.ao-build-flow{display:flex;flex-direction:column;align-items:stretch}.ao-build-flow i{text-align:center;line-height:1}.ao-record-locations,.proof-mini-grid{grid-template-columns:1fr}.workpaper-cause-chain{font-size:9px}.home-ao-note{line-height:1.5}}
