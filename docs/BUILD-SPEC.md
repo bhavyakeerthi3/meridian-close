@@ -20,7 +20,7 @@ Matched service invoice; missing buyer payable; duplicate buyer entry; wrong pol
 
 ## Interface
 
-Close overview; entity balances; investigation detail with sources, agent tool log, proposed entries and approval; impact view for a late change; chronological audit trail; downloadable JSON/CSV workpapers; integration status with configured versus verified distinction; accountant Q&A backed by retrieval tools; source import panel. Clearly label synthetic sandbox and deterministic rehearsal mode without keys.
+Close overview; entity balances; investigation detail with sources, agent tool log, proposed entries and approval; impact view for a late change; chronological audit trail; downloadable JSON workpapers; integration status with configured versus verified distinction; accountant Q&A backed by retrieval tools; source import panel. Clearly label synthetic sandbox and deterministic rehearsal mode without keys.
 
 ## Must pass
 

@@ -1,0 +1,20 @@
+{
+  "verifiedAt": "2026-09-06T01:33:40.690Z",
+  "mode": "deterministic rehearsal",
+  "matched": 5,
+  "review": 0,
+  "blocked": 1,
+  "reportVersion": 4,
+  "reportStatus": "provisional",
+  "reportStale": false,
+  "eliminationPairs": 5,
+  "ledgerBatches": 15,
+  "retainedCorrectionBatches": 5,
+  "unresolved": [
+    {
+      "invoiceId": "IC-1047",
+      "reason": "Service acceptance is disputed. Obtain confirmed evidence before preparing a correction. Evidence: DOC-IC-1047, MEET-1047. This result was computed in deterministic rehearsal mode; no LLM call was made."
+    }
+  ],
+  "scope": "Actual browser approval and API verification on synthetic data. No production posting."
+}

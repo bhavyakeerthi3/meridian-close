@@ -1,0 +1,49 @@
+Executed 2026-09-05T18:08:06.789Z
+(node:16028) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ AI SDK tool loop completes an evidence-grounded finding and has no posting authority (35.0837ms)
+✔ agent cannot submit without reading evidence, ledger and policy (5.6562ms)
+✔ agent cannot fabricate a source ID or override a source dispute (14.1579ms)
+(node:14580) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ OS-killed worker before-commit recovers with exactly one posting (162.2088ms)
+✔ OS-killed worker after-commit recovers with exactly one posting (104.4956ms)
+✔ two processes race the same approval and only one commits a journal (116.4258ms)
+(node:33476) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Dodo import uses test GET only, deduplicates pagination and does not affect intercompany balances (22.8897ms)
+✔ Dodo pagination budget produces explicit partial coverage, never a completed import claim (1.3917ms)
+✔ Dodo rejects changing IDs, malformed money, out-of-window rows and failed authentication (4.1454ms)
+✔ Dodo row checks flag inconsistent movements and missing balances without inventing bank reconciliation (0.7571ms)
+(node:24000) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ half-up money conversion is exact, symmetric and rejects fractional cents (1.611ms)
+✔ source and ledger produce expected missing, duplicate, rate, credit and disputed cases (3.6072ms)
+✔ independent checker rejects a balanced but incorrect proposal (2.4109ms)
+✔ checker rejects currency substitution, fabricated source and policy revision (1.1002ms)
+✔ approval posts once, balances ledger, and repeats return the original posting (4.6734ms)
+✔ source update rejects a stale approval with no ledger mutation (3.5194ms)
+✔ late credit preserves past journals and produces a compensating revision and stale report (8.3776ms)
+✔ credits beyond invoice value and fractional minor units roll back (0.7537ms)
+✔ all supported exceptions resolve while disputed source prevents a clean close (6.9683ms)
+✔ email instructions cannot approve, modify policy, or erase a source dispute (1.5881ms)
+✔ rejected review preserves feedback and does not automatically change accounting policy (3.1291ms)
+✔ in-flight evidence changes cannot publish a stale investigation result (2.0892ms)
+✔ failed model run records failure without silent fallback or postings (1.3371ms)
+✔ pending review survives database reopen; repeated approval after restart posts once (33.6526ms)
+✔ credit reference and version deduplicate retries and replace revised contributions (2.2193ms)
+✔ tiny late credit recalculates the rounded target instead of rounding the adjustment (2.6087ms)
+✔ frozen export keeps historical evidence, ledger and approvals after a late source arrives (4.1355ms)
+✔ agreement of receivable and payable cannot hide a wrong service account or ledger currency (3.208ms)
+✔ worker startup marks interrupted runs and leaves fingerprints and journals intact (1.1596ms)
+✔ resume keeps completed current checkpoints and investigates only unfinished bundles (4.6466ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5174.2534
+
+Exit code: 0

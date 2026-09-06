@@ -38,4 +38,15 @@ Source: https://aigrants.in/
 
 ## Status
 
-Research complete enough to start implementation; account activation, live calls, and AO evidence remain to be verified. No sponsor bonus scoring was found in the inspected official event page.
+| Sponsor | Implemented or observed | Still needed |
+| --- | --- | --- |
+| AO | Desktop 0.12.10 installed; project `closeloop`; actual design review in session `closeloop-1` before implementation. Five concrete acceptance cases informed the code and tests. Raw scoped output: `evidence/AO-DESIGN-REVIEW.md`. | Show genuine AO session activity in the final recording; maintain documented AO usage during remaining work. |
+| TensorMux | AI SDK 7 tool loop, event endpoint/model, accountant Q&A, required source consultation and validation gates. Contract tested with mocked model transport. | Key, successful live response, real tool use and measured usage. |
+| Neatlogs | Official SDK 1.1.19; workflow/agent/tool spans; CloseLoop's six-span local envelope passes the SDK diagnostic with export disabled. Rejection reasons remain review labels. | Key and proof the actual run arrived in the sponsor dashboard. |
+| Dodo Payments | Read-only `GET /balances/ledger` against the test environment, bearer auth, bounded page traversal, source-ID deduplication and row balance checks. Separate cash UI. | Test-mode key and actual import; no live usage claimed from mocked tests. |
+| Maximor | Track-specific internal close/reconciliation workflow and domain research. | Mentor feedback if available; no API/endorsement claimed. |
+| AI Grants India | Grant resource and optional environment placeholders documented. | Approved grant and supplied compatible endpoint/model; no runtime usage yet. |
+
+Dodo schema and pagination were checked against official SDK source on 2026-09-05: https://github.com/dodopayments/dodopayments-typescript/blob/main/src/resources/balances.ts and https://github.com/dodopayments/dodopayments-typescript/blob/main/src/core/pagination.ts . API rows retain source minor units without assuming every currency has two decimal places. Exhausted pagination is distinct from independent proof of ledger completeness.
+
+No sponsor bonus scoring was found in the inspected official event page. A logo or configured key is not verified use.

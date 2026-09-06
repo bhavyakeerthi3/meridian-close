@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-09-05T17:58:12.003Z",
+  "scope": "Local Neatlogs envelope for a CloseLoop rehearsal. Export disabled; no dashboard delivery or LLM quality verified.",
+  "diagnostic": {
+    "format_version": "neatlogs.doctor/v2",
+    "mode": "local",
+    "status": "pass",
+    "first_failure": null,
+    "runtime": {
+      "language": "typescript",
+      "sdk_version": "1.1.19",
+      "schema_version": "2",
+      "transport": "otlp_http_protobuf"
+    },
+    "capture": {
+      "trace_id": "f195c867603db2855c703b9b690bfaaa",
+      "root_span_id": "111936b9d372031a",
+      "span_count": 6,
+      "semantic_digest": "sha256:ac2e20160f12f86c7a48daadb0ae1fd7260fc681b2ae9bd6bad356cd2c201a26"
+    },
+    "sampling": {
+      "effective_sampler": "parentbased_traceidratio",
+      "root_sample_rate": 1,
+      "sampled": true
+    },
+    "ownership": {
+      "provider": "private",
+      "instrumentor_count": 0
+    },
+    "queue": {
+      "mode": "diagnostic_capture",
+      "pending_spans": 0,
+      "dropped_spans": 0,
+      "capacity": 2048
+    },
+    "retry": {
+      "attempts": 0,
+      "window_ms": 0,
+      "exhausted": false
+    },
+    "flush": {
+      "outcome": "success",
+      "timeout_ms": 5000,
+      "duration_ms": null
+    },
+    "checks": [
+      {
+        "name": "local_envelope",
+        "status": "pass",
+        "reason_code": "LOCAL_ENVELOPE_VALID",
+        "remediation_code": "NONE",
+        "message": "The final normalized local envelope is valid"
+      }
+    ]
+  }
+}

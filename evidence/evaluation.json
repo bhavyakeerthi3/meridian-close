@@ -1,0 +1,220 @@
+{
+  "generatedAt": "2026-09-05T18:08:08.406Z",
+  "scope": "Deterministic held-out arithmetic and validator checks. No live model accuracy or human time savings claimed.",
+  "cases": 30,
+  "passed": 30,
+  "failed": 0,
+  "durationMs": 13,
+  "results": [
+    {
+      "amountUSDMinor": 101,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 101,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 101,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 337,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 337,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 337,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 999,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 999,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 999,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 12345,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 12345,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 12345,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 78123,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 78123,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 78123,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 100001,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 100001,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 100001,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 987654,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 987654,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 987654,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 1234567,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 1234567,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 1234567,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 8765431,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 8765431,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 8765431,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 12345678,
+      "kind": "missing",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 12345678,
+      "kind": "duplicate",
+      "expectedAcceptance": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "amountUSDMinor": 12345678,
+      "kind": "balanced_wrong",
+      "expectedAcceptance": false,
+      "accepted": false,
+      "passed": true
+    }
+  ]
+}

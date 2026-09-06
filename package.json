@@ -11,7 +11,9 @@
     "dev": "node --env-file-if-exists=.env.local src/server.js",
     "start": "node --env-file-if-exists=.env.local src/server.js",
     "test": "node --test tests/*.test.js",
-    "evaluate": "node scripts/evaluate.js"
+    "evaluate": "node scripts/evaluate.js",
+    "check": "tsc -p tsconfig.json && node --check public/app.js",
+    "check:traces": "node scripts/check-traces.js"
   },
   "dependencies": {
     "@ai-sdk/openai-compatible": "^3.0.44",
@@ -23,5 +25,13 @@
     "@types/node": "^26.4.1",
     "agent-browser": "^0.27.0",
     "typescript": "^7.0.2"
+  },
+  "overrides": {
+    "@opentelemetry/otlp-transformer@0.216.0": {
+      "protobufjs": "8.8.0"
+    },
+    "@opentelemetry/sdk-trace-node": {
+      "@opentelemetry/propagator-jaeger": "2.11.0"
+    }
   }
 }

@@ -1,0 +1,129 @@
+{
+  "checkedAt": "2026-09-05T17:58:13.749Z",
+  "counts": {
+    "info": 0,
+    "low": 0,
+    "moderate": 12,
+    "high": 0,
+    "critical": 0,
+    "total": 12
+  },
+  "packages": [
+    {
+      "name": "@opentelemetry/core",
+      "severity": "moderate",
+      "via": [
+        {
+          "title": "OpenTelemetry Core: Unbounded memory allocation in W3C Baggage propagation",
+          "url": "https://github.com/advisories/GHSA-8988-4f7v-96qf",
+          "range": "<2.8.0"
+        }
+      ]
+    },
+    {
+      "name": "@opentelemetry/exporter-logs-otlp-proto",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core",
+        "@opentelemetry/otlp-exporter-base",
+        "@opentelemetry/otlp-transformer",
+        "@opentelemetry/resources",
+        "@opentelemetry/sdk-logs",
+        "@opentelemetry/sdk-trace-base"
+      ]
+    },
+    {
+      "name": "@opentelemetry/exporter-trace-otlp-proto",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core",
+        "@opentelemetry/otlp-exporter-base",
+        "@opentelemetry/otlp-transformer",
+        "@opentelemetry/resources",
+        "@opentelemetry/sdk-trace-base"
+      ]
+    },
+    {
+      "name": "@opentelemetry/otlp-exporter-base",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core",
+        "@opentelemetry/otlp-transformer"
+      ]
+    },
+    {
+      "name": "@opentelemetry/otlp-transformer",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core",
+        "@opentelemetry/resources",
+        "@opentelemetry/sdk-logs",
+        "@opentelemetry/sdk-metrics",
+        "@opentelemetry/sdk-trace-base"
+      ]
+    },
+    {
+      "name": "@opentelemetry/propagator-b3",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core"
+      ]
+    },
+    {
+      "name": "@opentelemetry/resources",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core"
+      ]
+    },
+    {
+      "name": "@opentelemetry/sdk-logs",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core",
+        "@opentelemetry/resources"
+      ]
+    },
+    {
+      "name": "@opentelemetry/sdk-metrics",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core",
+        "@opentelemetry/resources"
+      ]
+    },
+    {
+      "name": "@opentelemetry/sdk-trace-base",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core",
+        "@opentelemetry/resources"
+      ]
+    },
+    {
+      "name": "@opentelemetry/sdk-trace-node",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core",
+        "@opentelemetry/propagator-b3",
+        "@opentelemetry/sdk-trace-base"
+      ]
+    },
+    {
+      "name": "neatlogs",
+      "severity": "moderate",
+      "via": [
+        "@opentelemetry/core",
+        "@opentelemetry/exporter-logs-otlp-proto",
+        "@opentelemetry/exporter-trace-otlp-proto",
+        "@opentelemetry/otlp-exporter-base",
+        "@opentelemetry/otlp-transformer",
+        "@opentelemetry/resources",
+        "@opentelemetry/sdk-logs",
+        "@opentelemetry/sdk-trace-base",
+        "@opentelemetry/sdk-trace-node"
+      ]
+    }
+  ],
+  "note": "Two narrow transitive overrides remove the observed high-severity advisories. The Neatlogs dependency tree still contains moderate OpenTelemetry advisories; this is not a clean audit."
+}

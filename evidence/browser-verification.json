@@ -1,0 +1,43 @@
+{
+  "verifiedAt": "2026-09-05T18:09:17.943Z",
+  "mode": "deterministic rehearsal",
+  "invoice": "IC-1042",
+  "status": "matched",
+  "balances": [
+    {
+      "entity": "US",
+      "currency": "USD",
+      "minorUnits": 1175000
+    },
+    {
+      "entity": "UK",
+      "currency": "GBP",
+      "minorUnits": 940000
+    }
+  ],
+  "retainedJournalKinds": [
+    "opening",
+    "correction",
+    "correction"
+  ],
+  "creditSourceCopies": 1,
+  "report": {
+    "version": 3,
+    "stale": false,
+    "status": "provisional",
+    "evidenceCount": 10,
+    "ledgerBatches": 12,
+    "unresolved": 4
+  },
+  "httpChecks": {
+    "foreignOrigin": 403,
+    "unknownInvoice": 400
+  },
+  "browser": {
+    "desktop": "1440x1000",
+    "mobile": "390x844",
+    "globalMobileOverflow": false,
+    "errorsObserved": 0
+  },
+  "scope": "Actual local UI and API verification against synthetic data. Sponsor calls not verified."
+}
