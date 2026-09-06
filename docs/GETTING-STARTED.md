@@ -17,7 +17,7 @@ npm ci
 npm run demo
 ```
 
-Open http://127.0.0.1:4320/. Leave the terminal running. Stop with Ctrl+C.
+After the server starts, open **http://127.0.0.1:4320/** in the same machine's browser. Leave the terminal running. Stop with Ctrl+C.
 
 No environment file is needed for rehearsal. The app creates a local SQLite workspace under `data/`. Restarting preserves your work. The database and credentials are excluded from Git.
 
@@ -31,7 +31,7 @@ No environment file is needed for rehearsal. The app creates a local SQLite work
 6. Open Workpapers and prepare a provisional package. Unresolved items are excluded from elimination entries.
 7. Add a late credit to an eligible invoice and observe downstream freshness. Reinvestigate and review any compensation before posting.
 
-Fresh installations contain six fixture cases. The recorded seven-case demo added JUDGE-LIVE-731 through Judge Lab; its database is intentionally not distributed. Historical evidence is in `evidence/`. For exact new-case inputs use [VIDEO-SCRIPT.md](VIDEO-SCRIPT.md).
+Fresh installations contain six fixture cases. The recorded seven-case demo added JUDGE-LIVE-731 through Judge Lab; its database is intentionally not distributed. Historical evidence is in `evidence/`. The presenter’s exact new-case inputs are provided separately with the private recording script.
 
 ## Optional live investigator
 

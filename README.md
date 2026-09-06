@@ -8,7 +8,7 @@ Built for **Syndicate by Maximor · Track 2: Autonomous Office of the CFO**.
 
 [![Verification](https://github.com/bhavyakeerthi3/meridian-close/actions/workflows/verify.yml/badge.svg)](https://github.com/bhavyakeerthi3/meridian-close/actions)
 
-[Run locally](#clone-and-run) · [Product walkthrough](#explore-the-product) · [Control proof](#what-we-test) · [AO engineering record](#how-we-used-agent-orchestrator) · [Three-minute video script](docs/VIDEO-SCRIPT.md)
+[Run locally](#clone-and-run) · [Product walkthrough](#explore-the-product) · [Control proof](#what-we-test) · [AO engineering record](#how-we-used-agent-orchestrator)
 
 ## The problem we solve
 
@@ -31,7 +31,7 @@ npm ci
 npm run demo
 ```
 
-Open **http://127.0.0.1:4320/**. Keep the terminal running; press Ctrl+C to stop.
+After `npm run demo` starts, open **http://127.0.0.1:4320/** in the same machine's browser. Keep the terminal running; press Ctrl+C to stop. This is a local URL, so each person who clones the repository runs their own Meridian instance.
 
 - No `.env.local` is needed for the default rehearsal.
 - SQLite creates your workspace in `data/`; restarting preserves evidence and journals.
@@ -207,7 +207,7 @@ No completed accountant productivity study or ROI measurement is claimed. The re
 ## Judge and contributor reading path
 
 1. [Clone and complete the first investigation](docs/GETTING-STARTED.md).
-2. [Record or follow the three-minute demo](docs/VIDEO-SCRIPT.md), including exact fresh-invoice fields.
+2. Follow the presenter-provided three-minute demo walkthrough, including the exact fresh-invoice fields shared separately from the public repository.
 3. Inspect IC-1047, run a Judge Lab challenge, and follow recovery and workpaper consequences.
 4. Read [architectural decisions](DECISIONS.md), [the build log](evidence/BUILD-LOG.md), and [engineering report](evidence/FINAL-ENGINEERING-REPORT.md).
 5. Verify the source and tests directly. For a change, preserve accounting invariants and run the checks above before opening a pull request.
