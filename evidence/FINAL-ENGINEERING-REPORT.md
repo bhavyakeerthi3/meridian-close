@@ -62,4 +62,4 @@ The close remains **6/7 reconciled** with **IC-1047 open** because signed servic
 
 ## L. Final commit
 
-The final release commit is recorded in `.meridian.toml` and should be updated with the immutable release hash after the final documentation commit. No historical Git history is rewritten.
+The implementation release commit is `22632f3` (`Add Meridian engineering discipline release package`) and is recorded in `.meridian.toml`. The metadata correction is a subsequent ordinary commit; no historical Git history is rewritten.
