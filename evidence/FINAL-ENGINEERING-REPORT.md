@@ -33,11 +33,11 @@ See [CONTROL-INVARIANTS.md](CONTROL-INVARIANTS.md). Each invariant maps to imple
 
 ## F. Adversarial validation
 
-See [JUDGE-EVALUATIONS.md](JUDGE-EVALUATIONS.md), [AO-RED-TEAM-2026-09-06.md](AO-RED-TEAM-2026-09-06.md), and [ADVERSARIAL-VALIDATION.md](ADVERSARIAL-VALIDATION.md). The capability, regression, source-conflict, late-evidence, interruption/recovery, approval-attack, and duplicate-retry paths are existing Judge Lab/workflow tests. Randomized fuzzing is explicitly not completed.
+See [JUDGE-EVALUATIONS.md](JUDGE-EVALUATIONS.md), [TEST-COVERAGE-MATRIX.md](TEST-COVERAGE-MATRIX.md), [AO-RED-TEAM-2026-09-06.md](AO-RED-TEAM-2026-09-06.md), and [ADVERSARIAL-VALIDATION.md](ADVERSARIAL-VALIDATION.md). The capability, regression, source-conflict, late-evidence, interruption/recovery, approval-attack, and duplicate-retry paths are existing Judge Lab/workflow tests. Randomized fuzzing is explicitly not completed.
 
 ## G. Tests
 
-- `npm test`: **39 passed, 0 failed**.
+- `npm test`: **103 passed, 0 failed** (39 baseline tests plus 64 new meaningful boundary, workflow, recovery, adversarial, and API cases).
 - `npm run check`: **passed** (TypeScript plus browser JavaScript syntax checks).
 - `GET /api/state`: **HTTP 200** in the release browser/API check.
 - Browser home, investigations, evidence, workpaper, cash, history, connections, Judge Lab, and Accountant Review pages loaded without an error overlay in the release check.

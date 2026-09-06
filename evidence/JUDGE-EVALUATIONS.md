@@ -8,4 +8,4 @@ Judge Lab is a compact evaluation harness around the existing close workflow. Ea
 | Regression | Unauthorized posting, stale approval, duplicate retry, checkpoint resume, audit retention | Approval, idempotency, freshness, and persistence checks | `tests/workflow.test.js`, `tests/crash.test.js`, `tests/judge-lab.test.js` | PASS |
 | Adversarial | Source conflict, late evidence, worker interruption, approval attack | Fail-safe state transition and ledger protection | `evidence/ADVERSARIAL-VALIDATION.md`, `tests/judge-lab.test.js` | PASS |
 
-The complete release suite reports 39 passed and 0 failed. The Judge Lab UI labels these as evaluation evidence; historical challenge results are not presented as current production incidents.
+The complete release suite reports **103 passed and 0 failed** (39 baseline tests plus 64 new meaningful cases). The detailed mapping is in [TEST-COVERAGE-MATRIX.md](TEST-COVERAGE-MATRIX.md). The Judge Lab UI labels these as evaluation evidence; historical challenge results are not presented as current production incidents.
