@@ -1,33 +1,44 @@
-# CloseLoop demo
+# CloseLoop judge demo
 
-Target: a three-minute demonstration of evidence, controlled correction and recovery. Keep mode labels visible. If sponsor keys are not connected, say "deterministic rehearsal" explicitly.
+The verified build on this workstation is at **http://127.0.0.1:4320/**, using `data/closeloop-judge-lab.sqlite`. The older workspace remains intact. `.env.local` selects the verified port/database for subsequent starts. Sponsor keys remain private.
 
-## Fresh workspace without losing prior work
+## The live challenge
 
-Use a second terminal and a new database filename. These commands preserve the existing workspace:
+1. **Bring a new case.** Open Judge lab → New judge case. Let the judge supply an invoice ID, USD gross amount, supported seller/buyer, recorded functional balances and source text. This importer accepts structured facts; it does not claim OCR or autonomous email ingestion. Choose TensorMux live agent and investigate the invoice.
+2. **Show evidence before approval.** Open the invoice. Show actual source, ledger, policy, checker and finding calls. Compare both sides and approve only after review. The demo controller role is simulated. Prepare a workpaper.
+3. **Introduce ambiguity.** Add another invoice source with a different amount. Approval becomes unavailable. A deliberately attempted stale API approval is rejected and recorded; the verified ERROR span is available in Judge lab. Record the controller's authoritative-source choice with a reason, then investigate again. All sources stay visible.
+4. **Change the accepted answer.** Add a late credit with a stable reference/version. Show the stale workpaper and preserved historical journal. A new correction requires another review.
+5. **Terminate a real process.** In Judge lab, choose all invoice bundles and enable pacing. After at least one checkpoint, press **Terminate worker process**. Show the process ID, retained checkpoint count and unchanged ledger hash. Press **Resume unfinished work**. The three-second checkpoint gap is stage pacing, not measured model latency or a provider outage.
+6. **Prove the result.** Review and approve the fresh correction. Retry an approved posting: the same journal is returned. Prepare the revised workpaper and compare frozen source/ledger snapshots. Inspect persisted Neatlogs spans and token totals; they come from authenticated remote read-back.
+
+Keep actual latency visible. A full seven-invoice live run can take several minutes. For a short recording, show a recorded uninterrupted challenge segment or transparently edit waiting time; do not imply a faster measured execution. Present the retained proof while offering a fresh case during judging.
+
+## Verified example
+
+`JUDGE-LIVE-731` was entered through the browser with USD 12,743.17 gross, the seller fully booked and the buyer unbooked. Live investigation correctly proposed GBP 10,194.54. A competing USD 14,000.31 source blocked the case until an explicit controller decision selected the original.
+
+A later USD 250.37 credit required USD 250.37 and GBP 200.30 reductions, preserving rounding of the net target. The live worker was terminated after one checkpoint; resume processed the remaining six. Repeated approval created no second journal. Final balances are USD 12,492.80 and GBP 9,994.24.
+
+The first resumed run held IC-1043 after the model used its tool budget without a verified finding. This failure remains recorded. Required-tool sequencing and immediate stopping after an accepted finding were added, then a real live rerun reconciled IC-1043. Final workpaper v8 is current: six of seven pairs reconcile, with the genuinely disputed IC-1047 still open.
+
+Evidence: `live-stage-challenge.json`, `live-agent-recovery.json`, `judge-final-verification.json`, and `judge-final-workpaper.json` in `evidence/`. These are synthetic automated verification results, not accountant feedback.
+
+## Usefulness and sponsor proof
+
+- Run a real accountant through **Accountant review** using [the review protocol](ACCOUNTANT-REVIEW.md). Test rehearsals are excluded. Report raw times and accuracy together; no human productivity claim exists yet.
+- Show AO project `closeloop` and real session `closeloop-1`, including its actual design contribution. Do not claim all development happened inside that session.
+- Neatlogs: inspect the persisted spans in Judge lab, then show the same trace IDs in the sponsor dashboard if signed in. A remote API receipt is verified; a dashboard screenshot is a separate artifact.
+- Show Dodo only if a real test account import has succeeded. Its connector tests do not establish live use.
+- Check event rules and required public repository/video/Devpost fields before submission. Nothing has been publicly submitted by this build.
+
+## Fresh rehearsal without deleting history
+
+Use an unused port and a new database filename, for example:
 
 ```powershell
-$env:PORT = '4318'
+$env:PORT = '4321'
 $env:CLOSELOOP_DB = Join-Path $PWD ('data/demo-' + [guid]::NewGuid().ToString('N') + '.sqlite')
 npm run dev
 ```
 
-Open http://127.0.0.1:4318. Stop this demo server with Ctrl+C when done. The default workspace remains on port 4317.
-
-## Recording sequence
-
-1. **0:00–0:20 — The problem.** "A close can look finished until a late credit changes the evidence. CloseLoop finds the affected conclusions and rebuilds a reviewable close." Show three entities, six invoices, one reconciled pair and one disputed source.
-2. **0:20–0:55 — Investigate.** Run the close, open IC-1042, inspect the invoice and email. The UK payable is missing. Show the tool activity and all independent checks. With TensorMux connected, show actual model usage; otherwise clearly describe rehearsal.
-3. **0:55–1:20 — Review and post.** The demo controller approves the proposed GBP 9,600 payable/expense entry. The model has no approval tool. Show both sides reconcile and prepare a workpaper. Open exceptions remain provisional.
-4. **1:20–2:10 — Challenge the close.** Add a USD 250 late credit with a stable reference. Show the change-impact view: affected invoice, historical approval, stale workpaper; five other bundles unchanged. Investigate again. Review and approve USD 250 and GBP 200 compensating lines. The old journal remains. Final balances are USD 11,750 and GBP 9,400. Prepare the revised workpaper and show frozen evidence in the export.
-5. **2:10–2:35 — Break it.** Reimport the same credit reference/version; there is no second contribution. Show the process-crash tests: killed before commit, killed after commit, and two-process approval race. Explain the persisted Resume action for interrupted or failed investigations.
-6. **2:35–3:00 — Show proof.** Display 30/30 deterministic held-out cases, the disputed exception still open, real AO session `closeloop-1`, and the genuine Neatlogs dashboard if verified. Show Dodo cash evidence only if an actual test account import has succeeded.
-
-For a live-provider failure, show the recorded error and explicit retry/resume. Do not edit mode labels, fabricate traces or imply the deterministic evaluation measures model accuracy.
-
-## Sponsor evidence before recording
-
-- Open AO project `closeloop` and the actual design-review session. Explain the five acceptance cases it contributed. Do not claim all development occurred in that session.
-- Save sponsor keys only in `.env.local`, restart, run one invoice and check Connections plus the real Neatlogs dashboard.
-- For Dodo, use a test-mode key and a date window containing test ledger events. Explain that row consistency is not bank reconciliation or revenue recognition.
-- Confirm final event rules, registrations and the public video/post requirement in `HACKATHON.md`. Review `DEVPOST-DRAFT.md` before posting anything.
+Keep source acceptance, amount/rate scope, mode labels and simulated roles visible. Do not hide failed runs or label deterministic tests as live-model accuracy.

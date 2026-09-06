@@ -1,11 +1,12 @@
 import { convert, integer } from './money.js';
 import { fingerprint, invoiceIds } from './revisions.js';
 import { validateProposal } from './validator.js';
+import { selectedInvoices } from './source-selection.js';
 export { hash, fingerprint, invoiceIds } from './revisions.js';
 
 export function sourceBundle(state, invoiceId) {
   const documents = state.documents.filter(d => d.invoiceId === invoiceId);
-  const invoices = documents.filter(d => d.kind === 'invoice');
+  const invoices = selectedInvoices(state, invoiceId);
   const invoice = invoices[0];
   if (!invoice) return { blocked: 'No structured invoice supports this reference.', documents };
   if (invoices.length !== 1) return { blocked: 'Conflicting invoice documents require review.', documents, invoice };

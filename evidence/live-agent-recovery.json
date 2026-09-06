@@ -1,0 +1,268 @@
+{
+  "checkedAt": "2026-09-06T03:43:35.460Z",
+  "problem": "IC-1043 previously exhausted the live tool budget and was held for review. Repeated reads can consume the budget before a valid finding.",
+  "change": "After two free tool-selection steps, require remaining evidence/ledger/policy/check/finding tools; stop immediately after an accepted finding. Supply formatted currency values next to minor units.",
+  "run": {
+    "id": "918c9ecc-538f-4090-92bd-04719582ddbc",
+    "status": "completed",
+    "startedAt": "2026-09-06T03:41:50.692Z",
+    "mode": "TensorMux live agent",
+    "total": 1,
+    "completed": 1,
+    "invoiceIds": [
+      "IC-1043"
+    ],
+    "resumedFrom": null,
+    "checkpointDelayMs": 0,
+    "workerPid": 29188,
+    "execution": "isolated process",
+    "traceId": "b07192d6153d4934a15f54080f5f9576",
+    "finishedAt": "2026-09-06T03:42:05.421Z",
+    "traceDelivery": {
+      "flush": {
+        "success": true,
+        "outcomes": [
+          {
+            "pipeline": "default",
+            "success": true,
+            "timedOut": false
+          }
+        ]
+      },
+      "spanExportFailures": 0,
+      "logExportFailures": 0,
+      "readback": {
+        "verified": true,
+        "checkedAt": "2026-09-06T03:42:07.722Z",
+        "traceId": "b07192d6153d4934a15f54080f5f9576",
+        "status": "success",
+        "spanCount": 9,
+        "hierarchyValid": true,
+        "spans": [
+          {
+            "id": "be0d94fea7b3d48d",
+            "parentId": "f28934b965304f31",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "f28934b965304f31",
+            "parentId": "e455471c3f30709f",
+            "name": "Investigate intercompany exception",
+            "type": "agent_action",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "e455471c3f30709f",
+            "parentId": null,
+            "name": "CloseLoop investigation run",
+            "type": "workflow",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "f32ffd8428cd3c96",
+            "parentId": "f28934b965304f31",
+            "name": "inspect_ledger",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "22cfa3c67cbf3525",
+            "parentId": "f28934b965304f31",
+            "name": "check_correction",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "0d6cd5adccefbbd2",
+            "parentId": "f28934b965304f31",
+            "name": "read_policy",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "a1c3f17090a3e92d",
+            "parentId": "f28934b965304f31",
+            "name": "read_evidence",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "c5dc59375f4ee5cc",
+            "parentId": "f28934b965304f31",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "770cb1dbc092c9d1",
+            "parentId": "f28934b965304f31",
+            "name": "submit_finding",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          }
+        ],
+        "hasError": 0,
+        "errorCount": 0,
+        "tokens": {
+          "input": 2830,
+          "output": 1139,
+          "total": 3969
+        },
+        "method": "Authenticated Neatlogs trace API read-back; UI screenshot not implied"
+      },
+      "dashboardVerified": false
+    },
+    "workerExit": {
+      "code": 0,
+      "signal": null,
+      "at": "2026-09-06T03:42:07.758Z"
+    }
+  },
+  "proposal": {
+    "invoiceId": "IC-1043",
+    "fingerprint": "c6f3e8ebf2ac48ba760b3a545b5dfe576b978a41337fd7cdf913b5bfb945b133",
+    "title": "Shared customer operations",
+    "evidenceIds": [
+      "DOC-IC-1043"
+    ],
+    "policyId": "POL-IC-01",
+    "policyVersion": 1,
+    "status": "matched",
+    "diagnosis": "Reconciled",
+    "explanation": "Both entities agree with the documented net service amount and policy rates.",
+    "net": 400000,
+    "sides": [
+      {
+        "side": "seller",
+        "entity": "UK",
+        "currency": "GBP",
+        "current": 320000,
+        "expected": 320000,
+        "delta": 0,
+        "rate": {
+          "n": 4,
+          "d": 5
+        }
+      },
+      {
+        "side": "buyer",
+        "entity": "IN",
+        "currency": "INR",
+        "current": 33200000,
+        "expected": 33200000,
+        "delta": 0,
+        "rate": {
+          "n": 83,
+          "d": 1
+        }
+      }
+    ],
+    "entries": [],
+    "id": "1a27efe1-409b-4545-bc99-86a851ac938a",
+    "runId": "918c9ecc-538f-4090-92bd-04719582ddbc",
+    "revision": 3,
+    "createdAt": "2026-09-06T03:42:05.410Z",
+    "mode": "TensorMux live agent",
+    "trace": [
+      {
+        "name": "read_evidence",
+        "detail": "read_evidence completed for IC-1043",
+        "kind": "tool",
+        "at": "2026-09-06T03:41:54.375Z"
+      },
+      {
+        "name": "inspect_ledger",
+        "detail": "inspect_ledger completed for IC-1043",
+        "kind": "tool",
+        "at": "2026-09-06T03:41:54.382Z"
+      },
+      {
+        "name": "read_policy",
+        "detail": "read_policy completed for IC-1043",
+        "kind": "tool",
+        "at": "2026-09-06T03:41:54.392Z"
+      },
+      {
+        "name": "check_correction",
+        "detail": "check_correction completed for IC-1043",
+        "kind": "tool",
+        "at": "2026-09-06T03:41:54.401Z"
+      },
+      {
+        "name": "submit_finding",
+        "detail": "submit_finding completed for IC-1043",
+        "kind": "tool",
+        "at": "2026-09-06T03:42:05.362Z"
+      },
+      {
+        "name": "model_usage",
+        "detail": "3969 tokens used across 2 steps.",
+        "kind": "model",
+        "at": "2026-09-06T03:42:05.396Z"
+      }
+    ],
+    "narrative": "Correction correctly recalculated IN side to ₹33,200,000 (USD $4,000.00) by crediting Service Expense and debiting IC Payable. UK side £3,200.00/USD $4,000.00 conversion matches policy (4/5). IN side ₹33,200,000/USD $4,000.00 conversion matches policy (83). All validation checks passed, evidence document DOC-IC-1043 exists, policy POL-IC-01 applicable, no conflicting decisions.\nEvidence: DOC-IC-1043",
+    "usage": {
+      "inputTokens": 2830,
+      "inputTokenDetails": {
+        "noCacheTokens": 2830,
+        "cacheReadTokens": 0
+      },
+      "outputTokens": 1139,
+      "outputTokenDetails": {
+        "textTokens": 1139,
+        "reasoningTokens": 0
+      },
+      "totalTokens": 3969
+    },
+    "processingMs": 13467,
+    "validation": {
+      "passed": true,
+      "checks": [
+        {
+          "name": "Current source revision",
+          "passed": true,
+          "detail": "Approval binds to exact evidence, policy, and ledger revisions."
+        },
+        {
+          "name": "Supported source invoice",
+          "passed": true,
+          "detail": "One undisputed USD service invoice with distinct parties."
+        },
+        {
+          "name": "Evidence references",
+          "passed": true,
+          "detail": "All referenced documents exist in this invoice bundle."
+        },
+        {
+          "name": "Policy revision",
+          "passed": true,
+          "detail": "Proposal uses the current approved policy."
+        },
+        {
+          "name": "Exact minor units",
+          "passed": true,
+          "detail": "Positive source values and bounded integer arithmetic; credits cannot exceed invoice."
+        },
+        {
+          "name": "Balanced by entity",
+          "passed": true,
+          "detail": "Each subsidiary balances in its own functional currency."
+        },
+        {
+          "name": "Allowed accounts and currency",
+          "passed": true,
+          "detail": "Existing and proposed lines use supported entities, currencies, accounts and integer amounts."
+        },
+        {
+          "name": "Source-to-ledger agreement",
+          "passed": true,
+          "detail": "Post-correction accounts agree with independently recomputed source obligations."
+        }
+      ]
+    }
+  },
+  "notAGeneralAccuracyClaim": true
+}

@@ -1,14 +1,17 @@
 const app = document.querySelector('#app');
 const modal = document.querySelector('#modal');
 let state = null, view = 'overview', selected = 'IC-1042', busy = false, chatBusy = false;
-let messages = [], renderedRevision = -1;
+let messages = [], renderedRevision = -1, formDirty = false;
+for (const eventName of ['input', 'change']) document.addEventListener(eventName, event => {
+  if (event.target.closest('form')) formDirty = true;
+}, true);
 const e = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const money = (n, currency = 'USD') => n === null || n === undefined ? '—' : new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 2 }).format(n / 100);
 const time = at => new Date(at).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: false });
 const labels = { review: 'Needs review', matched: 'Reconciled', blocked: 'Needs evidence', posted: 'Approved & posted', stale: 'Needs refresh', superseded: 'Superseded', rejected: 'Rejected', ready: 'Ready for review', provisional: 'Provisional', completed: 'Completed', running: 'Running', failed: 'Failed', interrupted: 'Interrupted' };
 const badge = (status, label) => `<span class="badge ${e(status)}">${e(label || labels[status] || status)}</span>`;
-const running = () => state?.runs.some(r => r.status === 'running');
-const navItems = [['overview', '◫', 'Close overview'], ['investigations', '⌕', 'Investigations'], ['evidence', '▤', 'Evidence room'], ['reports', '▥', 'Close workpapers'], ['cash', '⇄', 'Cash evidence'], ['history', '◷', 'Run history'], ['connections', '⚇', 'Connections']];
+const running = () => Boolean(state?.workerActiveRunId || state?.runs.some(r => r.status === 'running'));
+const navItems = [['overview', '◫', 'Close overview'], ['investigations', '⌕', 'Investigations'], ['lab', '⚡', 'Judge lab'], ['study', '◴', 'Accountant review'], ['evidence', '▤', 'Evidence room'], ['reports', '▥', 'Close workpapers'], ['cash', '⇄', 'Cash evidence'], ['history', '◷', 'Run history'], ['connections', '⚇', 'Connections']];
 
 async function api(path, data) {
   const response = await fetch(path, data === undefined ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
@@ -26,16 +29,17 @@ async function refresh(force = false) {
   const changed = !state || next.revision !== renderedRevision;
   state = next;
   const editing = ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName);
-  if (force || (changed && !editing && !modal.open)) render();
+  if (force || (changed && !editing && !modal.open && !formDirty)) render();
 }
 function go(target, invoiceId) { view = target; if (invoiceId) selected = invoiceId; render(); window.scrollTo({ top: 0 }); }
 function runButton(invoiceId) { return `<button class="btn primary" data-action="run" ${invoiceId ? `data-invoice="${e(invoiceId)}"` : ''} ${running() || busy ? 'disabled' : ''}>${running() ? '<span class="spinner"></span> Investigating…' : '<span>▷</span> ' + (invoiceId ? 'Investigate invoice' : 'Run close')}</button>`; }
 function title(eyebrow, text, sub, actions = '') { return `<div class="page-title"><div><div class="eyebrow">${eyebrow}</div><h1>${text}</h1><p>${sub}</p></div><div class="actions">${actions}</div></div>`; }
 function render() {
   if (!state) return;
+  formDirty = false;
   renderedRevision = state.revision;
   const nav = view === 'detail' ? 'investigations' : view;
-  app.innerHTML = `<div class="shell"><aside class="sidebar"><div class="brand"><span class="brand-mark">↻</span><span class="wordmark">CloseLoop</span></div><div class="workspace-switch"><span class="avatar-box">N</span><div><b>Northstar Group</b><small>3 entities · Sandbox</small></div></div><div class="nav-label">Workspace</div><nav class="nav" aria-label="Main navigation">${navItems.map(([id, icon, label]) => `<button data-nav="${id}" class="${nav === id ? 'active' : ''}" aria-label="${label}" ${nav === id ? 'aria-current="page"' : ''}><span class="nav-icon">${icon}</span><span class="nav-text">${label}</span>${id === 'investigations' ? `<span class="nav-count">${state.review + state.blocked}</span>` : ''}</button>`).join('')}</nav><div class="sidebar-bottom"><div class="sandbox-label"><strong><span class="dot"></span> Local sandbox</strong>Synthetic data. Every correction<br>requires human review.</div><div class="profile"><span class="circle">GC</span><div>Group controller<small>Demo reviewer role</small></div></div></div></aside><main class="main"><header class="topbar"><div class="breadcrumb">Workspace <span>/</span> Northstar Group <span>/</span> <b>August close</b></div><div class="top-right"><span class="muted">Syndicate · Track 02</span><span class="period">AUG 2026</span></div></header><div class="content">${({ overview, investigations, detail, evidence, reports, cash, history, connections })[view]()}<footer class="page-foot"><span>CloseLoop · Evidence-driven intercompany service close · Synthetic sandbox</span><span>EVERY CHANGE HAS A TRAIL ↗</span></footer></div></main></div>`;
+  app.innerHTML = `<div class="shell"><aside class="sidebar"><div class="brand"><span class="brand-mark">↻</span><span class="wordmark">CloseLoop</span></div><div class="workspace-switch"><span class="avatar-box">N</span><div><b>Northstar Group</b><small>3 entities · Sandbox</small></div></div><div class="nav-label">Workspace</div><nav class="nav" aria-label="Main navigation">${navItems.map(([id, icon, label]) => `<button data-nav="${id}" class="${nav === id ? 'active' : ''}" aria-label="${label}" ${nav === id ? 'aria-current="page"' : ''}><span class="nav-icon">${icon}</span><span class="nav-text">${label}</span>${id === 'investigations' ? `<span class="nav-count">${state.review + state.blocked}</span>` : ''}</button>`).join('')}</nav><div class="sidebar-bottom"><div class="sandbox-label"><strong><span class="dot"></span> Local sandbox</strong>Synthetic data. Every correction<br>requires human review.</div><div class="profile"><span class="circle">GC</span><div>Group controller<small>Demo reviewer role</small></div></div></div></aside><main class="main"><header class="topbar"><div class="breadcrumb">Workspace <span>/</span> Northstar Group <span>/</span> <b>August close</b></div><div class="top-right"><span class="muted">Syndicate · Track 02</span><span class="period">AUG 2026</span></div></header><div class="content">${({ overview, investigations, detail, lab, study, evidence, reports, cash, history, connections })[view]()}<footer class="page-foot"><span>CloseLoop · Evidence-driven intercompany service close · Synthetic sandbox</span><span>EVERY CHANGE HAS A TRAIL ↗</span></footer></div></main></div>`;
 }
 function statusStrip() {
   const run = state.runs.at(-1);

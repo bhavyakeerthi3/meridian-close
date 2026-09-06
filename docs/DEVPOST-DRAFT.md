@@ -16,15 +16,21 @@ Three synthetic subsidiaries have missing, duplicated, misrated and disputed ser
 
 Late credits have stable identities and versions. Repeated imports count once; revisions retain old evidence and replace active contributions. Affected workpapers become stale. New versions include frozen source, ledger, policy and approval snapshots. Ambiguous services remain open. Failed or interrupted runs resume from saved checkpoints.
 
+Judges can enter an unfamiliar invoice and recorded balances or attach a competing invoice source. Conflicting sources block the correction until a simulated controller records an evidence-bound source decision. The judge lab can terminate the actual investigation process, resume remaining work and retry a posting without adding a second journal.
+
 ## How we built it
 
 Node.js, native SQLite, a browser dashboard, AI SDK 7 ToolLoopAgent, TensorMux-compatible model routing, and manual Neatlogs instrumentation. Dodo's read-only test ledger connector adds a separate cash-evidence view. AO session `closeloop-1` reviewed the initial design and proposed five acceptance cases that shaped implementation and testing.
 
 ## What we verified
 
-30 automated tests, including actual worker-process kills before/after commit, concurrent approvals, source-version deduplication, stale decision rejection and checkpoint resume. A separate deterministic benchmark passed 30/30 unseen arithmetic/validator cases. Browser verification completed the late-credit correction workflow on desktop; mobile layout was inspected and fixed. Neatlogs validated a six-span local CloseLoop envelope with export disabled.
+36 automated tests, including actual worker-process kills before/after commit, concurrent approvals, source-version deduplication, stale decision rejection, new invoice imports, source authority, checkpoint resume and the review-study protocol. A separate deterministic benchmark passed 30/30 unseen arithmetic/validator cases.
 
-These results do not establish live-model accuracy or human time savings. TensorMux live calls, Neatlogs dashboard delivery and Dodo account access must be verified before changing this wording.
+TensorMux's GLM-4.7-Flash actually called the evidence, ledger, policy, independent-check and finding tools on newly entered synthetic invoices. An isolated live case produced the independently expected GBP 10,194.54 correction; its 11 Neatlogs spans and 9,951 tokens were read back from the authenticated trace API. The live agent also escalated conflicting invoice sources. A deliberately attempted stale approval produced a real guardrail error that was verified in Neatlogs, with no ledger change. Evidence files retain actual trace IDs and results.
+
+These observations do not establish a general live-model accuracy rate or human time savings. The accountant-review screen records randomized matched tasks, raw elapsed time, accuracy and feedback, but no completed accountant review is claimed. Dodo account access remains unverified.
+
+The live late-credit challenge terminated a real worker after one checkpoint and resumed six remaining bundles. Final new-case balances were USD 12,492.80 and GBP 9,994.24, with historical journals retained and no duplicate posting on retry. One other invoice initially exhausted the live tool budget and stayed blocked; after tightening required-tool sequencing, its real live rerun reconciled. Both observations remain in the audit. Final workpaper v8 retains the disputed service exception.
 
 ## Challenges and next steps
 
@@ -36,6 +42,6 @@ The hard part was preserving the relationship between the evidence, approval and
 - Public GitHub URL. Current origin is a local development remote, not GitHub.
 - Public demo video/social post URL and final AO usage recording.
 - Hosted app URL if deployed; the current app is local only.
-- Actual verified sponsor evidence and final event-rule review.
+- Final event-rule review, real accountant participation, and consent before quoting feedback.
 
 No social post, bug report, public repository or Devpost submission has been sent by this build.

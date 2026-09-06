@@ -1,0 +1,3257 @@
+{
+  "id": "f33db550-2cf8-48fc-986a-16f663e69349",
+  "version": 6,
+  "createdAt": "2026-09-06T03:37:05.531Z",
+  "fingerprint": "0cf3123d6cca69a336242bf68b289692f10bd73038472bf5a86e4f6a70cf7697",
+  "stale": false,
+  "status": "provisional",
+  "scope": "Synthetic intercompany service reconciliation and USD elimination workpaper. Not a statutory consolidation.",
+  "period": "2026-08",
+  "rows": [
+    {
+      "invoiceId": "IC-1042",
+      "seller": "US",
+      "buyer": "UK",
+      "netUSDMinor": 1175000,
+      "status": "matched",
+      "evidenceIds": [
+        "DOC-IC-1042",
+        "MAIL-1042",
+        "CN-c685c42e"
+      ],
+      "sides": [
+        {
+          "side": "seller",
+          "entity": "US",
+          "currency": "USD",
+          "current": 1175000,
+          "expected": 1175000,
+          "delta": 0,
+          "rate": {
+            "n": 1,
+            "d": 1
+          }
+        },
+        {
+          "side": "buyer",
+          "entity": "UK",
+          "currency": "GBP",
+          "current": 940000,
+          "expected": 940000,
+          "delta": 0,
+          "rate": {
+            "n": 4,
+            "d": 5
+          }
+        }
+      ]
+    },
+    {
+      "invoiceId": "IC-1043",
+      "seller": "UK",
+      "buyer": "IN",
+      "netUSDMinor": 400000,
+      "status": "blocked",
+      "evidenceIds": [
+        "DOC-IC-1043"
+      ],
+      "sides": [
+        {
+          "side": "seller",
+          "entity": "UK",
+          "currency": "GBP",
+          "current": 320000,
+          "expected": 320000,
+          "delta": 0,
+          "rate": {
+            "n": 4,
+            "d": 5
+          }
+        },
+        {
+          "side": "buyer",
+          "entity": "IN",
+          "currency": "INR",
+          "current": 33200000,
+          "expected": 33200000,
+          "delta": 0,
+          "rate": {
+            "n": 83,
+            "d": 1
+          }
+        }
+      ]
+    },
+    {
+      "invoiceId": "IC-1044",
+      "seller": "US",
+      "buyer": "UK",
+      "netUSDMinor": 350000,
+      "status": "matched",
+      "evidenceIds": [
+        "DOC-IC-1044"
+      ],
+      "sides": [
+        {
+          "side": "seller",
+          "entity": "US",
+          "currency": "USD",
+          "current": 350000,
+          "expected": 350000,
+          "delta": 0,
+          "rate": {
+            "n": 1,
+            "d": 1
+          }
+        },
+        {
+          "side": "buyer",
+          "entity": "UK",
+          "currency": "GBP",
+          "current": 280000,
+          "expected": 280000,
+          "delta": 0,
+          "rate": {
+            "n": 4,
+            "d": 5
+          }
+        }
+      ]
+    },
+    {
+      "invoiceId": "IC-1045",
+      "seller": "US",
+      "buyer": "IN",
+      "netUSDMinor": 750000,
+      "status": "matched",
+      "evidenceIds": [
+        "DOC-IC-1045",
+        "CN-1045"
+      ],
+      "sides": [
+        {
+          "side": "seller",
+          "entity": "US",
+          "currency": "USD",
+          "current": 750000,
+          "expected": 750000,
+          "delta": 0,
+          "rate": {
+            "n": 1,
+            "d": 1
+          }
+        },
+        {
+          "side": "buyer",
+          "entity": "IN",
+          "currency": "INR",
+          "current": 62250000,
+          "expected": 62250000,
+          "delta": 0,
+          "rate": {
+            "n": 83,
+            "d": 1
+          }
+        }
+      ]
+    },
+    {
+      "invoiceId": "IC-1046",
+      "seller": "UK",
+      "buyer": "US",
+      "netUSDMinor": 500000,
+      "status": "matched",
+      "evidenceIds": [
+        "DOC-IC-1046"
+      ],
+      "sides": [
+        {
+          "side": "seller",
+          "entity": "UK",
+          "currency": "GBP",
+          "current": 400000,
+          "expected": 400000,
+          "delta": 0,
+          "rate": {
+            "n": 4,
+            "d": 5
+          }
+        },
+        {
+          "side": "buyer",
+          "entity": "US",
+          "currency": "USD",
+          "current": 500000,
+          "expected": 500000,
+          "delta": 0,
+          "rate": {
+            "n": 1,
+            "d": 1
+          }
+        }
+      ]
+    },
+    {
+      "invoiceId": "IC-1047",
+      "seller": "IN",
+      "buyer": "US",
+      "netUSDMinor": null,
+      "status": "blocked",
+      "evidenceIds": [
+        "DOC-IC-1047",
+        "MEET-1047"
+      ],
+      "sides": []
+    },
+    {
+      "invoiceId": "JUDGE-LIVE-731",
+      "seller": "US",
+      "buyer": "UK",
+      "netUSDMinor": 1249280,
+      "status": "matched",
+      "evidenceIds": [
+        "JUDGE-LIVE-731-INV",
+        "JUDGE-LIVE-731-CONFLICT",
+        "JUDGE-LIVE-731-CREDIT"
+      ],
+      "sides": [
+        {
+          "side": "seller",
+          "entity": "US",
+          "currency": "USD",
+          "current": 1249280,
+          "expected": 1249280,
+          "delta": 0,
+          "rate": {
+            "n": 1,
+            "d": 1
+          }
+        },
+        {
+          "side": "buyer",
+          "entity": "UK",
+          "currency": "GBP",
+          "current": 999424,
+          "expected": 999424,
+          "delta": 0,
+          "rate": {
+            "n": 4,
+            "d": 5
+          }
+        }
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "invoiceId": "IC-1043",
+      "reason": "The live agent did not submit a verified finding within its step budget. Human investigation required."
+    },
+    {
+      "invoiceId": "IC-1047",
+      "reason": "The advisory services remain unconfirmed. The invoice (DOC-IC-1047) states: \"The recipient has not confirmed delivery. Escalate until the underlying service is confirmed.\" The meeting (MEET-1047) confirms controllers want to keep the exception open until signed evidence arrives. Policy POL-IC-01 states \"Disputed services stay open.\" The USD $225,000 invoice and INR 18,675,000 ledger entry agree at the 83:1 INR/USD rate, but the rejection block requires investigation of the underlying service and receipt of confirmed acceptance before any further action.\nEvidence: DOC-IC-1047, MEET-1047"
+    }
+  ],
+  "eliminations": [
+    {
+      "invoiceId": "IC-1042",
+      "currency": "USD",
+      "sourceEvidence": [
+        "DOC-IC-1042",
+        "MAIL-1042",
+        "CN-c685c42e"
+      ],
+      "entries": [
+        {
+          "account": "IC_PAYABLE",
+          "debit": 1175000,
+          "credit": 0
+        },
+        {
+          "account": "IC_RECEIVABLE",
+          "debit": 0,
+          "credit": 1175000
+        },
+        {
+          "account": "SERVICE_REVENUE",
+          "debit": 1175000,
+          "credit": 0
+        },
+        {
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 1175000
+        }
+      ]
+    },
+    {
+      "invoiceId": "IC-1044",
+      "currency": "USD",
+      "sourceEvidence": [
+        "DOC-IC-1044"
+      ],
+      "entries": [
+        {
+          "account": "IC_PAYABLE",
+          "debit": 350000,
+          "credit": 0
+        },
+        {
+          "account": "IC_RECEIVABLE",
+          "debit": 0,
+          "credit": 350000
+        },
+        {
+          "account": "SERVICE_REVENUE",
+          "debit": 350000,
+          "credit": 0
+        },
+        {
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 350000
+        }
+      ]
+    },
+    {
+      "invoiceId": "IC-1045",
+      "currency": "USD",
+      "sourceEvidence": [
+        "DOC-IC-1045",
+        "CN-1045"
+      ],
+      "entries": [
+        {
+          "account": "IC_PAYABLE",
+          "debit": 750000,
+          "credit": 0
+        },
+        {
+          "account": "IC_RECEIVABLE",
+          "debit": 0,
+          "credit": 750000
+        },
+        {
+          "account": "SERVICE_REVENUE",
+          "debit": 750000,
+          "credit": 0
+        },
+        {
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 750000
+        }
+      ]
+    },
+    {
+      "invoiceId": "IC-1046",
+      "currency": "USD",
+      "sourceEvidence": [
+        "DOC-IC-1046"
+      ],
+      "entries": [
+        {
+          "account": "IC_PAYABLE",
+          "debit": 500000,
+          "credit": 0
+        },
+        {
+          "account": "IC_RECEIVABLE",
+          "debit": 0,
+          "credit": 500000
+        },
+        {
+          "account": "SERVICE_REVENUE",
+          "debit": 500000,
+          "credit": 0
+        },
+        {
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 500000
+        }
+      ]
+    },
+    {
+      "invoiceId": "JUDGE-LIVE-731",
+      "currency": "USD",
+      "sourceEvidence": [
+        "JUDGE-LIVE-731-INV",
+        "JUDGE-LIVE-731-CONFLICT",
+        "JUDGE-LIVE-731-CREDIT"
+      ],
+      "entries": [
+        {
+          "account": "IC_PAYABLE",
+          "debit": 1249280,
+          "credit": 0
+        },
+        {
+          "account": "IC_RECEIVABLE",
+          "debit": 0,
+          "credit": 1249280
+        },
+        {
+          "account": "SERVICE_REVENUE",
+          "debit": 1249280,
+          "credit": 0
+        },
+        {
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 1249280
+        }
+      ]
+    }
+  ],
+  "journals": [
+    {
+      "id": "6877e40b-6728-471b-8861-cf4eed6239f6",
+      "idempotencyKey": "approve:44cd8c5d-b274-4103-bc61-75614f2e2cbf:1",
+      "invoiceId": "IC-1042",
+      "proposalId": "44cd8c5d-b274-4103-bc61-75614f2e2cbf",
+      "proposalRevision": 1,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 960000,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 960000
+        }
+      ],
+      "createdAt": "2026-09-05T17:28:45.105Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1042",
+        "MAIL-1042"
+      ],
+      "sourceFingerprint": "21bd843d8d675e150da0b68570d01fea3b6732f70bb331b50d81c2ffa3a33119",
+      "policyVersion": 1
+    },
+    {
+      "id": "f8afc7a7-0150-4055-892c-e1f8549be49b",
+      "idempotencyKey": "approve:5a38bb84-2300-4477-927c-deaa227f7835:2",
+      "invoiceId": "IC-1042",
+      "proposalId": "5a38bb84-2300-4477-927c-deaa227f7835",
+      "proposalRevision": 2,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "IC_RECEIVABLE",
+          "debit": 0,
+          "credit": 25000
+        },
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "SERVICE_REVENUE",
+          "debit": 25000,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 20000
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 20000,
+          "credit": 0
+        }
+      ],
+      "createdAt": "2026-09-05T17:37:29.629Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1042",
+        "MAIL-1042",
+        "CN-c685c42e"
+      ],
+      "sourceFingerprint": "08856d00e295311cce74d06f33fd9c56b2f40ff0334c246d69aa9fb587411049",
+      "policyVersion": 1
+    },
+    {
+      "id": "fc1e6983-b2a3-4ef8-8164-d18e7057e9c5",
+      "idempotencyKey": "approve:f432a2ec-ee8d-4690-ba78-c7682f4d3698:1",
+      "invoiceId": "IC-1043",
+      "proposalId": "f432a2ec-ee8d-4690-ba78-c7682f4d3698",
+      "proposalRevision": 1,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 33200000
+        },
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "IC_PAYABLE",
+          "debit": 33200000,
+          "credit": 0
+        }
+      ],
+      "createdAt": "2026-09-06T01:32:52.513Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1043"
+      ],
+      "sourceFingerprint": "fd6ab2f99fe94a7fa6e964617c1d54b32ead5055ebda8324b19394b900e8333b",
+      "policyVersion": 1
+    },
+    {
+      "id": "b1d19a83-cb8d-4315-914b-d05f6f1f2b6c",
+      "idempotencyKey": "approve:c3b9842c-ccf6-49cb-83ad-997ead1d4019:1",
+      "invoiceId": "IC-1044",
+      "proposalId": "c3b9842c-ccf6-49cb-83ad-997ead1d4019",
+      "proposalRevision": 1,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 17500,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 17500
+        }
+      ],
+      "createdAt": "2026-09-06T01:33:09.915Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1044"
+      ],
+      "sourceFingerprint": "eec97d6ab4b456901a9db8c4132b812e89cc7fd14ee3d950524ed39056b5468a",
+      "policyVersion": 1
+    },
+    {
+      "id": "4b8c896d-d3bb-4c1c-9178-8142f85ec5c8",
+      "idempotencyKey": "approve:b894f3f5-36d9-4b73-9d85-613e4ec29aa8:1",
+      "invoiceId": "IC-1045",
+      "proposalId": "b894f3f5-36d9-4b73-9d85-613e4ec29aa8",
+      "proposalRevision": 1,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 4150000
+        },
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "IC_PAYABLE",
+          "debit": 4150000,
+          "credit": 0
+        }
+      ],
+      "createdAt": "2026-09-06T01:33:35.939Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1045",
+        "CN-1045"
+      ],
+      "sourceFingerprint": "be55c262702199d6d0130583213ed0fefe925e262100f7951e2e01847fd704ee",
+      "policyVersion": 1
+    },
+    {
+      "id": "981bc602-9c87-4659-9f18-3cf9ad773e8a",
+      "idempotencyKey": "approve:317f60bc-a1ad-4f2c-86f3-0f5d0f4f9dfd:3",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "317f60bc-a1ad-4f2c-86f3-0f5d0f4f9dfd",
+      "proposalRevision": 3,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 1019454,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 1019454
+        }
+      ],
+      "createdAt": "2026-09-06T03:32:44.936Z",
+      "reviewer": "Automated demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "JUDGE-LIVE-731-INV",
+        "JUDGE-LIVE-731-CONFLICT"
+      ],
+      "sourceFingerprint": "b2b75f8ea6fff79d9af77e4a1fbf3322c3fdf4c974e43f86319971d353c29fa3",
+      "policyVersion": 1
+    },
+    {
+      "id": "ead3365a-b097-4db4-9b7e-4e00374c1c47",
+      "idempotencyKey": "approve:56539bf0-ae6a-4382-975c-c7e26d31b30a:4",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "56539bf0-ae6a-4382-975c-c7e26d31b30a",
+      "proposalRevision": 4,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "IC_RECEIVABLE",
+          "debit": 0,
+          "credit": 25037
+        },
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "SERVICE_REVENUE",
+          "debit": 25037,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 20030
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 20030,
+          "credit": 0
+        }
+      ],
+      "createdAt": "2026-09-06T03:37:05.443Z",
+      "reviewer": "Automated stage verification",
+      "role": "group_controller",
+      "evidenceIds": [
+        "JUDGE-LIVE-731-INV",
+        "JUDGE-LIVE-731-CONFLICT",
+        "JUDGE-LIVE-731-CREDIT"
+      ],
+      "sourceFingerprint": "8bd1b618e9a6b455508d13fc0dcbacfeadef1a23bd7a8f80d5b18b0ff47690b4",
+      "policyVersion": 1
+    }
+  ],
+  "policy": {
+    "id": "POL-IC-01",
+    "version": 1,
+    "name": "Wholly owned intercompany services",
+    "description": "Synthetic policy: USD service invoices, documented invoice and credit amounts, entity-specific fixed functional booking rates. Reviewer approval is required for all corrections. Disputed services stay open.",
+    "rateSource": "Synthetic fixture rates, not market quotes"
+  },
+  "evidence": [
+    {
+      "id": "DOC-IC-1042",
+      "invoiceId": "IC-1042",
+      "kind": "invoice",
+      "seller": "US",
+      "buyer": "UK",
+      "currency": "USD",
+      "amount": 1200000,
+      "title": "Platform engineering · August",
+      "body": "Approved service invoice IC-1042. Platform engineering · August. US supplied services to UK. Gross USD 12000.00. Period August 2026.",
+      "version": 1,
+      "source": "Synthetic invoice",
+      "period": "2026-08"
+    },
+    {
+      "id": "DOC-IC-1043",
+      "invoiceId": "IC-1043",
+      "kind": "invoice",
+      "seller": "UK",
+      "buyer": "IN",
+      "currency": "USD",
+      "amount": 400000,
+      "title": "Shared customer operations",
+      "body": "Approved service invoice IC-1043. Shared customer operations. UK supplied services to IN. Gross USD 4000.00. Period August 2026.",
+      "version": 1,
+      "source": "Synthetic invoice",
+      "period": "2026-08"
+    },
+    {
+      "id": "DOC-IC-1044",
+      "invoiceId": "IC-1044",
+      "kind": "invoice",
+      "seller": "US",
+      "buyer": "UK",
+      "currency": "USD",
+      "amount": 350000,
+      "title": "Infrastructure allocation",
+      "body": "Approved service invoice IC-1044. Infrastructure allocation. US supplied services to UK. Gross USD 3500.00. Period August 2026.",
+      "version": 1,
+      "source": "Synthetic invoice",
+      "period": "2026-08"
+    },
+    {
+      "id": "DOC-IC-1045",
+      "invoiceId": "IC-1045",
+      "kind": "invoice",
+      "seller": "US",
+      "buyer": "IN",
+      "currency": "USD",
+      "amount": 800000,
+      "title": "Data services and support",
+      "body": "Approved service invoice IC-1045. Data services and support. US supplied services to IN. Gross USD 8000.00. Period August 2026.",
+      "version": 1,
+      "source": "Synthetic invoice",
+      "period": "2026-08"
+    },
+    {
+      "id": "CN-1045",
+      "invoiceId": "IC-1045",
+      "kind": "credit_note",
+      "seller": "US",
+      "buyer": "IN",
+      "currency": "USD",
+      "amount": 50000,
+      "version": 1,
+      "title": "August service credit",
+      "source": "Synthetic credit note",
+      "body": "Credit of USD 500.00 against IC-1045 for agreed downtime. Both entities must reflect the credit.",
+      "period": "2026-08"
+    },
+    {
+      "id": "DOC-IC-1046",
+      "invoiceId": "IC-1046",
+      "kind": "invoice",
+      "seller": "UK",
+      "buyer": "US",
+      "currency": "USD",
+      "amount": 500000,
+      "title": "Design systems retainer",
+      "body": "Approved service invoice IC-1046. Design systems retainer. UK supplied services to US. Gross USD 5000.00. Period August 2026.",
+      "version": 1,
+      "source": "Synthetic invoice",
+      "period": "2026-08"
+    },
+    {
+      "id": "DOC-IC-1047",
+      "invoiceId": "IC-1047",
+      "kind": "invoice",
+      "seller": "IN",
+      "buyer": "US",
+      "currency": "USD",
+      "amount": 225000,
+      "title": "Unconfirmed advisory services",
+      "body": "The invoice reference conflicts with the meeting notes. The recipient has not confirmed delivery. Escalate until the underlying service is confirmed.",
+      "version": 1,
+      "source": "Synthetic invoice",
+      "period": "2026-08",
+      "disputed": true
+    },
+    {
+      "id": "MAIL-1042",
+      "invoiceId": "IC-1042",
+      "kind": "email",
+      "version": 1,
+      "title": "UK controller: invoice missed the import",
+      "source": "Synthetic email",
+      "body": "From: controller-uk@northstar.example\nSubject: IC-1042\nWe received the August engineering invoice, but the payable was omitted from our ledger import. Please prepare an evidence-backed correction for review."
+    },
+    {
+      "id": "MEET-1047",
+      "invoiceId": "IC-1047",
+      "kind": "meeting",
+      "version": 1,
+      "title": "Close meeting: confirm advisory delivery",
+      "source": "Synthetic meeting transcript",
+      "body": "UK controller: Do not clear the India advisory item yet. The service acceptance is still disputed. Group controller: Keep the exception open until signed evidence arrives."
+    },
+    {
+      "id": "CN-c685c42e",
+      "invoiceId": "IC-1042",
+      "kind": "credit_note",
+      "seller": "US",
+      "buyer": "UK",
+      "currency": "USD",
+      "amount": 25000,
+      "title": "Late service credit",
+      "body": "Late service credit agreed after the August close review.",
+      "source": "Reviewer-entered sandbox credit",
+      "version": 1,
+      "period": "2026-08"
+    },
+    {
+      "id": "JUDGE-LIVE-731-INV",
+      "invoiceId": "JUDGE-LIVE-731",
+      "kind": "invoice",
+      "seller": "US",
+      "buyer": "UK",
+      "currency": "USD",
+      "period": "2026-08",
+      "amount": 1274317,
+      "title": "Unseen engineering service - browser challenge",
+      "body": "Synthetic case entered during browser verification. Engineering services were accepted by both entities. US recorded the full invoice. UK has no booking. This document does not approve posting.",
+      "disputed": false,
+      "version": 1,
+      "source": "Judge-entered sandbox source",
+      "receivedAt": "2026-09-06T02:14:22.631Z"
+    },
+    {
+      "id": "JUDGE-LIVE-731-CONFLICT",
+      "invoiceId": "JUDGE-LIVE-731",
+      "kind": "invoice",
+      "seller": "US",
+      "buyer": "UK",
+      "currency": "USD",
+      "period": "2026-08",
+      "amount": 1400031,
+      "title": "Unseen engineering service - browser challenge",
+      "body": "Conflicting synthetic draft: this document claims a different service amount. The controller must identify the authoritative invoice before any correction is posted.",
+      "disputed": false,
+      "version": 1,
+      "source": "Judge-entered sandbox source",
+      "receivedAt": "2026-09-06T02:21:09.064Z"
+    },
+    {
+      "id": "JUDGE-LIVE-731-CREDIT",
+      "invoiceId": "JUDGE-LIVE-731",
+      "kind": "credit_note",
+      "seller": "US",
+      "buyer": "UK",
+      "currency": "USD",
+      "amount": 25037,
+      "title": "Late service credit",
+      "body": "Late service credit agreed after the August close review.",
+      "source": "Reviewer-entered sandbox credit",
+      "version": 1,
+      "period": "2026-08"
+    }
+  ],
+  "sourceDecisions": [
+    {
+      "id": "d78b65bd-db4e-4807-8c7e-bb5fab4be5ad",
+      "invoiceId": "JUDGE-LIVE-731",
+      "selectedSourceId": "JUDGE-LIVE-731-INV",
+      "candidateDigest": "34442c84e6febd4a4521d3eac5bc479514d1146ea83654d533948c2dced975dd",
+      "reviewer": "Automated demo controller",
+      "role": "group_controller",
+      "reason": "Automated demonstration: the original signed invoice is the designated authoritative source; the higher amount is a conflicting draft. A real controller must make this decision in actual use.",
+      "at": "2026-09-06T02:22:54.147Z"
+    }
+  ],
+  "ledgerSnapshot": [
+    {
+      "id": "OPEN-IC-1042-US",
+      "invoiceId": "IC-1042",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "IC_RECEIVABLE",
+          "debit": 1200000,
+          "credit": 0
+        },
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "SERVICE_REVENUE",
+          "debit": 0,
+          "credit": 1200000
+        }
+      ]
+    },
+    {
+      "id": "OPEN-IC-1043-UK",
+      "invoiceId": "IC-1043",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_RECEIVABLE",
+          "debit": 320000,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_REVENUE",
+          "debit": 0,
+          "credit": 320000
+        }
+      ]
+    },
+    {
+      "id": "OPEN-IC-1043-IN",
+      "invoiceId": "IC-1043",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "SERVICE_EXPENSE",
+          "debit": 66400000,
+          "credit": 0
+        },
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 66400000
+        }
+      ]
+    },
+    {
+      "id": "OPEN-IC-1044-US",
+      "invoiceId": "IC-1044",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "IC_RECEIVABLE",
+          "debit": 350000,
+          "credit": 0
+        },
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "SERVICE_REVENUE",
+          "debit": 0,
+          "credit": 350000
+        }
+      ]
+    },
+    {
+      "id": "OPEN-IC-1044-UK",
+      "invoiceId": "IC-1044",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 262500,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 262500
+        }
+      ]
+    },
+    {
+      "id": "OPEN-IC-1045-US",
+      "invoiceId": "IC-1045",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "IC_RECEIVABLE",
+          "debit": 750000,
+          "credit": 0
+        },
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "SERVICE_REVENUE",
+          "debit": 0,
+          "credit": 750000
+        }
+      ]
+    },
+    {
+      "id": "OPEN-IC-1045-IN",
+      "invoiceId": "IC-1045",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "SERVICE_EXPENSE",
+          "debit": 66400000,
+          "credit": 0
+        },
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 66400000
+        }
+      ]
+    },
+    {
+      "id": "OPEN-IC-1046-UK",
+      "invoiceId": "IC-1046",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_RECEIVABLE",
+          "debit": 400000,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_REVENUE",
+          "debit": 0,
+          "credit": 400000
+        }
+      ]
+    },
+    {
+      "id": "OPEN-IC-1046-US",
+      "invoiceId": "IC-1046",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "SERVICE_EXPENSE",
+          "debit": 500000,
+          "credit": 0
+        },
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 500000
+        }
+      ]
+    },
+    {
+      "id": "OPEN-IC-1047-IN",
+      "invoiceId": "IC-1047",
+      "kind": "opening",
+      "createdAt": "2026-09-05T17:05:00.000Z",
+      "entries": [
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "IC_RECEIVABLE",
+          "debit": 18675000,
+          "credit": 0
+        },
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "SERVICE_REVENUE",
+          "debit": 0,
+          "credit": 18675000
+        }
+      ]
+    },
+    {
+      "id": "6877e40b-6728-471b-8861-cf4eed6239f6",
+      "idempotencyKey": "approve:44cd8c5d-b274-4103-bc61-75614f2e2cbf:1",
+      "invoiceId": "IC-1042",
+      "proposalId": "44cd8c5d-b274-4103-bc61-75614f2e2cbf",
+      "proposalRevision": 1,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 960000,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 960000
+        }
+      ],
+      "createdAt": "2026-09-05T17:28:45.105Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1042",
+        "MAIL-1042"
+      ],
+      "sourceFingerprint": "21bd843d8d675e150da0b68570d01fea3b6732f70bb331b50d81c2ffa3a33119",
+      "policyVersion": 1
+    },
+    {
+      "id": "f8afc7a7-0150-4055-892c-e1f8549be49b",
+      "idempotencyKey": "approve:5a38bb84-2300-4477-927c-deaa227f7835:2",
+      "invoiceId": "IC-1042",
+      "proposalId": "5a38bb84-2300-4477-927c-deaa227f7835",
+      "proposalRevision": 2,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "IC_RECEIVABLE",
+          "debit": 0,
+          "credit": 25000
+        },
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "SERVICE_REVENUE",
+          "debit": 25000,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 20000
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 20000,
+          "credit": 0
+        }
+      ],
+      "createdAt": "2026-09-05T17:37:29.629Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1042",
+        "MAIL-1042",
+        "CN-c685c42e"
+      ],
+      "sourceFingerprint": "08856d00e295311cce74d06f33fd9c56b2f40ff0334c246d69aa9fb587411049",
+      "policyVersion": 1
+    },
+    {
+      "id": "fc1e6983-b2a3-4ef8-8164-d18e7057e9c5",
+      "idempotencyKey": "approve:f432a2ec-ee8d-4690-ba78-c7682f4d3698:1",
+      "invoiceId": "IC-1043",
+      "proposalId": "f432a2ec-ee8d-4690-ba78-c7682f4d3698",
+      "proposalRevision": 1,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 33200000
+        },
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "IC_PAYABLE",
+          "debit": 33200000,
+          "credit": 0
+        }
+      ],
+      "createdAt": "2026-09-06T01:32:52.513Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1043"
+      ],
+      "sourceFingerprint": "fd6ab2f99fe94a7fa6e964617c1d54b32ead5055ebda8324b19394b900e8333b",
+      "policyVersion": 1
+    },
+    {
+      "id": "b1d19a83-cb8d-4315-914b-d05f6f1f2b6c",
+      "idempotencyKey": "approve:c3b9842c-ccf6-49cb-83ad-997ead1d4019:1",
+      "invoiceId": "IC-1044",
+      "proposalId": "c3b9842c-ccf6-49cb-83ad-997ead1d4019",
+      "proposalRevision": 1,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 17500,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 17500
+        }
+      ],
+      "createdAt": "2026-09-06T01:33:09.915Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1044"
+      ],
+      "sourceFingerprint": "eec97d6ab4b456901a9db8c4132b812e89cc7fd14ee3d950524ed39056b5468a",
+      "policyVersion": 1
+    },
+    {
+      "id": "4b8c896d-d3bb-4c1c-9178-8142f85ec5c8",
+      "idempotencyKey": "approve:b894f3f5-36d9-4b73-9d85-613e4ec29aa8:1",
+      "invoiceId": "IC-1045",
+      "proposalId": "b894f3f5-36d9-4b73-9d85-613e4ec29aa8",
+      "proposalRevision": 1,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 4150000
+        },
+        {
+          "entity": "IN",
+          "currency": "INR",
+          "account": "IC_PAYABLE",
+          "debit": 4150000,
+          "credit": 0
+        }
+      ],
+      "createdAt": "2026-09-06T01:33:35.939Z",
+      "reviewer": "Demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "DOC-IC-1045",
+        "CN-1045"
+      ],
+      "sourceFingerprint": "be55c262702199d6d0130583213ed0fefe925e262100f7951e2e01847fd704ee",
+      "policyVersion": 1
+    },
+    {
+      "id": "7f73bc38-5c1e-4665-855f-106da16d6dae",
+      "invoiceId": "JUDGE-LIVE-731",
+      "kind": "opening_import",
+      "entries": [
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "IC_RECEIVABLE",
+          "debit": 1274317,
+          "credit": 0
+        },
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "SERVICE_REVENUE",
+          "debit": 0,
+          "credit": 1274317
+        }
+      ],
+      "createdAt": "2026-09-06T02:14:22.631Z",
+      "sourceId": "JUDGE-LIVE-731-INV",
+      "description": "Opening balance supplied by the judge; no AI-generated correction."
+    },
+    {
+      "id": "981bc602-9c87-4659-9f18-3cf9ad773e8a",
+      "idempotencyKey": "approve:317f60bc-a1ad-4f2c-86f3-0f5d0f4f9dfd:3",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "317f60bc-a1ad-4f2c-86f3-0f5d0f4f9dfd",
+      "proposalRevision": 3,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 1019454,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 0,
+          "credit": 1019454
+        }
+      ],
+      "createdAt": "2026-09-06T03:32:44.936Z",
+      "reviewer": "Automated demo controller",
+      "role": "group_controller",
+      "evidenceIds": [
+        "JUDGE-LIVE-731-INV",
+        "JUDGE-LIVE-731-CONFLICT"
+      ],
+      "sourceFingerprint": "b2b75f8ea6fff79d9af77e4a1fbf3322c3fdf4c974e43f86319971d353c29fa3",
+      "policyVersion": 1
+    },
+    {
+      "id": "ead3365a-b097-4db4-9b7e-4e00374c1c47",
+      "idempotencyKey": "approve:56539bf0-ae6a-4382-975c-c7e26d31b30a:4",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "56539bf0-ae6a-4382-975c-c7e26d31b30a",
+      "proposalRevision": 4,
+      "kind": "correction",
+      "entries": [
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "IC_RECEIVABLE",
+          "debit": 0,
+          "credit": 25037
+        },
+        {
+          "entity": "US",
+          "currency": "USD",
+          "account": "SERVICE_REVENUE",
+          "debit": 25037,
+          "credit": 0
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "SERVICE_EXPENSE",
+          "debit": 0,
+          "credit": 20030
+        },
+        {
+          "entity": "UK",
+          "currency": "GBP",
+          "account": "IC_PAYABLE",
+          "debit": 20030,
+          "credit": 0
+        }
+      ],
+      "createdAt": "2026-09-06T03:37:05.443Z",
+      "reviewer": "Automated stage verification",
+      "role": "group_controller",
+      "evidenceIds": [
+        "JUDGE-LIVE-731-INV",
+        "JUDGE-LIVE-731-CONFLICT",
+        "JUDGE-LIVE-731-CREDIT"
+      ],
+      "sourceFingerprint": "8bd1b618e9a6b455508d13fc0dcbacfeadef1a23bd7a8f80d5b18b0ff47690b4",
+      "policyVersion": 1
+    }
+  ],
+  "entities": [
+    {
+      "id": "US",
+      "name": "Northstar US",
+      "country": "United States",
+      "currency": "USD",
+      "rate": {
+        "n": 1,
+        "d": 1
+      }
+    },
+    {
+      "id": "UK",
+      "name": "Northstar UK",
+      "country": "United Kingdom",
+      "currency": "GBP",
+      "rate": {
+        "n": 4,
+        "d": 5
+      }
+    },
+    {
+      "id": "IN",
+      "name": "Northstar India",
+      "country": "India",
+      "currency": "INR",
+      "rate": {
+        "n": 83,
+        "d": 1
+      }
+    }
+  ],
+  "approvals": [
+    {
+      "id": "44cd8c5d-b274-4103-bc61-75614f2e2cbf",
+      "invoiceId": "IC-1042",
+      "revision": 1,
+      "approval": {
+        "reviewer": "Demo controller",
+        "role": "group_controller",
+        "at": "2026-09-05T17:28:45.105Z",
+        "journalId": "6877e40b-6728-471b-8861-cf4eed6239f6"
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "name": "Current source revision",
+            "passed": true,
+            "detail": "Approval binds to exact evidence, policy, and ledger revisions."
+          },
+          {
+            "name": "Supported source invoice",
+            "passed": true,
+            "detail": "One undisputed USD service invoice with distinct parties."
+          },
+          {
+            "name": "Evidence references",
+            "passed": true,
+            "detail": "All referenced documents exist in this invoice bundle."
+          },
+          {
+            "name": "Policy revision",
+            "passed": true,
+            "detail": "Proposal uses the current approved policy."
+          },
+          {
+            "name": "Exact minor units",
+            "passed": true,
+            "detail": "Positive source values and bounded integer arithmetic; credits cannot exceed invoice."
+          },
+          {
+            "name": "Balanced by entity",
+            "passed": true,
+            "detail": "Each subsidiary balances in its own functional currency."
+          },
+          {
+            "name": "Allowed accounts and currency",
+            "passed": true,
+            "detail": "No unrelated entity, currency, or account can be posted."
+          },
+          {
+            "name": "Source-to-ledger agreement",
+            "passed": true,
+            "detail": "Post-correction accounts agree with independently recomputed source obligations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "f432a2ec-ee8d-4690-ba78-c7682f4d3698",
+      "invoiceId": "IC-1043",
+      "revision": 1,
+      "approval": {
+        "reviewer": "Demo controller",
+        "role": "group_controller",
+        "at": "2026-09-06T01:32:52.513Z",
+        "journalId": "fc1e6983-b2a3-4ef8-8164-d18e7057e9c5"
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "name": "Current source revision",
+            "passed": true,
+            "detail": "Approval binds to exact evidence, policy, and ledger revisions."
+          },
+          {
+            "name": "Supported source invoice",
+            "passed": true,
+            "detail": "One undisputed USD service invoice with distinct parties."
+          },
+          {
+            "name": "Evidence references",
+            "passed": true,
+            "detail": "All referenced documents exist in this invoice bundle."
+          },
+          {
+            "name": "Policy revision",
+            "passed": true,
+            "detail": "Proposal uses the current approved policy."
+          },
+          {
+            "name": "Exact minor units",
+            "passed": true,
+            "detail": "Positive source values and bounded integer arithmetic; credits cannot exceed invoice."
+          },
+          {
+            "name": "Balanced by entity",
+            "passed": true,
+            "detail": "Each subsidiary balances in its own functional currency."
+          },
+          {
+            "name": "Allowed accounts and currency",
+            "passed": true,
+            "detail": "Existing and proposed lines use supported entities, currencies, accounts and integer amounts."
+          },
+          {
+            "name": "Source-to-ledger agreement",
+            "passed": true,
+            "detail": "Post-correction accounts agree with independently recomputed source obligations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "c3b9842c-ccf6-49cb-83ad-997ead1d4019",
+      "invoiceId": "IC-1044",
+      "revision": 1,
+      "approval": {
+        "reviewer": "Demo controller",
+        "role": "group_controller",
+        "at": "2026-09-06T01:33:09.915Z",
+        "journalId": "b1d19a83-cb8d-4315-914b-d05f6f1f2b6c"
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "name": "Current source revision",
+            "passed": true,
+            "detail": "Approval binds to exact evidence, policy, and ledger revisions."
+          },
+          {
+            "name": "Supported source invoice",
+            "passed": true,
+            "detail": "One undisputed USD service invoice with distinct parties."
+          },
+          {
+            "name": "Evidence references",
+            "passed": true,
+            "detail": "All referenced documents exist in this invoice bundle."
+          },
+          {
+            "name": "Policy revision",
+            "passed": true,
+            "detail": "Proposal uses the current approved policy."
+          },
+          {
+            "name": "Exact minor units",
+            "passed": true,
+            "detail": "Positive source values and bounded integer arithmetic; credits cannot exceed invoice."
+          },
+          {
+            "name": "Balanced by entity",
+            "passed": true,
+            "detail": "Each subsidiary balances in its own functional currency."
+          },
+          {
+            "name": "Allowed accounts and currency",
+            "passed": true,
+            "detail": "Existing and proposed lines use supported entities, currencies, accounts and integer amounts."
+          },
+          {
+            "name": "Source-to-ledger agreement",
+            "passed": true,
+            "detail": "Post-correction accounts agree with independently recomputed source obligations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "b894f3f5-36d9-4b73-9d85-613e4ec29aa8",
+      "invoiceId": "IC-1045",
+      "revision": 1,
+      "approval": {
+        "reviewer": "Demo controller",
+        "role": "group_controller",
+        "at": "2026-09-06T01:33:35.939Z",
+        "journalId": "4b8c896d-d3bb-4c1c-9178-8142f85ec5c8"
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "name": "Current source revision",
+            "passed": true,
+            "detail": "Approval binds to exact evidence, policy, and ledger revisions."
+          },
+          {
+            "name": "Supported source invoice",
+            "passed": true,
+            "detail": "One undisputed USD service invoice with distinct parties."
+          },
+          {
+            "name": "Evidence references",
+            "passed": true,
+            "detail": "All referenced documents exist in this invoice bundle."
+          },
+          {
+            "name": "Policy revision",
+            "passed": true,
+            "detail": "Proposal uses the current approved policy."
+          },
+          {
+            "name": "Exact minor units",
+            "passed": true,
+            "detail": "Positive source values and bounded integer arithmetic; credits cannot exceed invoice."
+          },
+          {
+            "name": "Balanced by entity",
+            "passed": true,
+            "detail": "Each subsidiary balances in its own functional currency."
+          },
+          {
+            "name": "Allowed accounts and currency",
+            "passed": true,
+            "detail": "Existing and proposed lines use supported entities, currencies, accounts and integer amounts."
+          },
+          {
+            "name": "Source-to-ledger agreement",
+            "passed": true,
+            "detail": "Post-correction accounts agree with independently recomputed source obligations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "5a38bb84-2300-4477-927c-deaa227f7835",
+      "invoiceId": "IC-1042",
+      "revision": 2,
+      "approval": {
+        "reviewer": "Demo controller",
+        "role": "group_controller",
+        "at": "2026-09-05T17:37:29.629Z",
+        "journalId": "f8afc7a7-0150-4055-892c-e1f8549be49b"
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "name": "Current source revision",
+            "passed": true,
+            "detail": "Approval binds to exact evidence, policy, and ledger revisions."
+          },
+          {
+            "name": "Supported source invoice",
+            "passed": true,
+            "detail": "One undisputed USD service invoice with distinct parties."
+          },
+          {
+            "name": "Evidence references",
+            "passed": true,
+            "detail": "All referenced documents exist in this invoice bundle."
+          },
+          {
+            "name": "Policy revision",
+            "passed": true,
+            "detail": "Proposal uses the current approved policy."
+          },
+          {
+            "name": "Exact minor units",
+            "passed": true,
+            "detail": "Positive source values and bounded integer arithmetic; credits cannot exceed invoice."
+          },
+          {
+            "name": "Balanced by entity",
+            "passed": true,
+            "detail": "Each subsidiary balances in its own functional currency."
+          },
+          {
+            "name": "Allowed accounts and currency",
+            "passed": true,
+            "detail": "No unrelated entity, currency, or account can be posted."
+          },
+          {
+            "name": "Source-to-ledger agreement",
+            "passed": true,
+            "detail": "Post-correction accounts agree with independently recomputed source obligations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "317f60bc-a1ad-4f2c-86f3-0f5d0f4f9dfd",
+      "invoiceId": "JUDGE-LIVE-731",
+      "revision": 3,
+      "approval": {
+        "reviewer": "Automated demo controller",
+        "role": "group_controller",
+        "at": "2026-09-06T03:32:44.936Z",
+        "journalId": "981bc602-9c87-4659-9f18-3cf9ad773e8a"
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "name": "Current source revision",
+            "passed": true,
+            "detail": "Approval binds to exact evidence, policy, and ledger revisions."
+          },
+          {
+            "name": "Supported source invoice",
+            "passed": true,
+            "detail": "One undisputed USD service invoice with distinct parties."
+          },
+          {
+            "name": "Evidence references",
+            "passed": true,
+            "detail": "All referenced documents exist in this invoice bundle."
+          },
+          {
+            "name": "Policy revision",
+            "passed": true,
+            "detail": "Proposal uses the current approved policy."
+          },
+          {
+            "name": "Exact minor units",
+            "passed": true,
+            "detail": "Positive source values and bounded integer arithmetic; credits cannot exceed invoice."
+          },
+          {
+            "name": "Balanced by entity",
+            "passed": true,
+            "detail": "Each subsidiary balances in its own functional currency."
+          },
+          {
+            "name": "Allowed accounts and currency",
+            "passed": true,
+            "detail": "Existing and proposed lines use supported entities, currencies, accounts and integer amounts."
+          },
+          {
+            "name": "Source-to-ledger agreement",
+            "passed": true,
+            "detail": "Post-correction accounts agree with independently recomputed source obligations."
+          }
+        ]
+      }
+    },
+    {
+      "id": "56539bf0-ae6a-4382-975c-c7e26d31b30a",
+      "invoiceId": "JUDGE-LIVE-731",
+      "revision": 4,
+      "approval": {
+        "reviewer": "Automated stage verification",
+        "role": "group_controller",
+        "at": "2026-09-06T03:37:05.443Z",
+        "journalId": "ead3365a-b097-4db4-9b7e-4e00374c1c47"
+      },
+      "validation": {
+        "passed": true,
+        "checks": [
+          {
+            "name": "Current source revision",
+            "passed": true,
+            "detail": "Approval binds to exact evidence, policy, and ledger revisions."
+          },
+          {
+            "name": "Supported source invoice",
+            "passed": true,
+            "detail": "One undisputed USD service invoice with distinct parties."
+          },
+          {
+            "name": "Evidence references",
+            "passed": true,
+            "detail": "All referenced documents exist in this invoice bundle."
+          },
+          {
+            "name": "Policy revision",
+            "passed": true,
+            "detail": "Proposal uses the current approved policy."
+          },
+          {
+            "name": "Exact minor units",
+            "passed": true,
+            "detail": "Positive source values and bounded integer arithmetic; credits cannot exceed invoice."
+          },
+          {
+            "name": "Balanced by entity",
+            "passed": true,
+            "detail": "Each subsidiary balances in its own functional currency."
+          },
+          {
+            "name": "Allowed accounts and currency",
+            "passed": true,
+            "detail": "Existing and proposed lines use supported entities, currencies, accounts and integer amounts."
+          },
+          {
+            "name": "Source-to-ledger agreement",
+            "passed": true,
+            "detail": "Post-correction accounts agree with independently recomputed source obligations."
+          }
+        ]
+      }
+    }
+  ],
+  "auditTrail": [
+    {
+      "id": "EV-OPEN",
+      "type": "workspace.created",
+      "at": "2026-09-05T17:05:00.000Z",
+      "message": "Synthetic August close workspace created. No production accounts connected."
+    },
+    {
+      "id": "f4560b7f-ed32-442c-9a35-672f2bbc0230",
+      "type": "run.started",
+      "message": "Investigating 6 invoice bundles in deterministic rehearsal mode.",
+      "at": "2026-09-05T17:27:49.629Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a"
+    },
+    {
+      "id": "fe185d10-feee-4fe8-b607-696a2b9301b4",
+      "type": "agent.tool",
+      "message": "Read 2 documents for IC-1042.",
+      "at": "2026-09-05T17:27:49.632Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1042",
+      "step": "read_evidence"
+    },
+    {
+      "id": "91dcdf11-720d-4bf0-a026-34a618d86f0e",
+      "type": "agent.tool",
+      "message": "Read 1 immutable journal batches.",
+      "at": "2026-09-05T17:27:49.633Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1042",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "755d3dcd-a7fc-483b-9838-0fc20a7d1951",
+      "type": "agent.tool",
+      "message": "Applied POL-IC-01 revision 1.",
+      "at": "2026-09-05T17:27:49.635Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1042",
+      "step": "apply_policy"
+    },
+    {
+      "id": "6349029e-4ae9-4641-bfc9-31d825920a3e",
+      "type": "agent.validation",
+      "message": "8/8 checks passed.",
+      "at": "2026-09-05T17:27:49.637Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1042",
+      "step": "independent_check"
+    },
+    {
+      "id": "b75ba201-fb7f-4517-8292-94bdfde147a5",
+      "type": "investigation.completed",
+      "message": "IC-1042: Missing counterpart entry",
+      "at": "2026-09-05T17:27:49.640Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1042",
+      "proposalId": "44cd8c5d-b274-4103-bc61-75614f2e2cbf",
+      "mode": "deterministic rehearsal"
+    },
+    {
+      "id": "9018ac8e-54e5-42fc-833e-df2621dd69b1",
+      "type": "agent.tool",
+      "message": "Read 1 documents for IC-1043.",
+      "at": "2026-09-05T17:27:49.643Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1043",
+      "step": "read_evidence"
+    },
+    {
+      "id": "423cc971-e624-4938-bab4-487f53c6eaa9",
+      "type": "agent.tool",
+      "message": "Read 2 immutable journal batches.",
+      "at": "2026-09-05T17:27:49.645Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1043",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "11170191-ec5e-453c-bb3b-75fa489d31f3",
+      "type": "agent.tool",
+      "message": "Applied POL-IC-01 revision 1.",
+      "at": "2026-09-05T17:27:49.646Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1043",
+      "step": "apply_policy"
+    },
+    {
+      "id": "ae713b5f-753c-4b0a-8700-8f1abcb1edfb",
+      "type": "agent.validation",
+      "message": "8/8 checks passed.",
+      "at": "2026-09-05T17:27:49.648Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1043",
+      "step": "independent_check"
+    },
+    {
+      "id": "2c4c0221-1fee-4a3f-a48a-3b9a3c81d870",
+      "type": "investigation.completed",
+      "message": "IC-1043: Duplicate booking",
+      "at": "2026-09-05T17:27:49.649Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1043",
+      "proposalId": "f432a2ec-ee8d-4690-ba78-c7682f4d3698",
+      "mode": "deterministic rehearsal"
+    },
+    {
+      "id": "68f09c96-1f80-47a4-bc52-b58c71b6dcb2",
+      "type": "agent.tool",
+      "message": "Read 1 documents for IC-1044.",
+      "at": "2026-09-05T17:27:49.651Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1044",
+      "step": "read_evidence"
+    },
+    {
+      "id": "82fd7c93-cf96-4c5c-ad5b-faf5f8c106e2",
+      "type": "agent.tool",
+      "message": "Read 2 immutable journal batches.",
+      "at": "2026-09-05T17:27:49.652Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1044",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "a6b83d6b-fa10-421a-9e17-4250a197c494",
+      "type": "agent.tool",
+      "message": "Applied POL-IC-01 revision 1.",
+      "at": "2026-09-05T17:27:49.653Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1044",
+      "step": "apply_policy"
+    },
+    {
+      "id": "3d062581-9bdd-4dfc-ae33-50419a3e5a7b",
+      "type": "agent.validation",
+      "message": "8/8 checks passed.",
+      "at": "2026-09-05T17:27:49.654Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1044",
+      "step": "independent_check"
+    },
+    {
+      "id": "981b52c9-ad8b-49d3-bb2a-9a0d48ffa7a5",
+      "type": "investigation.completed",
+      "message": "IC-1044: Booking differs from policy",
+      "at": "2026-09-05T17:27:49.655Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1044",
+      "proposalId": "c3b9842c-ccf6-49cb-83ad-997ead1d4019",
+      "mode": "deterministic rehearsal"
+    },
+    {
+      "id": "ef79e90f-eadc-4a54-b420-0ed103a7d46b",
+      "type": "agent.tool",
+      "message": "Read 2 documents for IC-1045.",
+      "at": "2026-09-05T17:27:49.656Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1045",
+      "step": "read_evidence"
+    },
+    {
+      "id": "db651978-10b5-47b5-b7c7-4d79106ce6ce",
+      "type": "agent.tool",
+      "message": "Read 2 immutable journal batches.",
+      "at": "2026-09-05T17:27:49.657Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1045",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "a45d5714-45c9-4b0f-9139-534b3b23a58c",
+      "type": "agent.tool",
+      "message": "Applied POL-IC-01 revision 1.",
+      "at": "2026-09-05T17:27:49.658Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1045",
+      "step": "apply_policy"
+    },
+    {
+      "id": "5d37efd7-ba4d-49d5-bffd-13743a5da8ea",
+      "type": "agent.validation",
+      "message": "8/8 checks passed.",
+      "at": "2026-09-05T17:27:49.660Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1045",
+      "step": "independent_check"
+    },
+    {
+      "id": "8ce389ff-eba4-4a08-8b4e-2e74b3e02d33",
+      "type": "investigation.completed",
+      "message": "IC-1045: Credit note not reflected",
+      "at": "2026-09-05T17:27:49.661Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1045",
+      "proposalId": "b894f3f5-36d9-4b73-9d85-613e4ec29aa8",
+      "mode": "deterministic rehearsal"
+    },
+    {
+      "id": "a8bb5c84-6e0a-484c-a108-2ed9b77f1be4",
+      "type": "agent.tool",
+      "message": "Read 1 documents for IC-1046.",
+      "at": "2026-09-05T17:27:49.663Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1046",
+      "step": "read_evidence"
+    },
+    {
+      "id": "c9a5a39c-aa8c-459e-b30a-6465e4e275e8",
+      "type": "agent.tool",
+      "message": "Read 2 immutable journal batches.",
+      "at": "2026-09-05T17:27:49.665Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1046",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "cba27f1f-5b46-4f04-beea-f2c205f00b9f",
+      "type": "agent.tool",
+      "message": "Applied POL-IC-01 revision 1.",
+      "at": "2026-09-05T17:27:49.666Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1046",
+      "step": "apply_policy"
+    },
+    {
+      "id": "d695c16b-8fa7-4147-8ee1-f2528ffbc520",
+      "type": "agent.validation",
+      "message": "8/8 checks passed.",
+      "at": "2026-09-05T17:27:49.667Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1046",
+      "step": "independent_check"
+    },
+    {
+      "id": "cc04cbe2-d5f9-481d-89dc-a1cdde79ee90",
+      "type": "investigation.completed",
+      "message": "IC-1046: Reconciled",
+      "at": "2026-09-05T17:27:49.669Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1046",
+      "proposalId": "0831c374-b3f9-453b-a145-97a18a21b72e",
+      "mode": "deterministic rehearsal"
+    },
+    {
+      "id": "6ce22f6c-5b8b-4b88-95e2-1171a5633fd7",
+      "type": "agent.tool",
+      "message": "Read 2 documents for IC-1047.",
+      "at": "2026-09-05T17:27:49.671Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1047",
+      "step": "read_evidence"
+    },
+    {
+      "id": "29359d7b-2ba7-4e70-9377-234a439c04c1",
+      "type": "agent.tool",
+      "message": "Read 1 immutable journal batches.",
+      "at": "2026-09-05T17:27:49.672Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1047",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "53d506af-f186-427d-b271-a446a05f4085",
+      "type": "agent.tool",
+      "message": "Applied POL-IC-01 revision 1.",
+      "at": "2026-09-05T17:27:49.674Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1047",
+      "step": "apply_policy"
+    },
+    {
+      "id": "34f3f04d-a204-4782-9682-7e8131e4d046",
+      "type": "agent.validation",
+      "message": "6/8 checks passed.",
+      "at": "2026-09-05T17:27:49.675Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1047",
+      "step": "independent_check"
+    },
+    {
+      "id": "3d73999b-7730-47a3-a149-6c53632865fb",
+      "type": "investigation.completed",
+      "message": "IC-1047: Needs source confirmation",
+      "at": "2026-09-05T17:27:49.677Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a",
+      "invoiceId": "IC-1047",
+      "proposalId": "4f9e10bd-fe77-4a95-91ec-7e151cdba12f",
+      "mode": "deterministic rehearsal"
+    },
+    {
+      "id": "812e3fe1-a32e-4fdc-952a-37149feba990",
+      "type": "run.completed",
+      "message": "Investigation complete. Corrections await human approval.",
+      "at": "2026-09-05T17:27:49.679Z",
+      "runId": "ebeb6b51-bfd5-40eb-8498-a6c75c3d600a"
+    },
+    {
+      "id": "b9a62412-811c-4783-b898-f6f4ec2fa7ec",
+      "type": "approval.posted",
+      "message": "Demo controller approved revision 1 of IC-1042. Sandbox journal posted atomically.",
+      "at": "2026-09-05T17:28:45.105Z",
+      "invoiceId": "IC-1042",
+      "proposalId": "44cd8c5d-b274-4103-bc61-75614f2e2cbf",
+      "journalId": "6877e40b-6728-471b-8861-cf4eed6239f6"
+    },
+    {
+      "id": "24e17649-a98c-4e83-a7cd-49327d40c12c",
+      "type": "report.prepared",
+      "message": "Workpaper v1 prepared with 4 unresolved exceptions.",
+      "at": "2026-09-05T17:29:25.430Z",
+      "reportId": "952869e4-5e73-49a2-997e-0cbe4cae7e66"
+    },
+    {
+      "id": "ed34e596-54d3-4edf-8e84-f3fccb231e0d",
+      "type": "evidence.changed",
+      "message": "CN-c685c42e changed IC-1042. Affected conclusions require review; historical entries are preserved.",
+      "at": "2026-09-05T17:32:28.489Z",
+      "invoiceId": "IC-1042",
+      "sourceId": "CN-c685c42e",
+      "affected": [
+        {
+          "id": "44cd8c5d-b274-4103-bc61-75614f2e2cbf",
+          "kind": "investigation",
+          "label": "IC-1042 · revision 1"
+        },
+        {
+          "id": "6877e40b-6728-471b-8861-cf4eed6239f6",
+          "kind": "approval",
+          "label": "Historical approval retained; additional correction needs fresh review"
+        },
+        {
+          "id": "952869e4-5e73-49a2-997e-0cbe4cae7e66",
+          "kind": "report",
+          "label": "Close workpaper v1"
+        }
+      ]
+    },
+    {
+      "id": "6163b291-9881-4e50-a585-fe577150da6f",
+      "type": "run.started",
+      "message": "Investigating 1 invoice bundles in deterministic rehearsal mode.",
+      "at": "2026-09-05T17:37:18.578Z",
+      "runId": "1746646b-815c-427e-8424-8cf9bf16c198"
+    },
+    {
+      "id": "ae68efee-9be6-4470-ab3c-f625d3e947f4",
+      "type": "agent.tool",
+      "message": "Read 3 documents for IC-1042.",
+      "at": "2026-09-05T17:37:18.580Z",
+      "runId": "1746646b-815c-427e-8424-8cf9bf16c198",
+      "invoiceId": "IC-1042",
+      "step": "read_evidence"
+    },
+    {
+      "id": "c6f69c15-4de3-48fe-9578-b970732ccf64",
+      "type": "agent.tool",
+      "message": "Read 2 immutable journal batches.",
+      "at": "2026-09-05T17:37:18.581Z",
+      "runId": "1746646b-815c-427e-8424-8cf9bf16c198",
+      "invoiceId": "IC-1042",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "ed632c3d-579b-4f74-b2f6-87e7b195373f",
+      "type": "agent.tool",
+      "message": "Applied POL-IC-01 revision 1.",
+      "at": "2026-09-05T17:37:18.583Z",
+      "runId": "1746646b-815c-427e-8424-8cf9bf16c198",
+      "invoiceId": "IC-1042",
+      "step": "apply_policy"
+    },
+    {
+      "id": "d1dbc1b2-019e-4d2f-af05-f796ce978ec3",
+      "type": "agent.validation",
+      "message": "8/8 checks passed.",
+      "at": "2026-09-05T17:37:18.585Z",
+      "runId": "1746646b-815c-427e-8424-8cf9bf16c198",
+      "invoiceId": "IC-1042",
+      "step": "independent_check"
+    },
+    {
+      "id": "275d1e43-33d4-4fb7-9835-5ea457358325",
+      "type": "investigation.completed",
+      "message": "IC-1042: Credit note not reflected",
+      "at": "2026-09-05T17:37:18.587Z",
+      "runId": "1746646b-815c-427e-8424-8cf9bf16c198",
+      "invoiceId": "IC-1042",
+      "proposalId": "5a38bb84-2300-4477-927c-deaa227f7835",
+      "mode": "deterministic rehearsal"
+    },
+    {
+      "id": "a31fd345-6568-4454-8f90-b38fe91ca116",
+      "type": "run.completed",
+      "message": "Investigation complete. Corrections await human approval.",
+      "at": "2026-09-05T17:37:18.589Z",
+      "runId": "1746646b-815c-427e-8424-8cf9bf16c198"
+    },
+    {
+      "id": "0d44196c-8723-45f6-ac4f-c0258c3bede4",
+      "type": "approval.posted",
+      "message": "Demo controller approved revision 2 of IC-1042. Sandbox journal posted atomically.",
+      "at": "2026-09-05T17:37:29.629Z",
+      "invoiceId": "IC-1042",
+      "proposalId": "5a38bb84-2300-4477-927c-deaa227f7835",
+      "journalId": "f8afc7a7-0150-4055-892c-e1f8549be49b"
+    },
+    {
+      "id": "7b006d60-32c6-4320-be4b-1433a298ecba",
+      "type": "report.prepared",
+      "message": "Workpaper v2 prepared with 4 unresolved exceptions.",
+      "at": "2026-09-05T17:37:46.456Z",
+      "reportId": "a5a8e7d8-a588-4d55-b470-d4bdfbea3f5e"
+    },
+    {
+      "id": "18cbaaae-d375-4634-ba2f-4f96fa3a8030",
+      "type": "report.prepared",
+      "message": "Workpaper v3 prepared with 4 unresolved exceptions.",
+      "at": "2026-09-05T18:00:32.478Z",
+      "reportId": "3f848bce-3924-4379-b4d2-3fbd5e5b6ea4"
+    },
+    {
+      "id": "c7b8308d-da4c-40c7-abe0-b21f2f9f10d9",
+      "type": "approval.posted",
+      "message": "Demo controller approved revision 1 of IC-1043. Sandbox journal posted atomically.",
+      "at": "2026-09-06T01:32:52.514Z",
+      "invoiceId": "IC-1043",
+      "proposalId": "f432a2ec-ee8d-4690-ba78-c7682f4d3698",
+      "journalId": "fc1e6983-b2a3-4ef8-8164-d18e7057e9c5"
+    },
+    {
+      "id": "e0cb51bd-4e3a-4afb-b51a-cf9caac8eea8",
+      "type": "approval.posted",
+      "message": "Demo controller approved revision 1 of IC-1044. Sandbox journal posted atomically.",
+      "at": "2026-09-06T01:33:09.915Z",
+      "invoiceId": "IC-1044",
+      "proposalId": "c3b9842c-ccf6-49cb-83ad-997ead1d4019",
+      "journalId": "b1d19a83-cb8d-4315-914b-d05f6f1f2b6c"
+    },
+    {
+      "id": "3c77e139-6e2d-4a44-90a7-ee5eee066d74",
+      "type": "approval.posted",
+      "message": "Demo controller approved revision 1 of IC-1045. Sandbox journal posted atomically.",
+      "at": "2026-09-06T01:33:35.939Z",
+      "invoiceId": "IC-1045",
+      "proposalId": "b894f3f5-36d9-4b73-9d85-613e4ec29aa8",
+      "journalId": "4b8c896d-d3bb-4c1c-9178-8142f85ec5c8"
+    },
+    {
+      "id": "1097830f-999e-4b0d-b7f4-d4f28183ef83",
+      "type": "report.prepared",
+      "message": "Workpaper v4 prepared with 1 unresolved exceptions.",
+      "at": "2026-09-06T01:33:38.218Z",
+      "reportId": "92bf50e2-72ea-4932-8b3d-68fd70889dc3"
+    },
+    {
+      "id": "56853f03-95cf-435e-b08c-6cc0ad28ba18",
+      "type": "evidence.changed",
+      "message": "JUDGE-LIVE-731-INV changed JUDGE-LIVE-731. Affected conclusions require review; historical entries are preserved.",
+      "at": "2026-09-06T02:14:22.632Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "sourceId": "JUDGE-LIVE-731-INV",
+      "affected": [
+        {
+          "id": "952869e4-5e73-49a2-997e-0cbe4cae7e66",
+          "kind": "report",
+          "label": "Close workpaper v1"
+        },
+        {
+          "id": "a5a8e7d8-a588-4d55-b470-d4bdfbea3f5e",
+          "kind": "report",
+          "label": "Close workpaper v2"
+        },
+        {
+          "id": "3f848bce-3924-4379-b4d2-3fbd5e5b6ea4",
+          "kind": "report",
+          "label": "Close workpaper v3"
+        },
+        {
+          "id": "92bf50e2-72ea-4932-8b3d-68fd70889dc3",
+          "kind": "report",
+          "label": "Close workpaper v4"
+        }
+      ]
+    },
+    {
+      "id": "c6b0d3c5-ca76-4bc6-8847-d8617dc1dcc0",
+      "type": "case.imported",
+      "message": "JUDGE-LIVE-731: new judge case and stated opening balances imported.",
+      "at": "2026-09-06T02:14:22.632Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "sourceId": "JUDGE-LIVE-731-INV"
+    },
+    {
+      "id": "cd1248b7-dbba-400b-963e-edd453aeee91",
+      "type": "run.started",
+      "message": "Investigating 1 invoice bundles in TensorMux live agent mode.",
+      "at": "2026-09-06T02:14:48.372Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "resumedFrom": null
+    },
+    {
+      "id": "ff14b8bb-62aa-440e-ba01-d5df5df2552d",
+      "type": "agent.tool",
+      "message": "read_evidence completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:14:51.688Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "read_evidence"
+    },
+    {
+      "id": "0a48cd03-3c69-4cba-a72f-50c89b56b497",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:14:51.697Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "2893cfce-4d45-4f27-9215-476552958288",
+      "type": "agent.tool",
+      "message": "read_policy completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:14:51.701Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "read_policy"
+    },
+    {
+      "id": "9188e7b5-a829-473c-bde4-fe1b5c285e1d",
+      "type": "agent.tool",
+      "message": "check_correction completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:14:51.705Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "check_correction"
+    },
+    {
+      "id": "21b9731b-90ca-4933-95f7-a597588637b7",
+      "type": "agent.tool",
+      "message": "submit_finding completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:15:02.392Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "submit_finding"
+    },
+    {
+      "id": "9e314296-f10c-4639-b6c8-ba94baad8813",
+      "type": "agent.tool",
+      "message": "submit_finding completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:15:06.087Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "submit_finding"
+    },
+    {
+      "id": "4219adcd-e0b5-4dad-94bf-80c807d3163c",
+      "type": "agent.model",
+      "message": "9792 tokens used across 4 steps.",
+      "at": "2026-09-06T02:15:09.604Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "model_usage"
+    },
+    {
+      "id": "c5f0a216-7c9f-4b09-91bf-32776b4e2617",
+      "type": "investigation.completed",
+      "message": "JUDGE-LIVE-731: Missing counterpart entry",
+      "at": "2026-09-06T02:15:09.622Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "43b6c0c3-b5b4-47dd-bc56-aebc85b290f3",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "cacc4dbf-11db-42fd-803e-006eefb287c9",
+      "type": "run.completed",
+      "message": "Investigation complete. Corrections await human approval.",
+      "at": "2026-09-06T02:15:09.630Z",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068"
+    },
+    {
+      "id": "79d6f396-edbd-4e90-a4e8-fff222d433fa",
+      "type": "evidence.changed",
+      "message": "JUDGE-LIVE-731-CONFLICT changed JUDGE-LIVE-731. Affected conclusions require review; historical entries are preserved.",
+      "at": "2026-09-06T02:21:09.065Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "sourceId": "JUDGE-LIVE-731-CONFLICT",
+      "affected": [
+        {
+          "id": "43b6c0c3-b5b4-47dd-bc56-aebc85b290f3",
+          "kind": "investigation",
+          "label": "JUDGE-LIVE-731 · revision 1"
+        },
+        {
+          "id": "952869e4-5e73-49a2-997e-0cbe4cae7e66",
+          "kind": "report",
+          "label": "Close workpaper v1"
+        },
+        {
+          "id": "a5a8e7d8-a588-4d55-b470-d4bdfbea3f5e",
+          "kind": "report",
+          "label": "Close workpaper v2"
+        },
+        {
+          "id": "3f848bce-3924-4379-b4d2-3fbd5e5b6ea4",
+          "kind": "report",
+          "label": "Close workpaper v3"
+        },
+        {
+          "id": "92bf50e2-72ea-4932-8b3d-68fd70889dc3",
+          "kind": "report",
+          "label": "Close workpaper v4"
+        }
+      ]
+    },
+    {
+      "id": "a9a44559-a5f8-4621-8f57-ce9727d89466",
+      "type": "case.imported",
+      "message": "JUDGE-LIVE-731: additional invoice evidence imported.",
+      "at": "2026-09-06T02:21:09.065Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "sourceId": "JUDGE-LIVE-731-CONFLICT"
+    },
+    {
+      "id": "9b98b91b-ab98-42ec-bf0b-87d3b146a1c0",
+      "type": "guardrail.failed",
+      "message": "Only a current proposal awaiting review can be approved",
+      "at": "2026-09-06T02:21:46.818Z",
+      "proposalId": "43b6c0c3-b5b4-47dd-bc56-aebc85b290f3",
+      "traceId": "65216d609334b951a663cca0f91c5398",
+      "traceReadback": {
+        "verified": false,
+        "reason": "Trace read-back returned HTTP 202"
+      }
+    },
+    {
+      "id": "cc323c08-02c7-449c-b5bb-db424630bb28",
+      "type": "run.started",
+      "message": "Investigating 1 invoice bundles in TensorMux live agent mode.",
+      "at": "2026-09-06T02:21:55.933Z",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "resumedFrom": null
+    },
+    {
+      "id": "c17b144c-c29c-4c29-9fca-b96037879457",
+      "type": "agent.tool",
+      "message": "read_evidence completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:21:59.570Z",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "read_evidence"
+    },
+    {
+      "id": "cec80198-f3bf-47be-b2cd-f0645370c3e4",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:21:59.584Z",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "700f5afb-0de9-4804-b383-a620972248ef",
+      "type": "agent.tool",
+      "message": "read_policy completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:21:59.589Z",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "read_policy"
+    },
+    {
+      "id": "348bd6af-5636-41e2-8b94-05e296927b18",
+      "type": "agent.tool",
+      "message": "check_correction completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:21:59.593Z",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "check_correction"
+    },
+    {
+      "id": "48298329-9ec2-408d-b9ae-f4746a30f5c6",
+      "type": "agent.tool",
+      "message": "submit_finding completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:22:10.795Z",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "submit_finding"
+    },
+    {
+      "id": "aa740082-fac6-4836-8e33-035a955e5a7a",
+      "type": "agent.model",
+      "message": "6572 tokens used across 3 steps.",
+      "at": "2026-09-06T02:22:13.839Z",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "model_usage"
+    },
+    {
+      "id": "631f7b48-239f-48e5-8d03-e67773c9b6c9",
+      "type": "investigation.completed",
+      "message": "JUDGE-LIVE-731: Needs source confirmation",
+      "at": "2026-09-06T02:22:13.855Z",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "2d66837f-8e50-4624-8a6f-5de332d0d686",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "c0ebd906-c6fa-417a-875b-5ea0bdf5da6c",
+      "type": "run.completed",
+      "message": "Investigation complete. Corrections await human approval.",
+      "at": "2026-09-06T02:22:13.862Z",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e"
+    },
+    {
+      "id": "2a8c7cc2-22b5-4ef8-8b69-8ca42b5d22f3",
+      "type": "evidence.changed",
+      "message": "JUDGE-LIVE-731-INV changed JUDGE-LIVE-731. Affected conclusions require review; historical entries are preserved.",
+      "at": "2026-09-06T02:22:54.147Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "sourceId": "JUDGE-LIVE-731-INV",
+      "affected": [
+        {
+          "id": "43b6c0c3-b5b4-47dd-bc56-aebc85b290f3",
+          "kind": "investigation",
+          "label": "JUDGE-LIVE-731 · revision 1"
+        },
+        {
+          "id": "2d66837f-8e50-4624-8a6f-5de332d0d686",
+          "kind": "investigation",
+          "label": "JUDGE-LIVE-731 · revision 2"
+        },
+        {
+          "id": "952869e4-5e73-49a2-997e-0cbe4cae7e66",
+          "kind": "report",
+          "label": "Close workpaper v1"
+        },
+        {
+          "id": "a5a8e7d8-a588-4d55-b470-d4bdfbea3f5e",
+          "kind": "report",
+          "label": "Close workpaper v2"
+        },
+        {
+          "id": "3f848bce-3924-4379-b4d2-3fbd5e5b6ea4",
+          "kind": "report",
+          "label": "Close workpaper v3"
+        },
+        {
+          "id": "92bf50e2-72ea-4932-8b3d-68fd70889dc3",
+          "kind": "report",
+          "label": "Close workpaper v4"
+        }
+      ]
+    },
+    {
+      "id": "60cf3477-2274-4520-a442-8e498ed82b4c",
+      "type": "source.selected",
+      "message": "Automated demo controller selected JUDGE-LIVE-731-INV as invoice authority. All competing sources are retained; investigate again.",
+      "at": "2026-09-06T02:22:54.147Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "decisionId": "d78b65bd-db4e-4807-8c7e-bb5fab4be5ad"
+    },
+    {
+      "id": "d4e20be5-ab38-41b4-8430-4e5c2d3d3806",
+      "type": "run.started",
+      "message": "Investigating 1 invoice bundles in TensorMux live agent mode.",
+      "at": "2026-09-06T02:22:58.118Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "resumedFrom": null
+    },
+    {
+      "id": "43f9a1c1-ef66-45df-bfd7-8bbafa6e65c1",
+      "type": "agent.tool",
+      "message": "read_evidence completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:23:01.684Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "read_evidence"
+    },
+    {
+      "id": "4e8a54e1-30f5-40f7-a45f-7f2e9f79a64c",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:23:01.699Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "b960a8b8-90e0-4190-b7a5-8491cf413ed9",
+      "type": "agent.tool",
+      "message": "read_policy completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:23:01.703Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "read_policy"
+    },
+    {
+      "id": "d2cbb629-b3d7-4af2-b1b4-5589234f355c",
+      "type": "agent.tool",
+      "message": "check_correction completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:23:01.708Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "check_correction"
+    },
+    {
+      "id": "0ce8da52-c285-455b-9779-9a51a58e88dc",
+      "type": "agent.tool",
+      "message": "submit_finding completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:23:12.500Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "submit_finding"
+    },
+    {
+      "id": "cd265418-681a-4bd4-b79f-fc58c6d28ff8",
+      "type": "agent.tool",
+      "message": "submit_finding completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T02:23:21.181Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "submit_finding"
+    },
+    {
+      "id": "b52d4a7c-a57f-4e41-b3b8-6d696e4d9561",
+      "type": "agent.model",
+      "message": "11927 tokens used across 4 steps.",
+      "at": "2026-09-06T02:23:26.487Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "model_usage"
+    },
+    {
+      "id": "5b89ef43-c14f-4162-8282-c82677f84c43",
+      "type": "investigation.completed",
+      "message": "JUDGE-LIVE-731: Missing counterpart entry",
+      "at": "2026-09-06T02:23:26.492Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "317f60bc-a1ad-4f2c-86f3-0f5d0f4f9dfd",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "1e83be8d-47e0-41d4-9754-3cffb854b30e",
+      "type": "run.completed",
+      "message": "Investigation complete. Corrections await human approval.",
+      "at": "2026-09-06T02:23:26.500Z",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef"
+    },
+    {
+      "id": "e81f9dc2-a2b3-418d-a3c2-1719171a5327",
+      "type": "approval.posted",
+      "message": "Automated demo controller approved revision 3 of JUDGE-LIVE-731. Sandbox journal posted atomically.",
+      "at": "2026-09-06T03:32:44.936Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "317f60bc-a1ad-4f2c-86f3-0f5d0f4f9dfd",
+      "journalId": "981bc602-9c87-4659-9f18-3cf9ad773e8a"
+    },
+    {
+      "id": "2c24130d-b27e-4436-8477-87eb001c191c",
+      "type": "report.prepared",
+      "message": "Workpaper v5 prepared with 1 unresolved exceptions.",
+      "at": "2026-09-06T03:33:25.508Z",
+      "reportId": "78eda470-40cb-4ed1-9408-268bef436789"
+    },
+    {
+      "id": "838c519d-d949-4a8b-849a-8345217dd4f6",
+      "type": "evidence.changed",
+      "message": "JUDGE-LIVE-731-CREDIT changed JUDGE-LIVE-731. Affected conclusions require review; historical entries are preserved.",
+      "at": "2026-09-06T03:34:26.869Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "sourceId": "JUDGE-LIVE-731-CREDIT",
+      "affected": [
+        {
+          "id": "43b6c0c3-b5b4-47dd-bc56-aebc85b290f3",
+          "kind": "investigation",
+          "label": "JUDGE-LIVE-731 · revision 1"
+        },
+        {
+          "id": "2d66837f-8e50-4624-8a6f-5de332d0d686",
+          "kind": "investigation",
+          "label": "JUDGE-LIVE-731 · revision 2"
+        },
+        {
+          "id": "317f60bc-a1ad-4f2c-86f3-0f5d0f4f9dfd",
+          "kind": "investigation",
+          "label": "JUDGE-LIVE-731 · revision 3"
+        },
+        {
+          "id": "981bc602-9c87-4659-9f18-3cf9ad773e8a",
+          "kind": "approval",
+          "label": "Historical approval retained; additional correction needs fresh review"
+        },
+        {
+          "id": "952869e4-5e73-49a2-997e-0cbe4cae7e66",
+          "kind": "report",
+          "label": "Close workpaper v1"
+        },
+        {
+          "id": "a5a8e7d8-a588-4d55-b470-d4bdfbea3f5e",
+          "kind": "report",
+          "label": "Close workpaper v2"
+        },
+        {
+          "id": "3f848bce-3924-4379-b4d2-3fbd5e5b6ea4",
+          "kind": "report",
+          "label": "Close workpaper v3"
+        },
+        {
+          "id": "92bf50e2-72ea-4932-8b3d-68fd70889dc3",
+          "kind": "report",
+          "label": "Close workpaper v4"
+        },
+        {
+          "id": "78eda470-40cb-4ed1-9408-268bef436789",
+          "kind": "report",
+          "label": "Close workpaper v5"
+        }
+      ]
+    },
+    {
+      "id": "8b8be8d0-a833-44f6-b6d9-705ec40e8c67",
+      "type": "run.started",
+      "message": "Investigating 7 invoice bundles in TensorMux live agent mode.",
+      "at": "2026-09-06T03:34:39.214Z",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4",
+      "resumedFrom": null
+    },
+    {
+      "id": "36a4ae17-b6d2-4446-96d6-ffa968c40cbc",
+      "type": "agent.tool",
+      "message": "read_evidence completed for IC-1042",
+      "at": "2026-09-06T03:34:44.392Z",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4",
+      "invoiceId": "IC-1042",
+      "step": "read_evidence"
+    },
+    {
+      "id": "79af96c2-cf8e-4428-aea0-9b45c6b639e4",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for IC-1042",
+      "at": "2026-09-06T03:34:44.398Z",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4",
+      "invoiceId": "IC-1042",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "4b65d91c-08d7-43c2-a615-34f9f37a4b1a",
+      "type": "agent.tool",
+      "message": "read_policy completed for IC-1042",
+      "at": "2026-09-06T03:34:44.402Z",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4",
+      "invoiceId": "IC-1042",
+      "step": "read_policy"
+    },
+    {
+      "id": "3c3bb7d6-556d-4fbd-9156-6f65ae83f8a5",
+      "type": "agent.tool",
+      "message": "check_correction completed for IC-1042",
+      "at": "2026-09-06T03:34:44.407Z",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4",
+      "invoiceId": "IC-1042",
+      "step": "check_correction"
+    },
+    {
+      "id": "0499389b-a935-476b-ac00-4adf8b0563d9",
+      "type": "agent.tool",
+      "message": "submit_finding completed for IC-1042",
+      "at": "2026-09-06T03:35:01.825Z",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4",
+      "invoiceId": "IC-1042",
+      "step": "submit_finding"
+    },
+    {
+      "id": "255ae1c5-aa35-46fa-a717-f3eb2491faa2",
+      "type": "agent.model",
+      "message": "9229 tokens used across 3 steps.",
+      "at": "2026-09-06T03:35:05.855Z",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4",
+      "invoiceId": "IC-1042",
+      "step": "model_usage"
+    },
+    {
+      "id": "119a48e9-ff96-4f27-813d-57123b946fcb",
+      "type": "investigation.completed",
+      "message": "IC-1042: Reconciled",
+      "at": "2026-09-06T03:35:05.864Z",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4",
+      "invoiceId": "IC-1042",
+      "proposalId": "3a363731-dc3e-4907-a42d-de91b32ec0fe",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "88fdf73c-7d71-4db1-a3f9-e8f4405c068a",
+      "type": "run.interrupted",
+      "message": "Worker deliberately terminated by the challenge control.",
+      "at": "2026-09-06T03:35:06.059Z",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4"
+    },
+    {
+      "id": "a177b711-e05b-440c-878c-864225bc5662",
+      "type": "run.resumed",
+      "message": "Investigating 6 invoice bundles in TensorMux live agent mode. Current completed checkpoints were retained.",
+      "at": "2026-09-06T03:35:06.095Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "resumedFrom": "87257867-1104-4382-bfca-a970d70a35c4"
+    },
+    {
+      "id": "f5f12fbe-073d-43eb-a509-de8fd0d56645",
+      "type": "agent.tool",
+      "message": "read_evidence completed for IC-1043",
+      "at": "2026-09-06T03:35:09.564Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1043",
+      "step": "read_evidence"
+    },
+    {
+      "id": "b86b000c-595b-4205-8d20-1e5c79b340b5",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for IC-1043",
+      "at": "2026-09-06T03:35:09.569Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1043",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "783948a3-fde2-4fc3-9c81-8f0ca1b487c6",
+      "type": "agent.tool",
+      "message": "read_policy completed for IC-1043",
+      "at": "2026-09-06T03:35:09.574Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1043",
+      "step": "read_policy"
+    },
+    {
+      "id": "32ef5704-9c7c-42cc-b9dc-58592bb45973",
+      "type": "agent.tool",
+      "message": "check_correction completed for IC-1043",
+      "at": "2026-09-06T03:35:09.580Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1043",
+      "step": "check_correction"
+    },
+    {
+      "id": "58c4c099-5a10-4282-8961-70131d7e508b",
+      "type": "agent.model",
+      "message": "5073 tokens used across 2 steps.",
+      "at": "2026-09-06T03:35:32.347Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1043",
+      "step": "model_usage"
+    },
+    {
+      "id": "3bff0f16-9580-4c5b-a35e-729e9b9ea181",
+      "type": "investigation.completed",
+      "message": "IC-1043: Agent requests human investigation",
+      "at": "2026-09-06T03:35:32.365Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1043",
+      "proposalId": "70e22c1a-f958-4600-be14-f3debc594518",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "83a5946c-d187-47bc-9b87-72b929f1e7b1",
+      "type": "agent.tool",
+      "message": "read_evidence completed for IC-1044",
+      "at": "2026-09-06T03:35:34.383Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1044",
+      "step": "read_evidence"
+    },
+    {
+      "id": "1b3b6958-171f-409d-99c2-d9211d559fcc",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for IC-1044",
+      "at": "2026-09-06T03:35:34.400Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1044",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "558b56ee-242f-4456-aeaf-ce9d4c350f18",
+      "type": "agent.tool",
+      "message": "read_policy completed for IC-1044",
+      "at": "2026-09-06T03:35:34.404Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1044",
+      "step": "read_policy"
+    },
+    {
+      "id": "e16933a2-e277-4f8a-91fc-5c0750c32ad6",
+      "type": "agent.tool",
+      "message": "check_correction completed for IC-1044",
+      "at": "2026-09-06T03:35:34.408Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1044",
+      "step": "check_correction"
+    },
+    {
+      "id": "480b883f-762e-49ed-9b7b-9a75982294c4",
+      "type": "agent.tool",
+      "message": "submit_finding completed for IC-1044",
+      "at": "2026-09-06T03:35:52.734Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1044",
+      "step": "submit_finding"
+    },
+    {
+      "id": "7bc39c18-c698-4218-a82b-a54911992167",
+      "type": "agent.model",
+      "message": "8646 tokens used across 3 steps.",
+      "at": "2026-09-06T03:35:56.136Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1044",
+      "step": "model_usage"
+    },
+    {
+      "id": "da95a516-f88d-4b40-9f93-90f94ad19527",
+      "type": "investigation.completed",
+      "message": "IC-1044: Reconciled",
+      "at": "2026-09-06T03:35:56.156Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1044",
+      "proposalId": "6e7ba8f0-0e4e-425e-9b6f-3382411585c4",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "edd6ba55-e382-4ffb-b10f-e1a944e894ff",
+      "type": "agent.tool",
+      "message": "read_evidence completed for IC-1045",
+      "at": "2026-09-06T03:35:57.930Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1045",
+      "step": "read_evidence"
+    },
+    {
+      "id": "87261849-29ec-4409-9384-38587df66a18",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for IC-1045",
+      "at": "2026-09-06T03:35:57.951Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1045",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "5fe2f3c5-900c-4f14-8e12-2257c99e39a8",
+      "type": "agent.tool",
+      "message": "read_policy completed for IC-1045",
+      "at": "2026-09-06T03:35:57.961Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1045",
+      "step": "read_policy"
+    },
+    {
+      "id": "317dceca-bdf5-45d5-8b8e-09c43dd47de0",
+      "type": "agent.tool",
+      "message": "check_correction completed for IC-1045",
+      "at": "2026-09-06T03:35:57.969Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1045",
+      "step": "check_correction"
+    },
+    {
+      "id": "48e17559-e5db-41c1-ae9a-35bdec1232c9",
+      "type": "guardrail.failed",
+      "message": "Only a current proposal awaiting review can be approved",
+      "at": "2026-09-06T03:36:00.145Z",
+      "proposalId": "43b6c0c3-b5b4-47dd-bc56-aebc85b290f3",
+      "traceId": "c923ced8cb265cb00dd28e1fcbfae01a",
+      "traceReadback": {
+        "verified": true,
+        "checkedAt": "2026-09-06T03:36:03.398Z",
+        "traceId": "c923ced8cb265cb00dd28e1fcbfae01a",
+        "status": "error",
+        "spanCount": 2,
+        "hierarchyValid": true,
+        "spans": [
+          {
+            "id": "7addd5790432656a",
+            "parentId": "ff2447475a38f321",
+            "name": "Controller approve validation",
+            "type": "guardrail",
+            "status": "ERROR"
+          },
+          {
+            "id": "ff2447475a38f321",
+            "parentId": null,
+            "name": "Controller approve",
+            "type": "workflow",
+            "status": "SUCCESS"
+          }
+        ],
+        "hasError": 1,
+        "errorCount": 1,
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "total": 0
+        },
+        "method": "Authenticated Neatlogs trace API read-back; UI screenshot not implied"
+      }
+    },
+    {
+      "id": "41f739e4-59da-40ae-bc90-866af1126024",
+      "type": "agent.tool",
+      "message": "submit_finding completed for IC-1045",
+      "at": "2026-09-06T03:36:09.325Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1045",
+      "step": "submit_finding"
+    },
+    {
+      "id": "992836b2-b40a-476c-b19e-a236e6b2e72a",
+      "type": "agent.model",
+      "message": "7473 tokens used across 3 steps.",
+      "at": "2026-09-06T03:36:11.769Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1045",
+      "step": "model_usage"
+    },
+    {
+      "id": "36e30a6d-08c2-4cff-9a13-043de6ed6072",
+      "type": "investigation.completed",
+      "message": "IC-1045: Reconciled",
+      "at": "2026-09-06T03:36:11.788Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1045",
+      "proposalId": "4a2bcd56-daba-4b13-9249-8754f6b64f33",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "cd72ff51-ba81-421c-b1e6-db2382849ade",
+      "type": "agent.tool",
+      "message": "read_evidence completed for IC-1046",
+      "at": "2026-09-06T03:36:13.428Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1046",
+      "step": "read_evidence"
+    },
+    {
+      "id": "cb3d11c7-8e41-4576-b802-820cb76f8fa6",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for IC-1046",
+      "at": "2026-09-06T03:36:13.450Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1046",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "c5906bb0-fe32-4424-b114-b22e53ecbbdb",
+      "type": "agent.tool",
+      "message": "read_policy completed for IC-1046",
+      "at": "2026-09-06T03:36:13.456Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1046",
+      "step": "read_policy"
+    },
+    {
+      "id": "f4dde9d8-89b8-47cc-b3cf-dab3ce31c649",
+      "type": "agent.tool",
+      "message": "check_correction completed for IC-1046",
+      "at": "2026-09-06T03:36:13.463Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1046",
+      "step": "check_correction"
+    },
+    {
+      "id": "05747566-85e6-40e8-8487-65faaa12360c",
+      "type": "agent.tool",
+      "message": "submit_finding completed for IC-1046",
+      "at": "2026-09-06T03:36:24.112Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1046",
+      "step": "submit_finding"
+    },
+    {
+      "id": "cd2e042c-0b70-4a67-9259-1de78752d29c",
+      "type": "agent.model",
+      "message": "6473 tokens used across 3 steps.",
+      "at": "2026-09-06T03:36:25.516Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1046",
+      "step": "model_usage"
+    },
+    {
+      "id": "3513492f-0585-4dd6-82d4-e960e9df73c5",
+      "type": "investigation.completed",
+      "message": "IC-1046: Reconciled",
+      "at": "2026-09-06T03:36:25.535Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1046",
+      "proposalId": "b2392718-93bf-4e25-9eb4-8172fdaf0113",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "7cd2ec43-5e9e-455b-9acb-9294227508a9",
+      "type": "agent.tool",
+      "message": "read_evidence completed for IC-1047",
+      "at": "2026-09-06T03:36:26.928Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1047",
+      "step": "read_evidence"
+    },
+    {
+      "id": "96674cc6-7490-4bb8-934a-0564904dd513",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for IC-1047",
+      "at": "2026-09-06T03:36:26.948Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1047",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "e0650684-bad8-4fca-b0c8-87ee385dc1c8",
+      "type": "agent.tool",
+      "message": "read_policy completed for IC-1047",
+      "at": "2026-09-06T03:36:26.959Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1047",
+      "step": "read_policy"
+    },
+    {
+      "id": "bbf89890-12d2-4f84-96e3-892690344ee7",
+      "type": "agent.tool",
+      "message": "check_correction completed for IC-1047",
+      "at": "2026-09-06T03:36:30.926Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1047",
+      "step": "check_correction"
+    },
+    {
+      "id": "0080b60a-4de9-4756-87bf-b36516f56404",
+      "type": "agent.tool",
+      "message": "submit_finding completed for IC-1047",
+      "at": "2026-09-06T03:36:35.915Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1047",
+      "step": "submit_finding"
+    },
+    {
+      "id": "39114237-69ec-4966-b7d6-380e22370f31",
+      "type": "agent.model",
+      "message": "8002 tokens used across 4 steps.",
+      "at": "2026-09-06T03:36:41.463Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1047",
+      "step": "model_usage"
+    },
+    {
+      "id": "590c3f90-c4b2-43d8-97fd-e3be5e324317",
+      "type": "investigation.completed",
+      "message": "IC-1047: Needs source confirmation",
+      "at": "2026-09-06T03:36:41.472Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "IC-1047",
+      "proposalId": "dc663e21-3939-4adf-947e-9c6cca4a16ef",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "00f5f68a-2dc2-4473-a569-5115a12d3542",
+      "type": "agent.tool",
+      "message": "read_evidence completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T03:36:43.950Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "read_evidence"
+    },
+    {
+      "id": "570dd03c-7d50-4555-b1a9-c88b73c16871",
+      "type": "agent.tool",
+      "message": "inspect_ledger completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T03:36:43.965Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "inspect_ledger"
+    },
+    {
+      "id": "6953f02f-0658-46b2-bbf1-cd7ad6e74eb9",
+      "type": "agent.tool",
+      "message": "read_policy completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T03:36:43.969Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "read_policy"
+    },
+    {
+      "id": "89d7fe1a-4a7c-4bb7-8c71-3566e56753d7",
+      "type": "study.created",
+      "message": "Test review study created. No timing or feedback result exists yet.",
+      "at": "2026-09-06T03:36:45.519Z",
+      "sessionId": "41e27e3b-0359-4df6-8d7c-01e512b3e3f6"
+    },
+    {
+      "id": "c2f9b49d-60e3-4d3d-9ace-b52882cf2839",
+      "type": "agent.tool",
+      "message": "check_correction completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T03:36:48.581Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "check_correction"
+    },
+    {
+      "id": "eaecfdb2-0a38-4da3-854c-6263612a2309",
+      "type": "agent.tool",
+      "message": "submit_finding completed for JUDGE-LIVE-731",
+      "at": "2026-09-06T03:36:56.239Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "submit_finding"
+    },
+    {
+      "id": "a20f7506-c486-4df5-b546-9f47a9653a04",
+      "type": "agent.model",
+      "message": "11179 tokens used across 4 steps.",
+      "at": "2026-09-06T03:37:01.129Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "JUDGE-LIVE-731",
+      "step": "model_usage"
+    },
+    {
+      "id": "75507314-8982-46b8-8374-e5def3a38981",
+      "type": "investigation.completed",
+      "message": "JUDGE-LIVE-731: Credit note not reflected",
+      "at": "2026-09-06T03:37:01.148Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "56539bf0-ae6a-4382-975c-c7e26d31b30a",
+      "mode": "TensorMux live agent"
+    },
+    {
+      "id": "2a75686b-76ee-4094-a0b7-90a695d28ecb",
+      "type": "run.completed",
+      "message": "Investigation complete. Corrections await human approval.",
+      "at": "2026-09-06T03:37:01.156Z",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c"
+    },
+    {
+      "id": "c8c69f3e-5b35-45cf-9014-c557e51fd186",
+      "type": "approval.posted",
+      "message": "Automated stage verification approved revision 4 of JUDGE-LIVE-731. Sandbox journal posted atomically.",
+      "at": "2026-09-06T03:37:05.443Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "56539bf0-ae6a-4382-975c-c7e26d31b30a",
+      "journalId": "ead3365a-b097-4db4-9b7e-4e00374c1c47"
+    },
+    {
+      "id": "ab5fa4f1-7e4e-44bf-95c1-d0e6cbcae9bc",
+      "type": "approval.replayed",
+      "message": "Retry returned the existing journal for JUDGE-LIVE-731; no second posting.",
+      "at": "2026-09-06T03:37:05.504Z",
+      "invoiceId": "JUDGE-LIVE-731",
+      "proposalId": "56539bf0-ae6a-4382-975c-c7e26d31b30a",
+      "journalId": "ead3365a-b097-4db4-9b7e-4e00374c1c47",
+      "correctionCount": 7
+    }
+  ],
+  "snapshotStatus": "Evidence and ledger frozen at preparation",
+  "integrityNote": "Hashes detect revisions; this local sandbox is not tamper-proof or independently certified."
+}

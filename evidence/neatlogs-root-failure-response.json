@@ -1,0 +1,7 @@
+{
+  "checkedAt": "2026-09-06T03:47:52.619Z",
+  "http": 409,
+  "finalizationStatus": "dlq",
+  "message": "We couldn't finish preparing this trace. Please retry or contact support.",
+  "error": "Trace processing failed"
+}

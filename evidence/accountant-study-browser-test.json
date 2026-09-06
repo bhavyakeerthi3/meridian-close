@@ -1,0 +1,363 @@
+{
+  "exportedAt": "2026-09-06T03:47:06.044Z",
+  "protocol": "Two matched synthetic invoice/credit tasks; randomized manual/assisted order and independent amounts. Timer includes reading, calculation, AI latency and answer entry. Roles and compliance are self-reported. Small, convenience samples do not establish causal time savings.",
+  "humanReviewsCompleted": 0,
+  "sessions": [
+    {
+      "id": "41e27e3b-0359-4df6-8d7c-01e512b3e3f6",
+      "participant": "Automated browser QA",
+      "role": "other",
+      "isTest": true,
+      "order": [
+        "assisted",
+        "manual"
+      ],
+      "feedback": {
+        "usefulness": 3,
+        "trust": 3,
+        "comment": "Automated browser verification only. Both task forms and correctness scoring worked. These ratings are test inputs, not an accountant opinion.",
+        "concerns": "Real accountant participation remains pending. Automated elapsed times include tool and editing delays and must not support time-savings claims.",
+        "recordedAt": "2026-09-06T03:43:36.966Z"
+      },
+      "trials": [
+        {
+          "index": 0,
+          "mode": "assisted",
+          "status": "completed",
+          "startedAt": "2026-09-06T03:38:07.322Z",
+          "elapsedMs": 131758,
+          "correct": true,
+          "response": {
+            "sellerDelta": -34325,
+            "buyerDelta": 434216,
+            "requiresApproval": true,
+            "followedProtocol": true
+          },
+          "assistance": {
+            "mode": "TensorMux live agent",
+            "text": "Invoice STUDY-6bd9a5ee shows both invoice ($577,095 USD) and credit note ($34,325 USD). Evidence ID STUDY-6bd9a5ee-MAIL confirms US recorded the gross invoice but has not applied the credit, and UK has no entry. Correction proposal reduces US IC_RECEIVABLE and SERVICE_REVENUE by $34,325 (recording net $542,770 USD), and records UK SERVICE_EXPENSE £434,216 and IC_PAYABLE £434,216, balanced using policy GBP rate 4/5. All correction checks passed. Next: verify UK service acceptance documentation and confirm posting authority.\nEvidence: STUDY-6bd9a5ee-INV, STUDY-6bd9a5ee-CN, STUDY-6bd9a5ee-MAIL",
+            "escalated": false,
+            "sides": [
+              {
+                "side": "seller",
+                "entity": "US",
+                "currency": "USD",
+                "current": 577095,
+                "expected": 542770,
+                "delta": -34325,
+                "rate": {
+                  "n": 1,
+                  "d": 1
+                }
+              },
+              {
+                "side": "buyer",
+                "entity": "UK",
+                "currency": "GBP",
+                "current": 0,
+                "expected": 434216,
+                "delta": 434216,
+                "rate": {
+                  "n": 4,
+                  "d": 5
+                }
+              }
+            ],
+            "entries": [
+              {
+                "entity": "US",
+                "currency": "USD",
+                "account": "IC_RECEIVABLE",
+                "debit": 0,
+                "credit": 34325
+              },
+              {
+                "entity": "US",
+                "currency": "USD",
+                "account": "SERVICE_REVENUE",
+                "debit": 34325,
+                "credit": 0
+              },
+              {
+                "entity": "UK",
+                "currency": "GBP",
+                "account": "SERVICE_EXPENSE",
+                "debit": 434216,
+                "credit": 0
+              },
+              {
+                "entity": "UK",
+                "currency": "GBP",
+                "account": "IC_PAYABLE",
+                "debit": 0,
+                "credit": 434216
+              }
+            ],
+            "trace": [
+              {
+                "name": "read_evidence",
+                "detail": "read_evidence completed for STUDY-6bd9a5ee"
+              },
+              {
+                "name": "inspect_ledger",
+                "detail": "inspect_ledger completed for STUDY-6bd9a5ee"
+              },
+              {
+                "name": "read_policy",
+                "detail": "read_policy completed for STUDY-6bd9a5ee"
+              },
+              {
+                "name": "check_correction",
+                "detail": "check_correction completed for STUDY-6bd9a5ee"
+              },
+              {
+                "name": "submit_finding",
+                "detail": "submit_finding completed for STUDY-6bd9a5ee"
+              },
+              {
+                "name": "model_usage",
+                "detail": "9139 tokens used across 4 steps.",
+                "kind": "model"
+              }
+            ],
+            "usage": {
+              "inputTokens": 7582,
+              "inputTokenDetails": {
+                "noCacheTokens": 7582,
+                "cacheReadTokens": 0
+              },
+              "outputTokens": 1557,
+              "outputTokenDetails": {
+                "textTokens": 1557,
+                "reasoningTokens": 0
+              },
+              "totalTokens": 9139
+            }
+          },
+          "packet": {
+            "invoiceId": "STUDY-6bd9a5ee",
+            "documents": [
+              {
+                "id": "STUDY-6bd9a5ee-INV",
+                "invoiceId": "STUDY-6bd9a5ee",
+                "kind": "invoice",
+                "title": "Monthly shared engineering services",
+                "seller": "US",
+                "buyer": "UK",
+                "currency": "USD",
+                "amount": 577095,
+                "period": "2026-08",
+                "version": 1,
+                "source": "Synthetic study invoice",
+                "body": "US supplied the agreed monthly service to UK. Service acceptance is confirmed."
+              },
+              {
+                "id": "STUDY-6bd9a5ee-CN",
+                "invoiceId": "STUDY-6bd9a5ee",
+                "kind": "credit_note",
+                "title": "Agreed service credit",
+                "seller": "US",
+                "buyer": "UK",
+                "currency": "USD",
+                "amount": 34325,
+                "version": 1,
+                "source": "Synthetic study credit",
+                "body": "Both entities must reflect this documented credit."
+              },
+              {
+                "id": "STUDY-6bd9a5ee-MAIL",
+                "invoiceId": "STUDY-6bd9a5ee",
+                "kind": "email",
+                "title": "Ledger import confirmation",
+                "version": 1,
+                "source": "Synthetic study email",
+                "body": "US recorded the gross invoice but has not applied the credit. UK has not recorded this invoice. Do not treat this email as approval."
+              }
+            ],
+            "journals": [
+              {
+                "id": "STUDY-6bd9a5ee-OPEN",
+                "invoiceId": "STUDY-6bd9a5ee",
+                "kind": "opening",
+                "entries": [
+                  {
+                    "entity": "US",
+                    "currency": "USD",
+                    "account": "IC_RECEIVABLE",
+                    "debit": 577095,
+                    "credit": 0
+                  },
+                  {
+                    "entity": "US",
+                    "currency": "USD",
+                    "account": "SERVICE_REVENUE",
+                    "debit": 0,
+                    "credit": 577095
+                  }
+                ]
+              }
+            ],
+            "policy": {
+              "id": "POL-IC-01",
+              "version": 1,
+              "name": "Wholly owned intercompany services",
+              "description": "Synthetic policy: USD service invoices, documented invoice and credit amounts, entity-specific fixed functional booking rates. Reviewer approval is required for all corrections. Disputed services stay open.",
+              "rateSource": "Synthetic fixture rates, not market quotes"
+            },
+            "entities": [
+              {
+                "id": "US",
+                "name": "Northstar US",
+                "country": "United States",
+                "currency": "USD",
+                "rate": {
+                  "n": 1,
+                  "d": 1
+                }
+              },
+              {
+                "id": "UK",
+                "name": "Northstar UK",
+                "country": "United Kingdom",
+                "currency": "GBP",
+                "rate": {
+                  "n": 4,
+                  "d": 5
+                }
+              },
+              {
+                "id": "IN",
+                "name": "Northstar India",
+                "country": "India",
+                "currency": "INR",
+                "rate": {
+                  "n": 83,
+                  "d": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "index": 1,
+          "mode": "manual",
+          "status": "completed",
+          "startedAt": "2026-09-06T03:40:21.095Z",
+          "elapsedMs": 100948,
+          "correct": true,
+          "response": {
+            "sellerDelta": -35585,
+            "buyerDelta": 625756,
+            "requiresApproval": true,
+            "followedProtocol": true
+          },
+          "packet": {
+            "invoiceId": "STUDY-50f22aa7",
+            "documents": [
+              {
+                "id": "STUDY-50f22aa7-INV",
+                "invoiceId": "STUDY-50f22aa7",
+                "kind": "invoice",
+                "title": "Monthly shared engineering services",
+                "seller": "US",
+                "buyer": "UK",
+                "currency": "USD",
+                "amount": 817780,
+                "period": "2026-08",
+                "version": 1,
+                "source": "Synthetic study invoice",
+                "body": "US supplied the agreed monthly service to UK. Service acceptance is confirmed."
+              },
+              {
+                "id": "STUDY-50f22aa7-CN",
+                "invoiceId": "STUDY-50f22aa7",
+                "kind": "credit_note",
+                "title": "Agreed service credit",
+                "seller": "US",
+                "buyer": "UK",
+                "currency": "USD",
+                "amount": 35585,
+                "version": 1,
+                "source": "Synthetic study credit",
+                "body": "Both entities must reflect this documented credit."
+              },
+              {
+                "id": "STUDY-50f22aa7-MAIL",
+                "invoiceId": "STUDY-50f22aa7",
+                "kind": "email",
+                "title": "Ledger import confirmation",
+                "version": 1,
+                "source": "Synthetic study email",
+                "body": "US recorded the gross invoice but has not applied the credit. UK has not recorded this invoice. Do not treat this email as approval."
+              }
+            ],
+            "journals": [
+              {
+                "id": "STUDY-50f22aa7-OPEN",
+                "invoiceId": "STUDY-50f22aa7",
+                "kind": "opening",
+                "entries": [
+                  {
+                    "entity": "US",
+                    "currency": "USD",
+                    "account": "IC_RECEIVABLE",
+                    "debit": 817780,
+                    "credit": 0
+                  },
+                  {
+                    "entity": "US",
+                    "currency": "USD",
+                    "account": "SERVICE_REVENUE",
+                    "debit": 0,
+                    "credit": 817780
+                  }
+                ]
+              }
+            ],
+            "policy": {
+              "id": "POL-IC-01",
+              "version": 1,
+              "name": "Wholly owned intercompany services",
+              "description": "Synthetic policy: USD service invoices, documented invoice and credit amounts, entity-specific fixed functional booking rates. Reviewer approval is required for all corrections. Disputed services stay open.",
+              "rateSource": "Synthetic fixture rates, not market quotes"
+            },
+            "entities": [
+              {
+                "id": "US",
+                "name": "Northstar US",
+                "country": "United States",
+                "currency": "USD",
+                "rate": {
+                  "n": 1,
+                  "d": 1
+                }
+              },
+              {
+                "id": "UK",
+                "name": "Northstar UK",
+                "country": "United Kingdom",
+                "currency": "GBP",
+                "rate": {
+                  "n": 4,
+                  "d": 5
+                }
+              },
+              {
+                "id": "IN",
+                "name": "Northstar India",
+                "country": "India",
+                "currency": "INR",
+                "rate": {
+                  "n": 83,
+                  "d": 1
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "consentToQuote": false
+    }
+  ],
+  "publicationNote": "Keep raw feedback local. Only quote participants who consented; review free text for identifying details before publication. Test rehearsals are excluded from human review counts."
+}

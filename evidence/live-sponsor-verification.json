@@ -1,0 +1,300 @@
+{
+  "checkedAt": "2026-09-06T02:21:08.989Z",
+  "scope": "Actual TensorMux model calls and Neatlogs export/read-back for a newly imported synthetic case. This is not a judge-supplied or human-reviewed case.",
+  "model": "glm-4-7-flash",
+  "run": {
+    "id": "1406bd89-187d-4224-b46c-161a6c86fe24",
+    "status": "completed",
+    "startedAt": "2026-09-06T02:20:40.301Z",
+    "mode": "TensorMux live agent",
+    "total": 1,
+    "completed": 1,
+    "invoiceIds": [
+      "LIVE-3c335964"
+    ],
+    "resumedFrom": null,
+    "checkpointDelayMs": 0,
+    "workerPid": 11832,
+    "execution": "isolated process",
+    "traceId": "c9ecc84335972098f9593c0a509db138",
+    "finishedAt": "2026-09-06T02:21:06.568Z",
+    "traceDelivery": {
+      "flush": {
+        "success": true,
+        "outcomes": [
+          {
+            "pipeline": "default",
+            "success": true,
+            "timedOut": false
+          }
+        ]
+      },
+      "spanExportFailures": 0,
+      "logExportFailures": 0,
+      "readback": {
+        "verified": true,
+        "checkedAt": "2026-09-06T02:21:08.793Z",
+        "traceId": "c9ecc84335972098f9593c0a509db138",
+        "status": "success",
+        "spanCount": 11,
+        "hierarchyValid": true,
+        "spans": [
+          {
+            "id": "07042fb68321c116",
+            "parentId": "44517fdbca7763bd",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "44517fdbca7763bd",
+            "parentId": "586cdc62b053a07a",
+            "name": "Investigate intercompany exception",
+            "type": "agent_action",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "586cdc62b053a07a",
+            "parentId": null,
+            "name": "CloseLoop investigation run",
+            "type": "workflow",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "573179a647e1a927",
+            "parentId": "44517fdbca7763bd",
+            "name": "read_evidence",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "aa59bd75e1efe218",
+            "parentId": "44517fdbca7763bd",
+            "name": "inspect_ledger",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "6af54042ed7b86cc",
+            "parentId": "44517fdbca7763bd",
+            "name": "read_policy",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "ffdf32f0edbc99fe",
+            "parentId": "44517fdbca7763bd",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "9cb7e31d99e70bd1",
+            "parentId": "44517fdbca7763bd",
+            "name": "check_correction",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "9249d32e43c59490",
+            "parentId": "44517fdbca7763bd",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "5481770a3d485c54",
+            "parentId": "44517fdbca7763bd",
+            "name": "submit_finding",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "c069d553c36d5a7c",
+            "parentId": "44517fdbca7763bd",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          }
+        ],
+        "hasError": 0,
+        "errorCount": 0,
+        "tokens": {
+          "input": 7864,
+          "output": 2087,
+          "total": 9951
+        },
+        "method": "Authenticated Neatlogs trace API read-back; UI screenshot not implied"
+      },
+      "dashboardVerified": false
+    },
+    "workerExit": {
+      "code": 0,
+      "signal": null,
+      "at": "2026-09-06T02:21:08.817Z"
+    }
+  },
+  "finding": {
+    "invoiceId": "LIVE-3c335964",
+    "fingerprint": "22b9c2c3729a8860448a3fd36c380b20a7935ce2cc170e569af00fdce7fbe24e",
+    "title": "Newly supplied synthetic service invoice",
+    "evidenceIds": [
+      "LIVE-3c335964-INV"
+    ],
+    "policyId": "POL-IC-01",
+    "policyVersion": 1,
+    "status": "review",
+    "diagnosis": "Missing counterpart entry",
+    "explanation": "Missing counterpart entry. Compare both entity balances with the invoice; prepare 2 functional-currency lines for human review.",
+    "net": 1274317,
+    "sides": [
+      {
+        "side": "seller",
+        "entity": "US",
+        "currency": "USD",
+        "current": 1274317,
+        "expected": 1274317,
+        "delta": 0,
+        "rate": {
+          "n": 1,
+          "d": 1
+        }
+      },
+      {
+        "side": "buyer",
+        "entity": "UK",
+        "currency": "GBP",
+        "current": 0,
+        "expected": 1019454,
+        "delta": 1019454,
+        "rate": {
+          "n": 4,
+          "d": 5
+        }
+      }
+    ],
+    "entries": [
+      {
+        "entity": "UK",
+        "currency": "GBP",
+        "account": "SERVICE_EXPENSE",
+        "debit": 1019454,
+        "credit": 0
+      },
+      {
+        "entity": "UK",
+        "currency": "GBP",
+        "account": "IC_PAYABLE",
+        "debit": 0,
+        "credit": 1019454
+      }
+    ],
+    "id": "5f9b671f-6b84-4463-9456-21a6c11116e2",
+    "runId": "1406bd89-187d-4224-b46c-161a6c86fe24",
+    "revision": 1,
+    "createdAt": "2026-09-06T02:21:06.567Z",
+    "mode": "TensorMux live agent",
+    "trace": [
+      {
+        "name": "read_evidence",
+        "detail": "read_evidence completed for LIVE-3c335964",
+        "kind": "tool",
+        "at": "2026-09-06T02:20:44.443Z"
+      },
+      {
+        "name": "inspect_ledger",
+        "detail": "inspect_ledger completed for LIVE-3c335964",
+        "kind": "tool",
+        "at": "2026-09-06T02:20:44.445Z"
+      },
+      {
+        "name": "read_policy",
+        "detail": "read_policy completed for LIVE-3c335964",
+        "kind": "tool",
+        "at": "2026-09-06T02:20:44.447Z"
+      },
+      {
+        "name": "check_correction",
+        "detail": "check_correction completed for LIVE-3c335964",
+        "kind": "tool",
+        "at": "2026-09-06T02:20:49.202Z"
+      },
+      {
+        "name": "submit_finding",
+        "detail": "submit_finding completed for LIVE-3c335964",
+        "kind": "tool",
+        "at": "2026-09-06T02:21:02.398Z"
+      },
+      {
+        "name": "model_usage",
+        "detail": "9951 tokens used across 4 steps.",
+        "kind": "model",
+        "at": "2026-09-06T02:21:06.555Z"
+      }
+    ],
+    "narrative": "The seller US has recorded the full USD 1,274,317 invoice with IC_RECEIVABLE debit and SERVICE_REVENUE credit as an opening import. The buyer UK shows zero current balance but expects GBP 1,019,454, which converts to USD 1,274,317 at policy rate 4/5 (1 USD = 0.8 GBP). The independent correction check passed all validations: source invoice support, policy consistency, balanced entity entries, and account permissions. US accepted services; UK must record SERVICE_EXPENSE debit of GBP 1,019,454 and IC_PAYABLE credit of GBP 1,019,454 to balance the transaction. Request reviewer approval for UK recording.\nEvidence: LIVE-3c335964-INV",
+    "usage": {
+      "inputTokens": 7864,
+      "inputTokenDetails": {
+        "noCacheTokens": 7864,
+        "cacheReadTokens": 0
+      },
+      "outputTokens": 2087,
+      "outputTokenDetails": {
+        "textTokens": 2087,
+        "reasoningTokens": 0
+      },
+      "totalTokens": 9951
+    },
+    "processingMs": 24960,
+    "validation": {
+      "passed": true,
+      "checks": [
+        {
+          "name": "Current source revision",
+          "passed": true,
+          "detail": "Approval binds to exact evidence, policy, and ledger revisions."
+        },
+        {
+          "name": "Supported source invoice",
+          "passed": true,
+          "detail": "One undisputed USD service invoice with distinct parties."
+        },
+        {
+          "name": "Evidence references",
+          "passed": true,
+          "detail": "All referenced documents exist in this invoice bundle."
+        },
+        {
+          "name": "Policy revision",
+          "passed": true,
+          "detail": "Proposal uses the current approved policy."
+        },
+        {
+          "name": "Exact minor units",
+          "passed": true,
+          "detail": "Positive source values and bounded integer arithmetic; credits cannot exceed invoice."
+        },
+        {
+          "name": "Balanced by entity",
+          "passed": true,
+          "detail": "Each subsidiary balances in its own functional currency."
+        },
+        {
+          "name": "Allowed accounts and currency",
+          "passed": true,
+          "detail": "Existing and proposed lines use supported entities, currencies, accounts and integer amounts."
+        },
+        {
+          "name": "Source-to-ledger agreement",
+          "passed": true,
+          "detail": "Post-correction accounts agree with independently recomputed source obligations."
+        }
+      ]
+    }
+  },
+  "expectedBuyerAdjustmentMinor": 1019454,
+  "actualBuyerAdjustmentMinor": 1019454,
+  "noAutomaticPosting": true,
+  "remotePersistenceVerified": true
+}

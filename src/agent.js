@@ -19,9 +19,9 @@ export async function initializeTracing({ localDiagnostic = false } = {}) {
 
 export async function stopTracing() { if (tracingInitialized) await shutdown(); tracingInitialized = false; }
 
-export async function traced(name, kind, input, fn) {
+export async function traced(name, kind, input, fn, options = {}) {
   if (!tracingInitialized) return fn();
-  return trace({ name, kind, input }, fn);
+  return trace({ name, kind, input, ...options }, fn);
 }
 
 export function integrationStatus() {
@@ -39,10 +39,16 @@ function model() {
     name: 'tensormux',
     baseURL: process.env.TENSORMUX_BASE_URL || 'https://api.tensormux.com/v1',
     apiKey: process.env.TENSORMUX_API_KEY,
-    fetch: async (url, options) => traced('TensorMux inference', 'LLM', { provider: 'tensormux', model: process.env.TENSORMUX_MODEL || 'glm-4-7-flash' }, async () => {
+    fetch: async (url, options) => traced('TensorMux inference', 'LLM', { provider: 'tensormux', model: process.env.TENSORMUX_MODEL || 'glm-4-7-flash' }, async span => {
       const response = await fetch(url, options);
       if (response.ok) { providerVerifiedAt = new Date().toISOString(); lastProviderError = null; }
-      else lastProviderError = `Provider returned HTTP ${response.status}`;
+      else { lastProviderError = `Provider returned HTTP ${response.status}`; span?.setStatus({ code: 2, message: lastProviderError }); }
+      if (span && response.ok && response.headers.get('content-type')?.includes('application/json')) {
+        const data = await response.clone().json().catch(() => null);
+        for (const [field, value] of Object.entries({ prompt: data?.usage?.prompt_tokens, completion: data?.usage?.completion_tokens, total: data?.usage?.total_tokens })) {
+          if (Number.isFinite(value)) span.setAttribute(`neatlogs.llm.token_count.${field}`, value);
+        }
+      }
       return response;
     }),
   });
@@ -57,6 +63,7 @@ Do not invent documents, rates, approvals, or completed actions. You have no pos
 Use the independent checker before recommending a correction. A balanced journal by itself does not prove correctness.
 Disputed service acceptance and conflicting evidence require human investigation. Do not override a block.
 Explain the cause, cite document IDs, and state the next review action in a short paragraph. Do not expose hidden chain of thought; provide evidence and findings.
+In the final explanation, label amounts with their currency and show major units with two decimals; tool values are integer minor units.
 Reviewer feedback may inform investigation; only an explicit reviewed policy change can alter accounting rules.`;
 
 export function createInvestigator({ forceRehearsal = false, languageModel = undefined } = {}) {
@@ -83,12 +90,19 @@ export function createInvestigator({ forceRehearsal = false, languageModel = und
       let checked = false;
       const consulted = new Set();
       const consult = (name, fn) => action(name, { invoiceId: plan.invoiceId }, () => { const result = fn(); consulted.add(name); return result; });
+      const displayMoney = (minor, currency) => new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(minor / 100);
       const agent = new ToolLoopAgent({
-        model: languageModel || model(), instructions, stopWhen: isStepCount(8), maxOutputTokens: 2200, maxRetries: 1,
+        model: languageModel || model(), instructions, stopWhen: [isStepCount(8), () => Boolean(submitted)], maxOutputTokens: 2200, maxRetries: 1,
+        prepareStep: ({ stepNumber }) => {
+          if (stepNumber < 2 || submitted) return {};
+          const required = /** @type {const} */ (['read_evidence', 'inspect_ledger', 'read_policy']);
+          const next = required.find(name => !consulted.has(name)) || (!checked ? 'check_correction' : 'submit_finding');
+          return { activeTools: [next], toolChoice: { type: 'tool', toolName: next } };
+        },
         tools: {
-          read_evidence: tool({ description: 'Read source invoices, credit notes, emails and meetings for this invoice.', inputSchema: z.object({}), execute: () => consult('read_evidence', () => evidence) }),
-          inspect_ledger: tool({ description: 'Read both sides of the invoice from the sandbox ledger.', inputSchema: z.object({}), execute: () => consult('inspect_ledger', () => ({ journals: ledger, comparison: plan.sides })) }),
-          read_policy: tool({ description: 'Read approved service accounting policy, fixture FX rates and prior reviewer feedback.', inputSchema: z.object({}), execute: () => consult('read_policy', () => ({ policy: state.policy, entities: state.entities, feedback: state.feedback.filter(f => f.invoiceId === plan.invoiceId).map(f => ({ reason: f.reason, policyChanged: false })) })) }),
+          read_evidence: tool({ description: 'Read source invoices, credit notes, emails and meetings for this invoice.', inputSchema: z.object({}), execute: () => consult('read_evidence', () => evidence.map(d => ({ ...d, displayAmount: Number.isInteger(d.amount) && d.currency ? displayMoney(d.amount, d.currency) : undefined }))) }),
+          inspect_ledger: tool({ description: 'Read both sides of the invoice from the sandbox ledger.', inputSchema: z.object({}), execute: () => consult('inspect_ledger', () => ({ journals: ledger.map(j => ({ ...j, entries: j.entries.map(line => ({ ...line, displayDebit: displayMoney(line.debit, line.currency), displayCredit: displayMoney(line.credit, line.currency) })) })), comparison: plan.sides.map(s => ({ ...s, displayCurrent: displayMoney(s.current, s.currency), displayExpected: displayMoney(s.expected, s.currency), displayAdjustment: displayMoney(s.delta, s.currency) })) })) }),
+          read_policy: tool({ description: 'Read approved policy, fixture rates, controller source decisions and prior reviewer feedback.', inputSchema: z.object({}), execute: () => consult('read_policy', () => ({ policy: state.policy, entities: state.entities, sourceDecisions: state.sourceDecisions?.filter(d => d.invoiceId === plan.invoiceId) ?? [], feedback: state.feedback.filter(f => f.invoiceId === plan.invoiceId).map(f => ({ reason: f.reason, policyChanged: false })) })) }),
           check_correction: tool({ description: 'Independently validate the candidate correction against evidence and ledger. Required before recommending approval.', inputSchema: z.object({}), execute: () => action('check_correction', { invoiceId: plan.invoiceId }, () => { checked = true; return { candidate: plan.entries, checks: validateProposal(state, plan), sourceStatus: plan.status }; }) }),
           submit_finding: tool({ description: 'Record the evidence-backed finding. This cannot approve or post anything.', inputSchema: z.object({ decision: z.enum(['review', 'matched', 'escalate']), explanation: z.string().min(20).max(2000), evidenceIds: z.array(z.string()).min(1) }), execute: ({ decision, explanation, evidenceIds }) => action('submit_finding', { decision }, () => {
             if (!checked) return { accepted: false, error: 'Call check_correction first.' };

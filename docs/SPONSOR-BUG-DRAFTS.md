@@ -29,3 +29,9 @@ Primary advisory: https://github.com/open-telemetry/opentelemetry-js/security/ad
 ## Neatlogs + AI SDK 7 compatibility note
 
 The installed Neatlogs AI SDK wrapper documents AI SDK 6 support. CloseLoop uses AI SDK 7 with explicit manual spans and verifies the normalized envelope locally. This is a compatibility question, not a reproduced sponsor defect. Ask whether AI SDK 7 wrappers are supported before replacing the working manual instrumentation.
+
+## Neatlogs standalone guardrail trace finalization — reproduced, not filed
+
+SDK 1.1.19 exported a standalone GUARDRAIL root whose callback threw during an actual stale-approval rejection. The authenticated read endpoint initially returned HTTP 202 with no spans and later HTTP 409 with finalizationStatus `dlq` and “Trace processing failed”. Trace ID: `65216d609334b951a663cca0f91c5398`. The same real guardrail under a WORKFLOW root, with the expected business rejection handled at that boundary, finalized successfully with two spans and ERROR status on the guardrail. Root cause is unconfirmed; this may be a required root convention or backend defect.
+
+Evidence: `evidence/neatlogs-root-guardrail-observation.json`, `evidence/neatlogs-root-failure-response.json`, and `evidence/live-guardrail-failure.json`. CloseLoop now uses the verified workflow-parent structure. No API keys or authorization headers belong in a report. This draft has not been sent.

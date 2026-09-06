@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-09-06T03:36:03.421Z",
+  "scenario": "Actual HTTP rejection of stale approval after conflicting evidence, intentionally triggered as an automated challenge; not a provider outage.",
+  "http": 400,
+  "error": "Only a current proposal awaiting review can be approved",
+  "ledgerUnchanged": true,
+  "trace": {
+    "verified": true,
+    "checkedAt": "2026-09-06T03:36:03.398Z",
+    "traceId": "c923ced8cb265cb00dd28e1fcbfae01a",
+    "status": "error",
+    "spanCount": 2,
+    "hierarchyValid": true,
+    "spans": [
+      {
+        "id": "7addd5790432656a",
+        "parentId": "ff2447475a38f321",
+        "name": "Controller approve validation",
+        "type": "guardrail",
+        "status": "ERROR"
+      },
+      {
+        "id": "ff2447475a38f321",
+        "parentId": null,
+        "name": "Controller approve",
+        "type": "workflow",
+        "status": "SUCCESS"
+      }
+    ],
+    "hasError": 1,
+    "errorCount": 1,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "total": 0
+    },
+    "method": "Authenticated Neatlogs trace API read-back; UI screenshot not implied"
+  }
+}

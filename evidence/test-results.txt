@@ -1,49 +1,240 @@
-Executed 2026-09-05T18:08:06.789Z
-(node:16028) ExperimentalWarning: SQLite is an experimental feature and might change at any time
-(Use `node --trace-warnings ...` to show where the warning was created)
-✔ AI SDK tool loop completes an evidence-grounded finding and has no posting authority (35.0837ms)
-✔ agent cannot submit without reading evidence, ledger and policy (5.6562ms)
-✔ agent cannot fabricate a source ID or override a source dispute (14.1579ms)
-(node:14580) ExperimentalWarning: SQLite is an experimental feature and might change at any time
-(Use `node --trace-warnings ...` to show where the warning was created)
-✔ OS-killed worker before-commit recovers with exactly one posting (162.2088ms)
-✔ OS-killed worker after-commit recovers with exactly one posting (104.4956ms)
-✔ two processes race the same approval and only one commits a journal (116.4258ms)
-(node:33476) ExperimentalWarning: SQLite is an experimental feature and might change at any time
-(Use `node --trace-warnings ...` to show where the warning was created)
-✔ Dodo import uses test GET only, deduplicates pagination and does not affect intercompany balances (22.8897ms)
-✔ Dodo pagination budget produces explicit partial coverage, never a completed import claim (1.3917ms)
-✔ Dodo rejects changing IDs, malformed money, out-of-window rows and failed authentication (4.1454ms)
-✔ Dodo row checks flag inconsistent movements and missing balances without inventing bank reconciliation (0.7571ms)
-(node:24000) ExperimentalWarning: SQLite is an experimental feature and might change at any time
-(Use `node --trace-warnings ...` to show where the warning was created)
-✔ half-up money conversion is exact, symmetric and rejects fractional cents (1.611ms)
-✔ source and ledger produce expected missing, duplicate, rate, credit and disputed cases (3.6072ms)
-✔ independent checker rejects a balanced but incorrect proposal (2.4109ms)
-✔ checker rejects currency substitution, fabricated source and policy revision (1.1002ms)
-✔ approval posts once, balances ledger, and repeats return the original posting (4.6734ms)
-✔ source update rejects a stale approval with no ledger mutation (3.5194ms)
-✔ late credit preserves past journals and produces a compensating revision and stale report (8.3776ms)
-✔ credits beyond invoice value and fractional minor units roll back (0.7537ms)
-✔ all supported exceptions resolve while disputed source prevents a clean close (6.9683ms)
-✔ email instructions cannot approve, modify policy, or erase a source dispute (1.5881ms)
-✔ rejected review preserves feedback and does not automatically change accounting policy (3.1291ms)
-✔ in-flight evidence changes cannot publish a stale investigation result (2.0892ms)
-✔ failed model run records failure without silent fallback or postings (1.3371ms)
-✔ pending review survives database reopen; repeated approval after restart posts once (33.6526ms)
-✔ credit reference and version deduplicate retries and replace revised contributions (2.2193ms)
-✔ tiny late credit recalculates the rounded target instead of rounding the adjustment (2.6087ms)
-✔ frozen export keeps historical evidence, ledger and approvals after a late source arrives (4.1355ms)
-✔ agreement of receivable and payable cannot hide a wrong service account or ledger currency (3.208ms)
-✔ worker startup marks interrupted runs and leaves fingerprints and journals intact (1.1596ms)
-✔ resume keeps completed current checkpoints and investigates only unfinished bundles (4.6466ms)
-ℹ tests 30
-ℹ suites 0
-ℹ pass 30
-ℹ fail 0
-ℹ cancelled 0
-ℹ skipped 0
-ℹ todo 0
-ℹ duration_ms 5174.2534
 
-Exit code: 0
+> closeloop@0.1.0 test
+> node --test tests/*.test.js
+
+TAP version 13
+# (node:31520) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: AI SDK tool loop completes an evidence-grounded finding and has no posting authority
+ok 1 - AI SDK tool loop completes an evidence-grounded finding and has no posting authority
+  ---
+  duration_ms: 93.1337
+  type: 'test'
+  ...
+# Subtest: agent cannot submit without reading evidence, ledger and policy
+ok 2 - agent cannot submit without reading evidence, ledger and policy
+  ---
+  duration_ms: 12.5116
+  type: 'test'
+  ...
+# Subtest: agent cannot fabricate a source ID or override a source dispute
+ok 3 - agent cannot fabricate a source ID or override a source dispute
+  ---
+  duration_ms: 32.1367
+  type: 'test'
+  ...
+# Subtest: tool guidance recovers from repetitive reads and stops immediately after an accepted finding
+ok 4 - tool guidance recovers from repetitive reads and stops immediately after an accepted finding
+  ---
+  duration_ms: 18.0478
+  type: 'test'
+  ...
+# (node:29668) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: OS-killed worker before-commit recovers with exactly one posting
+ok 5 - OS-killed worker before-commit recovers with exactly one posting
+  ---
+  duration_ms: 255.7902
+  type: 'test'
+  ...
+# Subtest: OS-killed worker after-commit recovers with exactly one posting
+ok 6 - OS-killed worker after-commit recovers with exactly one posting
+  ---
+  duration_ms: 228.2449
+  type: 'test'
+  ...
+# Subtest: two processes race the same approval and only one commits a journal
+ok 7 - two processes race the same approval and only one commits a journal
+  ---
+  duration_ms: 204.0281
+  type: 'test'
+  ...
+# (node:25768) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Dodo import uses test GET only, deduplicates pagination and does not affect intercompany balances
+ok 8 - Dodo import uses test GET only, deduplicates pagination and does not affect intercompany balances
+  ---
+  duration_ms: 51.6113
+  type: 'test'
+  ...
+# Subtest: Dodo pagination budget produces explicit partial coverage, never a completed import claim
+ok 9 - Dodo pagination budget produces explicit partial coverage, never a completed import claim
+  ---
+  duration_ms: 2.7447
+  type: 'test'
+  ...
+# Subtest: Dodo rejects changing IDs, malformed money, out-of-window rows and failed authentication
+ok 10 - Dodo rejects changing IDs, malformed money, out-of-window rows and failed authentication
+  ---
+  duration_ms: 10.227
+  type: 'test'
+  ...
+# Subtest: Dodo row checks flag inconsistent movements and missing balances without inventing bank reconciliation
+ok 11 - Dodo row checks flag inconsistent movements and missing balances without inventing bank reconciliation
+  ---
+  duration_ms: 1.5055
+  type: 'test'
+  ...
+# (node:12100) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: new judge case handles cents and imports opening balances once
+ok 12 - new judge case handles cents and imports opening balances once
+  ---
+  duration_ms: 24.5118
+  type: 'test'
+  ...
+# Subtest: malformed imports and source-only balance changes roll back completely
+ok 13 - malformed imports and source-only balance changes roll back completely
+  ---
+  duration_ms: 4.086
+  type: 'test'
+  ...
+# Subtest: conflicting invoices invalidate approvals and require current controller source authority
+ok 14 - conflicting invoices invalidate approvals and require current controller source authority
+  ---
+  duration_ms: 12.342
+  type: 'test'
+  ...
+# Subtest: real process termination retains checkpoints and resume skips completed work
+ok 15 - real process termination retains checkpoints and resume skips completed work
+  ---
+  duration_ms: 2387.6186
+  type: 'test'
+  ...
+# Subtest: review study hides answers, enforces order, measures actual time and excludes test feedback
+ok 16 - review study hides answers, enforces order, measures actual time and excludes test feedback
+  ---
+  duration_ms: 75.1044
+  type: 'test'
+  ...
+# (node:24700) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: half-up money conversion is exact, symmetric and rejects fractional cents
+ok 17 - half-up money conversion is exact, symmetric and rejects fractional cents
+  ---
+  duration_ms: 2.7932
+  type: 'test'
+  ...
+# Subtest: source and ledger produce expected missing, duplicate, rate, credit and disputed cases
+ok 18 - source and ledger produce expected missing, duplicate, rate, credit and disputed cases
+  ---
+  duration_ms: 5.8142
+  type: 'test'
+  ...
+# Subtest: independent checker rejects a balanced but incorrect proposal
+ok 19 - independent checker rejects a balanced but incorrect proposal
+  ---
+  duration_ms: 2.9377
+  type: 'test'
+  ...
+# Subtest: checker rejects currency substitution, fabricated source and policy revision
+ok 20 - checker rejects currency substitution, fabricated source and policy revision
+  ---
+  duration_ms: 2.8213
+  type: 'test'
+  ...
+# Subtest: approval posts once, balances ledger, and repeats return the original posting
+ok 21 - approval posts once, balances ledger, and repeats return the original posting
+  ---
+  duration_ms: 10.6002
+  type: 'test'
+  ...
+# Subtest: source update rejects a stale approval with no ledger mutation
+ok 22 - source update rejects a stale approval with no ledger mutation
+  ---
+  duration_ms: 7.1034
+  type: 'test'
+  ...
+# Subtest: late credit preserves past journals and produces a compensating revision and stale report
+ok 23 - late credit preserves past journals and produces a compensating revision and stale report
+  ---
+  duration_ms: 25.3354
+  type: 'test'
+  ...
+# Subtest: credits beyond invoice value and fractional minor units roll back
+ok 24 - credits beyond invoice value and fractional minor units roll back
+  ---
+  duration_ms: 2.3781
+  type: 'test'
+  ...
+# Subtest: all supported exceptions resolve while disputed source prevents a clean close
+ok 25 - all supported exceptions resolve while disputed source prevents a clean close
+  ---
+  duration_ms: 19.7917
+  type: 'test'
+  ...
+# Subtest: email instructions cannot approve, modify policy, or erase a source dispute
+ok 26 - email instructions cannot approve, modify policy, or erase a source dispute
+  ---
+  duration_ms: 2.5287
+  type: 'test'
+  ...
+# Subtest: rejected review preserves feedback and does not automatically change accounting policy
+ok 27 - rejected review preserves feedback and does not automatically change accounting policy
+  ---
+  duration_ms: 3.3808
+  type: 'test'
+  ...
+# Subtest: in-flight evidence changes cannot publish a stale investigation result
+ok 28 - in-flight evidence changes cannot publish a stale investigation result
+  ---
+  duration_ms: 3.7514
+  type: 'test'
+  ...
+# Subtest: failed model run records failure without silent fallback or postings
+ok 29 - failed model run records failure without silent fallback or postings
+  ---
+  duration_ms: 3.8727
+  type: 'test'
+  ...
+# Subtest: pending review survives database reopen; repeated approval after restart posts once
+ok 30 - pending review survives database reopen; repeated approval after restart posts once
+  ---
+  duration_ms: 57.4015
+  type: 'test'
+  ...
+# Subtest: credit reference and version deduplicate retries and replace revised contributions
+ok 31 - credit reference and version deduplicate retries and replace revised contributions
+  ---
+  duration_ms: 4.8223
+  type: 'test'
+  ...
+# Subtest: tiny late credit recalculates the rounded target instead of rounding the adjustment
+ok 32 - tiny late credit recalculates the rounded target instead of rounding the adjustment
+  ---
+  duration_ms: 5.4466
+  type: 'test'
+  ...
+# Subtest: frozen export keeps historical evidence, ledger and approvals after a late source arrives
+ok 33 - frozen export keeps historical evidence, ledger and approvals after a late source arrives
+  ---
+  duration_ms: 6.2319
+  type: 'test'
+  ...
+# Subtest: agreement of receivable and payable cannot hide a wrong service account or ledger currency
+ok 34 - agreement of receivable and payable cannot hide a wrong service account or ledger currency
+  ---
+  duration_ms: 9.3389
+  type: 'test'
+  ...
+# Subtest: worker startup marks interrupted runs and leaves fingerprints and journals intact
+ok 35 - worker startup marks interrupted runs and leaves fingerprints and journals intact
+  ---
+  duration_ms: 1.7925
+  type: 'test'
+  ...
+# Subtest: resume keeps completed current checkpoints and investigates only unfinished bundles
+ok 36 - resume keeps completed current checkpoints and investigates only unfinished bundles
+  ---
+  duration_ms: 13.3005
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2886.4882

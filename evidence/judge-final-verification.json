@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-09-06T03:50:29.712Z",
+  "url": "http://127.0.0.1:4320",
+  "matched": 6,
+  "cases": 7,
+  "blocked": 1,
+  "reportVersion": 8,
+  "reportCurrent": true,
+  "unresolved": [
+    {
+      "invoiceId": "IC-1047",
+      "reason": "IC-1047 involves unconfirmed advisory services. The source invoice (DOC-IC-1047) states the recipient has not confirmed delivery and recommends escalation. The meeting transcript (MEET-1047) confirms UK and Group controllers agreed to keep the exception open until signed evidence arrives. The ledger shows only an internal balance in India (INR ₹186,750.00) without a corresponding intercompany entry to balance the US entity. Correction check failed due to source-to-ledger agreement issue. Per policy, disputed services stay open and require reviewer approval for corrections. Before clearing, the service delivery must be confirmed with proper signed evidence and the intercompany relationship properly balanced.\nEvidence: DOC-IC-1047, MEET-1047"
+    }
+  ],
+  "liveRuns": [
+    {
+      "id": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "status": "completed",
+      "completed": 1,
+      "total": 1,
+      "traceId": "3a09064c31e370073edb886af61679f2",
+      "readbackVerified": false
+    },
+    {
+      "id": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "status": "completed",
+      "completed": 1,
+      "total": 1,
+      "traceId": "fcb7e03435a63140bebafcef3dc08d6d",
+      "readbackVerified": true,
+      "spanCount": 10
+    },
+    {
+      "id": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "status": "completed",
+      "completed": 1,
+      "total": 1,
+      "traceId": "7b3208d9017f194eb0852b95b9458e11",
+      "readbackVerified": true,
+      "spanCount": 12
+    },
+    {
+      "id": "87257867-1104-4382-bfca-a970d70a35c4",
+      "status": "interrupted",
+      "completed": 1,
+      "total": 7,
+      "traceId": "f4be2807ad4271889f2b498d1e547e58",
+      "readbackVerified": false,
+      "interruptionProof": {
+        "mechanism": "OS process termination",
+        "workerPid": 36380,
+        "completedCheckpoints": 1,
+        "ledgerUnchanged": true,
+        "ledgerHash": "01cdb4cbd4b033ce5f39632999a5d7113f45b0c3bfa06f27dbc5ed59f93549b2",
+        "at": "2026-09-06T03:35:06.059Z"
+      }
+    },
+    {
+      "id": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "status": "completed",
+      "completed": 6,
+      "total": 6,
+      "traceId": "7d0b95cb9b582f0b996ef6fea49fe14d",
+      "readbackVerified": true,
+      "spanCount": 55
+    },
+    {
+      "id": "918c9ecc-538f-4090-92bd-04719582ddbc",
+      "status": "completed",
+      "completed": 1,
+      "total": 1,
+      "traceId": "b07192d6153d4934a15f54080f5f9576",
+      "readbackVerified": true,
+      "spanCount": 9
+    }
+  ],
+  "journals": 18,
+  "corrections": 7,
+  "humanReviewsCompleted": 0,
+  "lastDisputedCaseRun": {
+    "id": "3dda9723-d87b-4478-a043-92c2aba5dcc8",
+    "traceId": "052bb3b8efe75e3b230779938c078c81",
+    "readbackVerified": true,
+    "spanCount": 13
+  }
+}

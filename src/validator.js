@@ -1,5 +1,6 @@
 import { integer, convert } from './money.js';
 import { fingerprint } from './revisions.js';
+import { selectedInvoices } from './source-selection.js';
 
 // This verifier rebuilds obligations from source records and ledger lines; it does
 // not call the proposal builder or trust the model's totals, status, or diagnosis.
@@ -8,7 +9,7 @@ export function validateProposal(state, proposal) {
   const check = (name, passed, detail) => checks.push({ name, passed: Boolean(passed), detail });
   check('Current source revision', proposal.fingerprint === fingerprint(state, proposal.invoiceId), 'Approval binds to exact evidence, policy, and ledger revisions.');
   const docs = state.documents.filter(d => d.invoiceId === proposal.invoiceId);
-  const invoices = docs.filter(d => d.kind === 'invoice');
+  const invoices = selectedInvoices(state, proposal.invoiceId);
   const invoice = invoices[0];
   check('Supported source invoice', invoices.length === 1 && invoice?.currency === 'USD' && !invoice?.disputed && invoice?.seller !== invoice?.buyer, 'One undisputed USD service invoice with distinct parties.');
   const refs = new Set(proposal.evidenceIds);

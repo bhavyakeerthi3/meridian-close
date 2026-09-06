@@ -30,7 +30,7 @@ if (!(Test-Path .env.local)) { Copy-Item .env.example .env.local }
 npm run dev
 ```
 
-Open http://127.0.0.1:4317. SQLite saves the workspace under `data/`; restarting preserves evidence, approvals and report versions. To rehearse from scratch without deleting history, follow [the demo guide](docs/DEMO.md).
+Open the address printed by the server (default http://127.0.0.1:4317; this workstation's verified judge build uses http://127.0.0.1:4320). SQLite saves the workspace under `data/`; restarting preserves evidence, approvals and report versions. To rehearse from scratch without deleting history, follow [the demo guide](docs/DEMO.md).
 
 Save `TENSORMUX_API_KEY` and `NEATLOGS_API_KEY` in `.env.local`, then restart. Optional `DODO_PAYMENTS_API_KEY` must be a test-mode key. Keys stay on the server. Without TensorMux credentials the app uses labeled deterministic rehearsal; a failed live call records failure without silently substituting a rehearsal result.
 
@@ -45,6 +45,9 @@ Save `TENSORMUX_API_KEY` and `NEATLOGS_API_KEY` in `.env.local`, then restart. O
 - Versioned reconciliation and USD elimination workpapers with frozen source, ledger, policy and approval snapshots. Disputed services keep the close provisional.
 - Read-only Dodo sandbox balance-ledger import, bounded pagination, deduplication and row balance checks in a separate cash evidence view.
 - Neatlogs workflow, agent and tool spans; reviewer rejection labels and failure-context export.
+- Judge-entered invoices and opening balances, conflicting source imports, and revision-bound controller source decisions. All competing documents stay visible.
+- Judge lab with real worker-process termination, checkpoint resume, posting retries, and authenticated Neatlogs trace read-back.
+- Accountant review with randomized manual/assisted task order, server timing, answer accuracy and feedback. Automated rehearsals are excluded from human counts.
 
 ## Verify
 
@@ -55,11 +58,20 @@ npm run evaluate
 npm run check:traces
 ```
 
-Current evidence: 30 workflow/agent/connector tests; 30/30 held-out arithmetic/validator cases; six-span CloseLoop Neatlogs local diagnostic passed. AI SDK contract tests use a mock model transport; they are not live-model accuracy measurements. [Build log](evidence/BUILD-LOG.md) records the actual browser run and limitations.
+Current evidence: 36 workflow/agent/connector tests; 30/30 held-out arithmetic/validator cases; actual TensorMux tool execution and actual Neatlogs traces read back through the authenticated API. The isolated live case produced the expected GBP 10,194.54 adjustment; its 11 persisted spans and 9,951 tokens were verified. A real stale-approval rejection is visible remotely as a guardrail error. See [live sponsor proof](evidence/live-sponsor-verification.json), [failure proof](evidence/live-guardrail-failure.json) and the [build log](evidence/BUILD-LOG.md).
+
+AI SDK contract tests use a mock transport. The deterministic benchmark is not a live-model accuracy score, and automated browser timings are not human time savings. [The accountant protocol](docs/ACCOUNTANT-REVIEW.md) is ready; actual participant feedback is still needed.
+
+Optional live checks consume sponsor tokens and export synthetic telemetry:
+
+```powershell
+node --env-file-if-exists=.env.local scripts/verify-live.js
+node --env-file-if-exists=.env.local scripts/verify-failure-trace.js
+```
 
 ## Architecture and limits
 
-Static browser client → local Node HTTP API → synchronous SQLite transaction store. AI SDK 7 `ToolLoopAgent` reads scoped evidence and proposes findings; policy code computes entries and an independent checker verifies the economic result. Journal, approval and audit event commit together under `BEGIN IMMEDIATE` with SQLite WAL and FULL synchronous durability.
+Static browser client → local Node HTTP API → isolated investigation worker → synchronous SQLite transaction store. AI SDK 7 `ToolLoopAgent` reads scoped evidence and proposes findings; policy code computes entries and an independent checker verifies the economic result. Journal, approval and audit event commit together under `BEGIN IMMEDIATE` with SQLite WAL and FULL synchronous durability. The judge lab terminates an actual child process. Investigation checkpoints and posting idempotency are tested separately.
 
 The demo uses simulated reviewer roles, synthetic FX booking rates, wholly owned service entities and USD transaction currency. It does not connect production ERP, bank, Gmail or Slack accounts. Email/meeting evidence is manually imported text. Dodo movements do not imply recognized revenue or reconciled bank cash. The app binds to loopback and is not ready for a public multi-user deployment.
 

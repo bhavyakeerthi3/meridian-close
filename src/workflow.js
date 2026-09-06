@@ -3,6 +3,8 @@ import { event } from './store.js';
 import { fingerprint, investigate, invoiceIds, summary } from './accounting.js';
 import { validateProposal } from './validator.js';
 import { integer } from './money.js';
+import { selectedInvoices } from './source-selection.js';
+import { setTimeout } from 'node:timers/promises';
 
 export function recoverInterrupted(store) {
   store.update(state => {
@@ -14,7 +16,7 @@ export function recoverInterrupted(store) {
   });
 }
 
-export async function runClose(store, agent, selectedInvoiceId, { resumeRunId = undefined } = {}) {
+export function createRun(store, mode, selectedInvoiceId, { resumeRunId = undefined, checkpointDelayMs = 0 } = {}) {
   const snapshot = store.read();
   if (snapshot.runs.some(r => r.status === 'running')) throw new Error('A close investigation is already running');
   let ids = selectedInvoiceId ? [selectedInvoiceId] : invoiceIds(snapshot);
@@ -27,11 +29,25 @@ export async function runClose(store, agent, selectedInvoiceId, { resumeRunId = 
   if (ids.some(id => !invoiceIds(snapshot).includes(id))) throw new Error('Unknown invoice');
   const runId = randomUUID();
   store.update(state => {
-    state.runs.push({ id: runId, status: 'running', startedAt: new Date().toISOString(), mode: agent.mode, total: ids.length, completed: 0, invoiceIds: ids, resumedFrom: resumeRunId ?? null });
-    event(state, resumeRunId ? 'run.resumed' : 'run.started', `Investigating ${ids.length} invoice bundles in ${agent.mode} mode.${resumeRunId ? ' Current completed checkpoints were retained.' : ''}`, { runId, resumedFrom: resumeRunId ?? null });
+    state.runs.push({ id: runId, status: 'running', startedAt: new Date().toISOString(), mode, total: ids.length, completed: 0, invoiceIds: ids, resumedFrom: resumeRunId ?? null, checkpointDelayMs });
+    event(state, resumeRunId ? 'run.resumed' : 'run.started', `Investigating ${ids.length} invoice bundles in ${mode} mode.${resumeRunId ? ' Current completed checkpoints were retained.' : ''}`, { runId, resumedFrom: resumeRunId ?? null });
   });
+  return runId;
+}
+
+export async function runClose(store, agent, selectedInvoiceId, options = {}) {
+  const runId = createRun(store, agent.mode, selectedInvoiceId, options);
+  await executeRun(store, agent, runId);
+  return runId;
+}
+
+export async function executeRun(store, agent, runId) {
+  const initial = store.read().runs.find(r => r.id === runId);
+  if (!initial || initial.status !== 'running') throw new Error('Run is not active');
+  const ids = initial.invoiceIds;
   try {
     for (const invoiceId of ids) {
+      const startedAt = Date.now();
       const current = store.read();
       const plan = investigate(current, invoiceId);
       const trace = [];
@@ -51,7 +67,7 @@ export async function runClose(store, agent, selectedInvoiceId, { resumeRunId = 
         }
         const previous = state.investigations.filter(p => p.invoiceId === invoiceId).at(-1);
         if (previous?.status === 'review') previous.status = 'superseded';
-        const proposal = { ...plan, id: randomUUID(), runId, revision: (previous?.revision ?? 0) + 1, createdAt: new Date().toISOString(), mode: agent.mode, trace, narrative: review.text, usage: review.usage ?? null, validation: null };
+        const proposal = { ...plan, id: randomUUID(), runId, revision: (previous?.revision ?? 0) + 1, createdAt: new Date().toISOString(), mode: agent.mode, trace, narrative: review.text, usage: review.usage ?? null, processingMs: Date.now() - startedAt, validation: null };
         if (review.escalate && plan.status !== 'blocked') { proposal.status = 'blocked'; proposal.diagnosis = 'Agent requests human investigation'; }
         proposal.validation = validateProposal(state, proposal);
         if (['review', 'matched'].includes(proposal.status) && !proposal.validation.passed) { proposal.status = 'blocked'; proposal.diagnosis = 'Independent validation failed'; }
@@ -59,6 +75,7 @@ export async function runClose(store, agent, selectedInvoiceId, { resumeRunId = 
         run.completed++;
         event(state, 'investigation.completed', `${invoiceId}: ${proposal.diagnosis}`, { runId, invoiceId, proposalId: proposal.id, mode: agent.mode });
       });
+      if (initial.checkpointDelayMs && invoiceId !== ids.at(-1)) await setTimeout(initial.checkpointDelayMs);
     }
     store.update(state => {
       const run = state.runs.find(r => r.id === runId);
@@ -68,6 +85,7 @@ export async function runClose(store, agent, selectedInvoiceId, { resumeRunId = 
   } catch (error) {
     store.update(state => {
       const run = state.runs.find(r => r.id === runId);
+      if (run.status === 'interrupted') return;
       run.status = 'failed'; run.finishedAt = new Date().toISOString();
       run.error = safeError(error);
       event(state, 'run.failed', run.error, { runId });
@@ -77,7 +95,11 @@ export async function runClose(store, agent, selectedInvoiceId, { resumeRunId = 
 }
 
 export function safeError(error) {
-  return String(error?.message ?? error).replace(/(?:tmx_|sk-|nlw_|nl_)[A-Za-z0-9_-]+/g, '[redacted]').slice(0, 400);
+  let message = String(error?.message ?? error);
+  for (const [key, value] of Object.entries(process.env)) {
+    if (/(?:API_KEY|TOKEN|SECRET)$/.test(key) && value?.length >= 8) message = message.replaceAll(value, '[redacted]');
+  }
+  return message.replace(/(?:tmx_|sk-|nlw_|nl_)[A-Za-z0-9_-]+/g, '[redacted]').slice(0, 400);
 }
 
 export function approve(store, id, { revision, reviewer, role }) {
@@ -87,7 +109,10 @@ export function approve(store, id, { revision, reviewer, role }) {
     if (!proposal) throw new Error('Proposal not found');
     if (proposal.revision !== revision) throw new Error('Approval revision does not match');
     // Retries return the original posting even if later source changes exist.
-    if (proposal.status === 'posted') return { proposal, duplicate: true };
+    if (proposal.status === 'posted') {
+      event(state, 'approval.replayed', `Retry returned the existing journal for ${proposal.invoiceId}; no second posting.`, { invoiceId: proposal.invoiceId, proposalId: id, journalId: proposal.approval.journalId, correctionCount: state.journals.filter(j => j.kind === 'correction').length });
+      return { proposal, duplicate: true };
+    }
     if (proposal.status !== 'review') throw new Error('Only a current proposal awaiting review can be approved');
     const validation = validateProposal(state, proposal);
     if (!validation.passed) throw new Error('Approval rejected: source or ledger changed, or accounting validation failed. Investigate again.');
@@ -137,7 +162,9 @@ export function addCredit(store, { invoiceId, amount, reason, sourceId = `CN-${r
   if (amount <= 0 || typeof reason !== 'string' || !reason.trim() || reason.length > 1000) throw new Error('Enter a positive credit amount and a reason');
   if (typeof sourceId !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9_.:-]{0,79}$/.test(sourceId) || !Number.isSafeInteger(version) || version < 1) throw new Error('Use a stable source reference and a positive integer version');
   return store.update(state => {
-    const invoice = state.documents.find(d => d.kind === 'invoice' && d.invoiceId === invoiceId);
+    const invoices = selectedInvoices(state, invoiceId);
+    if (invoices.length !== 1) throw new Error('Resolve conflicting invoice sources before importing a credit');
+    const invoice = invoices[0];
     if (!invoice) throw new Error('Invoice not found');
     const previous = state.documents.find(d => d.id === sourceId);
     if (previous && (previous.kind !== 'credit_note' || previous.invoiceId !== invoiceId)) throw new Error('Source reference already belongs to another document');
@@ -174,7 +201,7 @@ export function prepareReport(store) {
     const view = summary(state);
     const unresolved = view.cases.filter(c => c.status !== 'matched' || ['blocked', 'rejected'].includes(c.investigation?.status));
     const report = { id: randomUUID(), version: state.reports.length + 1, createdAt: new Date().toISOString(), fingerprint: fingerprint(state), stale: false, status: unresolved.length ? 'provisional' : 'ready', scope: 'Synthetic intercompany service reconciliation and USD elimination workpaper. Not a statutory consolidation.', period: state.period, rows: view.cases.map(c => ({ invoiceId: c.invoiceId, seller: c.seller, buyer: c.buyer, netUSDMinor: c.net, status: c.status, evidenceIds: c.evidenceIds, sides: c.sides })), unresolved: unresolved.map(c => ({ invoiceId: c.invoiceId, reason: c.investigation?.status === 'rejected' ? 'Reviewer rejected the latest proposal' : c.explanation })), eliminations: view.cases.filter(c => c.status === 'matched' && !['blocked', 'rejected'].includes(c.investigation?.status)).map(c => ({ invoiceId: c.invoiceId, currency: 'USD', sourceEvidence: c.evidenceIds, entries: [{ account: 'IC_PAYABLE', debit: c.net, credit: 0 }, { account: 'IC_RECEIVABLE', debit: 0, credit: c.net }, { account: 'SERVICE_REVENUE', debit: c.net, credit: 0 }, { account: 'SERVICE_EXPENSE', debit: 0, credit: c.net }] })), journals: structuredClone(state.journals.filter(j => j.kind === 'correction')), policy: structuredClone(state.policy) };
-    Object.assign(report, { evidence: structuredClone(state.documents), ledgerSnapshot: structuredClone(state.journals), entities: structuredClone(state.entities), approvals: state.investigations.filter(p => p.approval).map(p => ({ id: p.id, invoiceId: p.invoiceId, revision: p.revision, approval: structuredClone(p.approval), validation: structuredClone(p.validation) })), auditTrail: structuredClone(state.events) });
+    Object.assign(report, { evidence: structuredClone(state.documents), sourceDecisions: structuredClone(state.sourceDecisions ?? []), ledgerSnapshot: structuredClone(state.journals), entities: structuredClone(state.entities), approvals: state.investigations.filter(p => p.approval).map(p => ({ id: p.id, invoiceId: p.invoiceId, revision: p.revision, approval: structuredClone(p.approval), validation: structuredClone(p.validation) })), auditTrail: structuredClone(state.events) });
     state.reports.push(report);
     event(state, 'report.prepared', `Workpaper v${report.version} prepared with ${unresolved.length} unresolved exceptions.`, { reportId: report.id });
     return report;

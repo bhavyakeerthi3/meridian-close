@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-09-06T03:31:08.243Z",
+  "scenario": "Real approval rejection exercised against a stale proposal in an isolated synthetic workspace. Deterministic setup; no LLM or provider outage was simulated.",
+  "outcome": {
+    "rejected": true,
+    "reason": "Only a current proposal awaiting review can be approved",
+    "ledgerUnchanged": true
+  },
+  "flushSuccess": true,
+  "trace": {
+    "verified": true,
+    "checkedAt": "2026-09-06T03:31:08.243Z",
+    "traceId": "1d54e181662ca9e2fb71c300a4cdfc73",
+    "status": "error",
+    "spanCount": 2,
+    "hierarchyValid": true,
+    "spans": [
+      {
+        "id": "384860cfcb7d4aaf",
+        "parentId": "57aadeed8a6fc9c2",
+        "name": "Validate stale controller approval",
+        "type": "guardrail",
+        "status": "ERROR"
+      },
+      {
+        "id": "57aadeed8a6fc9c2",
+        "parentId": null,
+        "name": "CloseLoop rejected approval challenge",
+        "type": "workflow",
+        "status": "SUCCESS"
+      }
+    ],
+    "hasError": 1,
+    "errorCount": 1,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "total": 0
+    },
+    "method": "Authenticated Neatlogs trace API read-back; UI screenshot not implied"
+  }
+}

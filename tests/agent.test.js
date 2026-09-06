@@ -31,7 +31,9 @@ test('agent cannot submit without reading evidence, ledger and policy', async ()
   const store = openStore(':memory:');
   const model = modelFor([[['check_correction']], [finding(['DOC-IC-1042'])]]);
   await runClose(store, createInvestigator({ languageModel: model }), 'IC-1042');
-  assert.equal(store.read().investigations.at(-1).status, 'blocked');
+  assert.equal(store.read().investigations.length, 0);
+  assert.equal(store.read().runs.at(-1).status, 'failed');
+  assert.match(store.read().runs.at(-1).error, /required tool 'read_evidence'/);
   assert.match(JSON.stringify(model.doGenerateCalls.at(-1).prompt), /Required evidence tools not consulted/);
   store.close();
 });
@@ -40,7 +42,27 @@ test('agent cannot fabricate a source ID or override a source dispute', async ()
   for (const [invoiceId, sources, expected] of [['IC-1042', ['MADE-UP'], 'Unknown evidence'], ['IC-1047', ['DOC-IC-1047'], 'source block cannot be overridden']]) {
     const store = openStore(':memory:'); const model = modelFor([reads, [finding(sources)]]);
     await runClose(store, createInvestigator({ languageModel: model }), invoiceId);
-    assert.equal(store.read().investigations.at(-1).status, 'blocked');
+    assert.equal(store.read().investigations.length, 0);
+    assert.equal(store.read().runs.at(-1).status, 'failed');
+    assert.match(store.read().runs.at(-1).error, /required tool 'submit_finding'/);
     assert.ok(JSON.stringify(model.doGenerateCalls.at(-1).prompt).includes(expected)); store.close();
   }
+});
+
+test('tool guidance recovers from repetitive reads and stops immediately after an accepted finding', async () => {
+  let count = 0;
+  const model = new MockLanguageModelV4({ doGenerate: async options => {
+    count++;
+    const toolName = count <= 2 ? 'read_evidence' : options.toolChoice.toolName;
+    const input = toolName === 'submit_finding' ? finding(['DOC-IC-1042'])[1] : {};
+    return { content: [{ type: 'tool-call', toolCallId: `guided-${count}`, toolName, input: JSON.stringify(input) }], finishReason: { unified: 'tool-calls', raw: undefined }, usage: { inputTokens: { total: 10, noCache: 10 }, outputTokens: { total: 10, text: 10 } }, warnings: [] };
+  } });
+  const store = openStore(':memory:'); const before = store.read().journals;
+  try {
+    await runClose(store, createInvestigator({ languageModel: model }), 'IC-1042');
+    const proposal = store.read().investigations.at(-1);
+    assert.equal(proposal.status, 'review'); assert.equal(count, 6);
+    assert.deepEqual(proposal.trace.filter(t => t.kind === 'tool').map(t => t.name), ['read_evidence', 'read_evidence', 'inspect_ledger', 'read_policy', 'check_correction', 'submit_finding']);
+    assert.deepEqual(store.read().journals, before);
+  } finally { store.close(); }
 });

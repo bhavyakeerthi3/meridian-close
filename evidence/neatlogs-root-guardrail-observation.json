@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-09-06T03:47:06.023Z",
+  "scope": "Observed standalone GUARDRAIL-root failure trace from the initial integration; root cause not established. A WORKFLOW parent with nested GUARDRAIL finalized and was adopted.",
+  "traceId": "65216d609334b951a663cca0f91c5398",
+  "readback": {
+    "verified": false,
+    "reason": "Trace read-back returned HTTP 409"
+  },
+  "workingProof": "live-guardrail-failure.json"
+}

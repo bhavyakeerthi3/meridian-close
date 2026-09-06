@@ -1,0 +1,808 @@
+{
+  "checkedAt": "2026-09-06T03:37:05.559Z",
+  "scope": "Automated live stage challenge, synthetic browser-entered case, simulated controller approvals; not human accountant feedback.",
+  "invoiceId": "JUDGE-LIVE-731",
+  "lateCreditMinorUSD": 25037,
+  "interruptedRun": {
+    "id": "87257867-1104-4382-bfca-a970d70a35c4",
+    "status": "interrupted",
+    "startedAt": "2026-09-06T03:34:39.214Z",
+    "mode": "TensorMux live agent",
+    "total": 7,
+    "completed": 1,
+    "invoiceIds": [
+      "IC-1042",
+      "IC-1043",
+      "IC-1044",
+      "IC-1045",
+      "IC-1046",
+      "IC-1047",
+      "JUDGE-LIVE-731"
+    ],
+    "resumedFrom": null,
+    "checkpointDelayMs": 3000,
+    "workerPid": 36380,
+    "execution": "isolated process",
+    "traceId": "f4be2807ad4271889f2b498d1e547e58",
+    "finishedAt": "2026-09-06T03:35:06.059Z",
+    "error": "Worker deliberately terminated by the challenge control.",
+    "workerExit": {
+      "code": null,
+      "signal": "SIGKILL",
+      "at": "2026-09-06T03:35:06.059Z"
+    },
+    "interruptionProof": {
+      "mechanism": "OS process termination",
+      "workerPid": 36380,
+      "completedCheckpoints": 1,
+      "ledgerUnchanged": true,
+      "ledgerHash": "01cdb4cbd4b033ce5f39632999a5d7113f45b0c3bfa06f27dbc5ed59f93549b2",
+      "at": "2026-09-06T03:35:06.059Z"
+    }
+  },
+  "resumedRun": {
+    "id": "59de8132-c241-4bb5-a772-7539adc6f22c",
+    "status": "completed",
+    "startedAt": "2026-09-06T03:35:06.095Z",
+    "mode": "TensorMux live agent",
+    "total": 6,
+    "completed": 6,
+    "invoiceIds": [
+      "IC-1043",
+      "IC-1044",
+      "IC-1045",
+      "IC-1046",
+      "IC-1047",
+      "JUDGE-LIVE-731"
+    ],
+    "resumedFrom": "87257867-1104-4382-bfca-a970d70a35c4",
+    "checkpointDelayMs": 0,
+    "workerPid": 31436,
+    "execution": "isolated process",
+    "traceId": "7d0b95cb9b582f0b996ef6fea49fe14d",
+    "finishedAt": "2026-09-06T03:37:01.156Z",
+    "traceDelivery": {
+      "flush": {
+        "success": true,
+        "outcomes": [
+          {
+            "pipeline": "default",
+            "success": true,
+            "timedOut": false
+          }
+        ]
+      },
+      "spanExportFailures": 0,
+      "logExportFailures": 0,
+      "readback": {
+        "verified": true,
+        "checkedAt": "2026-09-06T03:37:04.953Z",
+        "traceId": "7d0b95cb9b582f0b996ef6fea49fe14d",
+        "status": "success",
+        "spanCount": 55,
+        "hierarchyValid": true,
+        "spans": [
+          {
+            "id": "997b68d2163065be",
+            "parentId": "9355ab5d8b474b79",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "9355ab5d8b474b79",
+            "parentId": "fb3de53963c11fcb",
+            "name": "Investigate intercompany exception",
+            "type": "agent_action",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "fb3de53963c11fcb",
+            "parentId": null,
+            "name": "CloseLoop investigation run",
+            "type": "workflow",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "c9e8148de539ec75",
+            "parentId": "9355ab5d8b474b79",
+            "name": "read_evidence",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "f431d5b196571d0e",
+            "parentId": "9355ab5d8b474b79",
+            "name": "inspect_ledger",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "e10ba7066aa8603b",
+            "parentId": "9355ab5d8b474b79",
+            "name": "read_policy",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "bd53cc6ddbacf018",
+            "parentId": "9355ab5d8b474b79",
+            "name": "check_correction",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "fefaa730c77fe1c4",
+            "parentId": "9355ab5d8b474b79",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "54bb3629966dfd81",
+            "parentId": "f928eb81c83c09ec",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "f928eb81c83c09ec",
+            "parentId": "fb3de53963c11fcb",
+            "name": "Investigate intercompany exception",
+            "type": "agent_action",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "11ccb1a6e75cdac1",
+            "parentId": "f928eb81c83c09ec",
+            "name": "read_evidence",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "aaa580b82f5862c5",
+            "parentId": "f928eb81c83c09ec",
+            "name": "inspect_ledger",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "6beaca0bbc29f067",
+            "parentId": "f928eb81c83c09ec",
+            "name": "check_correction",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "8a09001fe4547a82",
+            "parentId": "f928eb81c83c09ec",
+            "name": "read_policy",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "09cf07bc83c8d66c",
+            "parentId": "f928eb81c83c09ec",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "56a49fb947dc5d25",
+            "parentId": "f928eb81c83c09ec",
+            "name": "submit_finding",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "619478e18d1e8b56",
+            "parentId": "f928eb81c83c09ec",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "3fbbef96be496fb7",
+            "parentId": "2071ef9984340452",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "2071ef9984340452",
+            "parentId": "fb3de53963c11fcb",
+            "name": "Investigate intercompany exception",
+            "type": "agent_action",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "4dc65f983ace1d92",
+            "parentId": "2071ef9984340452",
+            "name": "read_evidence",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "e1f2112d000f59b6",
+            "parentId": "2071ef9984340452",
+            "name": "inspect_ledger",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "e8d35a12db56fa67",
+            "parentId": "2071ef9984340452",
+            "name": "read_policy",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "8d78297dbade2bd9",
+            "parentId": "2071ef9984340452",
+            "name": "check_correction",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "9717c941554dd8f1",
+            "parentId": "2071ef9984340452",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "5168152607ec3007",
+            "parentId": "2071ef9984340452",
+            "name": "submit_finding",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "1a8aca987d3c5cc0",
+            "parentId": "2071ef9984340452",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "a235a4faa0f2f946",
+            "parentId": "8f6008058869db65",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "8f6008058869db65",
+            "parentId": "fb3de53963c11fcb",
+            "name": "Investigate intercompany exception",
+            "type": "agent_action",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "6ad216d02ae9ddc1",
+            "parentId": "8f6008058869db65",
+            "name": "read_evidence",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "7ca38c7997051b82",
+            "parentId": "8f6008058869db65",
+            "name": "inspect_ledger",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "c93e8445cd4cdd26",
+            "parentId": "8f6008058869db65",
+            "name": "read_policy",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "95a2912341cc8032",
+            "parentId": "8f6008058869db65",
+            "name": "check_correction",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "8eeb0cb58c809087",
+            "parentId": "8f6008058869db65",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "14e88a2d40d30db1",
+            "parentId": "8f6008058869db65",
+            "name": "submit_finding",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "647624608fb50b56",
+            "parentId": "8f6008058869db65",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "2e26da3a3ac5bc31",
+            "parentId": "2517bf9d3fb8272a",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "2517bf9d3fb8272a",
+            "parentId": "fb3de53963c11fcb",
+            "name": "Investigate intercompany exception",
+            "type": "agent_action",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "a7a49d6602de073f",
+            "parentId": "2517bf9d3fb8272a",
+            "name": "read_evidence",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "d103e8e884b030ae",
+            "parentId": "2517bf9d3fb8272a",
+            "name": "inspect_ledger",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "882dcdbb9a97552c",
+            "parentId": "2517bf9d3fb8272a",
+            "name": "read_policy",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "86fb91282675d274",
+            "parentId": "2517bf9d3fb8272a",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "1bdab576f8f3e58a",
+            "parentId": "2517bf9d3fb8272a",
+            "name": "check_correction",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "d9aab275a73b070c",
+            "parentId": "2517bf9d3fb8272a",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "be30ff81f4f397db",
+            "parentId": "2517bf9d3fb8272a",
+            "name": "submit_finding",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "43a428123fbd7b11",
+            "parentId": "2517bf9d3fb8272a",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "cd71e2b362320773",
+            "parentId": "7eeb3805352f66e8",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "7eeb3805352f66e8",
+            "parentId": "fb3de53963c11fcb",
+            "name": "Investigate intercompany exception",
+            "type": "agent_action",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "554a6ff46b255eb8",
+            "parentId": "7eeb3805352f66e8",
+            "name": "read_evidence",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "d6736dd04d9f53e1",
+            "parentId": "7eeb3805352f66e8",
+            "name": "inspect_ledger",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "022d5133d015d13f",
+            "parentId": "7eeb3805352f66e8",
+            "name": "read_policy",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "adc30cffd29fd35e",
+            "parentId": "7eeb3805352f66e8",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "e394c139ade87539",
+            "parentId": "7eeb3805352f66e8",
+            "name": "check_correction",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "4b34460a28cc319c",
+            "parentId": "7eeb3805352f66e8",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "38737cb7b5823f4a",
+            "parentId": "7eeb3805352f66e8",
+            "name": "submit_finding",
+            "type": "tool_call",
+            "status": "SUCCESS"
+          },
+          {
+            "id": "c8637820ea8467ea",
+            "parentId": "7eeb3805352f66e8",
+            "name": "TensorMux inference",
+            "type": "llm",
+            "status": "SUCCESS"
+          }
+        ],
+        "hasError": 0,
+        "errorCount": 0,
+        "tokens": {
+          "input": 36613,
+          "output": 10233,
+          "total": 46846
+        },
+        "method": "Authenticated Neatlogs trace API read-back; UI screenshot not implied"
+      },
+      "dashboardVerified": false
+    },
+    "workerExit": {
+      "code": 0,
+      "signal": null,
+      "at": "2026-09-06T03:37:04.987Z"
+    }
+  },
+  "completedCheckpointsSkipped": 1,
+  "originalJournalsPreserved": true,
+  "postingRetryDuplicate": true,
+  "journalHashAfterPosting": "1c915c16ddbdb20c63ea2411abe985267774b2c7cf626fea37d6580278617d1c",
+  "journalHashAfterRetry": "1c915c16ddbdb20c63ea2411abe985267774b2c7cf626fea37d6580278617d1c",
+  "finalBalances": [
+    {
+      "side": "seller",
+      "entity": "US",
+      "currency": "USD",
+      "current": 1249280,
+      "expected": 1249280,
+      "delta": 0,
+      "rate": {
+        "n": 1,
+        "d": 1
+      }
+    },
+    {
+      "side": "buyer",
+      "entity": "UK",
+      "currency": "GBP",
+      "current": 999424,
+      "expected": 999424,
+      "delta": 0,
+      "rate": {
+        "n": 4,
+        "d": 5
+      }
+    }
+  ],
+  "report": {
+    "previousVersion": 5,
+    "revisedVersion": 6,
+    "current": true,
+    "unresolved": [
+      {
+        "invoiceId": "IC-1043",
+        "reason": "The live agent did not submit a verified finding within its step budget. Human investigation required."
+      },
+      {
+        "invoiceId": "IC-1047",
+        "reason": "The advisory services remain unconfirmed. The invoice (DOC-IC-1047) states: \"The recipient has not confirmed delivery. Escalate until the underlying service is confirmed.\" The meeting (MEET-1047) confirms controllers want to keep the exception open until signed evidence arrives. Policy POL-IC-01 states \"Disputed services stay open.\" The USD $225,000 invoice and INR 18,675,000 ledger entry agree at the 83:1 INR/USD rate, but the rejection block requires investigation of the underlying service and receipt of confirmed acceptance before any further action.\nEvidence: DOC-IC-1047, MEET-1047"
+      }
+    ]
+  },
+  "historicalReportUnchanged": true,
+  "liveInvestigations": [
+    {
+      "invoiceId": "JUDGE-LIVE-731",
+      "runId": "95418da5-44df-4ff4-b159-f7d9f36c3068",
+      "status": "stale",
+      "processingMs": 20078,
+      "usage": {
+        "inputTokens": 8139,
+        "inputTokenDetails": {
+          "noCacheTokens": 8139,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 1653,
+        "outputTokenDetails": {
+          "textTokens": 1653,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 9792
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "submit_finding",
+        "submit_finding",
+        "model_usage"
+      ]
+    },
+    {
+      "invoiceId": "JUDGE-LIVE-731",
+      "runId": "34fc96b0-ec93-4290-9721-a03633f88c9e",
+      "status": "stale",
+      "processingMs": 16802,
+      "usage": {
+        "inputTokens": 5181,
+        "inputTokenDetails": {
+          "noCacheTokens": 5181,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 1391,
+        "outputTokenDetails": {
+          "textTokens": 1391,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 6572
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "submit_finding",
+        "model_usage"
+      ]
+    },
+    {
+      "invoiceId": "JUDGE-LIVE-731",
+      "runId": "cae8655b-ba2f-47db-90e7-c67761fc46ef",
+      "status": "posted",
+      "processingMs": 27005,
+      "usage": {
+        "inputTokens": 9665,
+        "inputTokenDetails": {
+          "noCacheTokens": 9665,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 2262,
+        "outputTokenDetails": {
+          "textTokens": 2262,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 11927
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "submit_finding",
+        "submit_finding",
+        "model_usage"
+      ]
+    },
+    {
+      "invoiceId": "IC-1042",
+      "runId": "87257867-1104-4382-bfca-a970d70a35c4",
+      "status": "matched",
+      "processingMs": 25366,
+      "usage": {
+        "inputTokens": 7154,
+        "inputTokenDetails": {
+          "noCacheTokens": 7154,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 2075,
+        "outputTokenDetails": {
+          "textTokens": 2075,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 9229
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "submit_finding",
+        "model_usage"
+      ]
+    },
+    {
+      "invoiceId": "IC-1043",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "status": "blocked",
+      "processingMs": 25124,
+      "usage": {
+        "inputTokens": 2748,
+        "inputTokenDetails": {
+          "noCacheTokens": 2748,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 2325,
+        "outputTokenDetails": {
+          "textTokens": 2325,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 5073
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "model_usage"
+      ]
+    },
+    {
+      "invoiceId": "IC-1044",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "status": "matched",
+      "processingMs": 23786,
+      "usage": {
+        "inputTokens": 6470,
+        "inputTokenDetails": {
+          "noCacheTokens": 6470,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 2176,
+        "outputTokenDetails": {
+          "textTokens": 2176,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 8646
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "submit_finding",
+        "model_usage"
+      ]
+    },
+    {
+      "invoiceId": "IC-1045",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "status": "matched",
+      "processingMs": 15628,
+      "usage": {
+        "inputTokens": 6073,
+        "inputTokenDetails": {
+          "noCacheTokens": 6073,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 1400,
+        "outputTokenDetails": {
+          "textTokens": 1400,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 7473
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "submit_finding",
+        "model_usage"
+      ]
+    },
+    {
+      "invoiceId": "IC-1046",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "status": "matched",
+      "processingMs": 13743,
+      "usage": {
+        "inputTokens": 5241,
+        "inputTokenDetails": {
+          "noCacheTokens": 5241,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 1232,
+        "outputTokenDetails": {
+          "textTokens": 1232,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 6473
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "submit_finding",
+        "model_usage"
+      ]
+    },
+    {
+      "invoiceId": "IC-1047",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "status": "blocked",
+      "processingMs": 15932,
+      "usage": {
+        "inputTokens": 6565,
+        "inputTokenDetails": {
+          "noCacheTokens": 6565,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 1437,
+        "outputTokenDetails": {
+          "textTokens": 1437,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 8002
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "submit_finding",
+        "model_usage"
+      ]
+    },
+    {
+      "invoiceId": "JUDGE-LIVE-731",
+      "runId": "59de8132-c241-4bb5-a772-7539adc6f22c",
+      "status": "posted",
+      "processingMs": 19668,
+      "usage": {
+        "inputTokens": 9516,
+        "inputTokenDetails": {
+          "noCacheTokens": 9516,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 1663,
+        "outputTokenDetails": {
+          "textTokens": 1663,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 11179
+      },
+      "tools": [
+        "read_evidence",
+        "inspect_ledger",
+        "read_policy",
+        "check_correction",
+        "submit_finding",
+        "model_usage"
+      ]
+    }
+  ]
+}

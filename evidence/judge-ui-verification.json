@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-09-06T03:52:38.119Z",
+  "url": "http://127.0.0.1:4320",
+  "browser": "agent-browser Chromium",
+  "desktop": {
+    "width": 1440,
+    "height": 1000
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 375,
+    "noPageOverflow": true
+  },
+  "verified": [
+    "Browser import of previously absent JUDGE-LIVE-731 and opening balances",
+    "Competing invoice import disables approval",
+    "Controller source selection preserves both documents",
+    "Live investigation and browser controller approval",
+    "Browser late-credit import",
+    "Remote Neatlogs failure spans expanded and inspected",
+    "Accountant study: two completed correct trials, actual live assistance, test feedback explicitly excluded from human counts"
+  ],
+  "pageErrors": [],
+  "humanReviewsCompleted": 0,
+  "screenshots": [
+    "screenshots/judge-lab-desktop.png",
+    "screenshots/judge-lab-mobile.png",
+    "screenshots/neatlogs-verified-failure.png",
+    "screenshots/accountant-study-test.png"
+  ]
+}

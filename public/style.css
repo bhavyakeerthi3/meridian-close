@@ -12,3 +12,9 @@
 .main-grid > *, .detail-grid > *, .bottom-grid > * { min-width:0; max-width:100%; }
 @media(max-width:990px) { .main-grid, .detail-grid { grid-template-columns:minmax(0,1fr); } }
 @media(max-width:680px) { .nav button { padding-inline:12px; } .section-head > .eyebrow { white-space:nowrap; } }
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.check-label{display:flex;align-items:flex-start;gap:10px;line-height:1.5;margin-top:16px}.check-label input{width:auto;min-height:18px;margin-top:3px;accent-color:#217365}.run-progress{width:100%;height:14px;accent-color:#217365}.case-actions .trace-step{align-items:center;flex-wrap:wrap}.case-actions .trace-step>div{flex:1;min-width:200px}.divider{border:0;border-top:1px solid #e1e5df;margin:24px 0}.mb{margin-bottom:24px}.trace-step .mono{overflow-wrap:anywhere}@media(max-width:760px){.form-grid{grid-template-columns:1fr}.nav{overflow-x:auto}.nav button{flex-shrink:0}}
+
+.remote-spans{margin-top:12px}.remote-spans summary{cursor:pointer;color:#256b5e;padding:8px 0}.remote-spans .table-wrap{max-height:340px;overflow:auto}.remote-spans th{font-size:10px}.remote-spans td{padding:10px;font-size:12px}.trace-step>div{min-width:0}
+
+.trace-step:has(.remote-spans){align-items:flex-start;gap:20px}.trace-step:has(.remote-spans)>div{flex:1}.trace-step:has(.remote-spans)>button{align-self:flex-start}@media(max-width:680px){.trace-step:has(.remote-spans){flex-wrap:wrap}.trace-step:has(.remote-spans)>div{flex-basis:100%}}
