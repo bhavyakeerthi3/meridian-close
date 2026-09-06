@@ -133,6 +133,14 @@
 .home-hero h1 em{font-weight:900;letter-spacing:-.065em}
 @media(max-width:1100px){.home-hero h1{font-size:clamp(54px,10vw,104px)}}
 @media(max-width:680px){.home-hero h1{font-size:clamp(50px,15vw,88px);line-height:.88}}
+.lab-release-receipt{display:grid;grid-template-columns:1.1fr 1fr 1fr;margin-top:18px;border:1px solid #263555;background:#0b1224}
+.lab-release-receipt>div{padding:14px 15px;border-right:1px solid #263555;min-width:0}
+.lab-release-receipt>div:last-child{border-right:0}
+.lab-release-receipt span,.lab-release-receipt strong,.lab-release-receipt small{display:block}
+.lab-release-receipt span{color:#00d8c8;font:9px "IBM Plex Mono",monospace;letter-spacing:.1em}
+.lab-release-receipt strong{margin-top:8px;color:#edf1ff;font-size:13px;font-weight:600}
+.lab-release-receipt small{margin-top:6px;color:#8194bc;font-size:9px;line-height:1.45;overflow-wrap:anywhere}
+@media(max-width:680px){.lab-release-receipt{display:flex;flex-direction:column}.lab-release-receipt>div{border-right:0;border-bottom:1px solid #263555}.lab-release-receipt>div:last-child{border-bottom:0}}
 
 /* Final hardening: keep provenance and control consequences visible without adding runtime behavior. */
 .home-ao-note{display:block;margin-top:12px;color:#7184ad;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
