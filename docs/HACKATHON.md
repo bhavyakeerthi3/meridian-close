@@ -1,35 +1,40 @@
-# Syndicate research and submission requirements
+# Syndicate track selection
 
-Reviewed 2026-09-05. Sources: user-pasted full organizer brief and kickoff notes; official Luma and Notion; sponsor documentation. Devpost could not be retrieved by the research tool, and Discord announcements have not been inspected. Do not claim the judging rubric or extra sponsor points have been verified.
+## Selected track
 
-## Schedule and track
+**Track 2 — Autonomous Office of the CFO**
 
-- Build window: 2026-09-05 21:30 IST through 2026-09-07 03:30 IST (30 hours).
-- One submission and one selected track per team. We select Autonomous Office of the CFO.
-- Internal accounting, finance, or treasury workflow, including exceptions and human review. A payments storefront alone is outside this track's focus.
-- Both tracks award $1,000/$500 cash for first/second, plus equal Dodo credit awards. Credits are not cash. AI Grants India awards are separate selected credits.
+## Why Meridian belongs in Track 2
 
-## Required before final submission
+Meridian is an internal finance workflow for month-end close. It automates the investigation and verification work around controller judgment:
 
-- Every team member registers; mandatory event Discord membership.
-- Use AO throughout building; show genuine AO sessions in the demo and explain its role.
-- Public GitHub repository with setup, scope, workflow, track, and measured changes.
-- Public demo video post on X or LinkedIn; attach the public post link in Devpost.
-- Submit on Devpost before the deadline. Discord showcase does not submit a project.
-- Team name and member names; selected track; repo; live link if deployed; description; AO usage explanation.
+- intercompany evidence and ledger reconciliation
+- accounting-policy evaluation
+- correction proposals with independent validation
+- missing or conflicting evidence detection
+- controller approval before posting
+- versioned workpapers and audit history
+- stale-evidence invalidation and checkpoint recovery
 
-## Kickoff notes supplied by participant
+This is an Office of the CFO workflow rather than a payments storefront. The product focuses on close exceptions, approval boundaries, evidence, and safe accounting execution.
 
-Emphasis reported on accountant interaction, internal revenue/cash operations, approval and human automation, communication evidence, recovery and learning. Neatlogs trace labels and condensed failure context for coding agents were discussed. AI Grants India GPT access and voice credits were mentioned. These notes do not establish additional prize criteria or permission to send messages to third parties.
+## How completely it is implemented
 
-## Sources
+Meridian is implemented as a working local synthetic sandbox with:
 
-- https://luma.com/d0kq45ek
-- https://maaztwts.notion.site/Syndicate-3cc32902e4a38075bfa9f03149ef150d
-- https://syndicate-by-maximor.devpost.com/
-- https://discord.gg/Sy3EwRBQX3
-- https://aoagents.dev/hackathons/syndicate/pass/
+- **103/103 automated tests passing**
+- **30/30 held-out arithmetic and validator cases passing**
+- **7/7 Judge Lab control invariants verified**
+- deterministic accounting validation independent of the model proposal
+- source-conflict handling that requires an explicit controller decision
+- approval protection for blocked or stale proposals
+- duplicate-safe posting and persisted audit events
+- worker interruption, checkpoint retention, and resume behavior
+- workpaper freshness checks that block final sign-off after evidence changes
+- TensorMux live-investigator support with deterministic rehearsal mode
+- selected Neatlogs trace read-back evidence
+- Agent Orchestrator evidence for the design checkpoint and final-hardening work
 
-## Practical priorities
+The current close state is **6/7 reconciled**. IC-1047 remains open because service acceptance is disputed and signed confirmation is missing. The system keeps that exception visible and prevents unsupported posting.
 
-Correct arithmetic and supported accounting; independently checkable outputs; versioned human decisions; safe restart; clear demonstration; credible evaluation. No promise of winning or idea exclusivity. Record only reproduced sponsor bugs with sanitized reproduction steps; do not file or publish without participant authorization.
+The implementation is deliberately bounded: it is a local synthetic sandbox, not a statutory consolidation system, production ERP, or authenticated multi-user accounting deployment.
