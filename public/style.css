@@ -127,6 +127,13 @@
 .global-ticker span:last-child::after{content:""}
 @media(max-width:680px){.global-ticker{gap:30px;padding-inline:14px;font-size:8px;letter-spacing:.12em}}
 
+/* Keep the editorial display face bold and legible at a sidebar-constrained width. */
+.home-hero{grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr);gap:30px}
+.home-hero h1{font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-weight:900;font-size:clamp(54px,6.2vw,108px);line-height:.86;letter-spacing:-.065em;max-width:760px}
+.home-hero h1 em{font-weight:900;letter-spacing:-.065em}
+@media(max-width:1100px){.home-hero h1{font-size:clamp(54px,10vw,104px)}}
+@media(max-width:680px){.home-hero h1{font-size:clamp(50px,15vw,88px);line-height:.88}}
+
 /* Final hardening: keep provenance and control consequences visible without adding runtime behavior. */
 .home-ao-note{display:block;margin-top:12px;color:#7184ad;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
 .ao-build-proof{padding:22px;margin-bottom:20px;background:#0b1224;border-color:#00b9ae}
