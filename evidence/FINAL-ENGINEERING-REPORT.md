@@ -54,7 +54,7 @@ See [ENGINEERING-METRICS.md](ENGINEERING-METRICS.md). The release claims test/ch
 
 [DECISIONS.md](../DECISIONS.md) records twelve implementation-backed tradeoffs, including the separation of model proposals from deterministic accounting validation, evidence-first stops, controller approval, stale invalidation, recovery, and optional cash evidence.
 
-The product uses synthetic data and a sandbox ledger. Dodo cash evidence is optional and read-only. No production ERP, bank, Gmail, Slack, or meeting connection is claimed. No human review study or ROI result is claimed. Some sponsor live calls may be unavailable; deterministic rehearsal remains explicit.
+The product uses synthetic data and a sandbox ledger. Dodo cash evidence is optional and read-only. No production ERP, bank, Gmail, or Slack/meeting connection is claimed. Reviewer identity is simulated, multi-process run-start locking is not claimed, and a run-wide atomic evidence snapshot is not claimed. No human review study or ROI result is claimed. Some sponsor live calls may be unavailable; deterministic rehearsal remains explicit.
 
 ## K. Final state
 

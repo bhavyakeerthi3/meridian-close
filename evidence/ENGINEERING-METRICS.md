@@ -10,7 +10,7 @@ Only reproducible workspace measurements are listed. These are engineering measu
 | API health | `GET /api/state` returned HTTP 200 | local browser/API release check |
 | Current close state | 6/7 reconciled; IC-1047 open; report v8 stale | `/api/state` release check |
 | Judge Lab recovery | Focused recovery evidence 8/8; full suite 39/39 | `evidence/AO-WORKER-RECOVERY.md` and release run |
-| AO engineering sessions recorded | 7 named sessions in the Connections proof | `evidence/AO-FINAL-HARDENING.md`; repository history |
+| AO engineering sessions recorded | 11 named sessions in the Connections proof (7 earlier records + 4 red-team sessions) | `evidence/AO-FINAL-HARDENING.md`, `evidence/AO-RED-TEAM-2026-09-06.md`; AO session records |
 | App startup time | Not measured | — |
 | Human time saved / ROI | Not measured | No human study is claimed |
 | Live sponsor call reliability | Not measured for this release | Credentials/provider availability varies |
