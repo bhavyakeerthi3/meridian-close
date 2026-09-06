@@ -142,6 +142,15 @@
 .lab-release-receipt small{margin-top:6px;color:#8194bc;font-size:9px;line-height:1.45;overflow-wrap:anywhere}
 @media(max-width:680px){.lab-release-receipt{display:flex;flex-direction:column}.lab-release-receipt>div{border-right:0;border-bottom:1px solid #263555}.lab-release-receipt>div:last-child{border-bottom:0}}
 
+/* Carry the home tab's editorial frame through every selected workspace tab. */
+.shell:not(.home-shell) .content{position:relative;isolation:isolate;background:#080d1b;overflow:hidden}
+.shell:not(.home-shell) .content::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(113,141,193,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(113,141,193,.025) 1px,transparent 1px);background-size:100% 4px,4px 100%;opacity:.32}
+.shell:not(.home-shell) .page-title{padding:18px 0 28px;border-bottom:1px solid #202e4c;margin-bottom:22px}
+.shell:not(.home-shell) .page-title h1{font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-weight:900;font-size:clamp(38px,5.2vw,76px);line-height:.9;letter-spacing:-.06em;text-transform:uppercase}
+.shell:not(.home-shell) .panel,.shell:not(.home-shell) .btn,.shell:not(.home-shell) input,.shell:not(.home-shell) select,.shell:not(.home-shell) textarea{border-radius:2px}
+.shell:not(.home-shell) .section-head h2{letter-spacing:-.03em}
+@media(max-width:680px){.shell:not(.home-shell) .page-title{padding-top:8px}.shell:not(.home-shell) .page-title h1{font-size:clamp(35px,11vw,58px)}}
+
 /* Final hardening: keep provenance and control consequences visible without adding runtime behavior. */
 .home-ao-note{display:block;margin-top:12px;color:#7184ad;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
 .ao-build-proof{padding:22px;margin-bottom:20px;background:#0b1224;border-color:#00b9ae}
