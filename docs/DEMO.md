@@ -1,17 +1,17 @@
-# CloseLoop judge demo
+# Meridian judge demo
 
-The verified build on this workstation is at **http://127.0.0.1:4320/**, using `data/closeloop-judge-lab.sqlite`. The older workspace remains intact. `.env.local` selects the verified port/database for subsequent starts. Sponsor keys remain private.
+This guide explains how a judge or contributor can inspect Meridian locally. After starting the verified workspace, open **http://127.0.0.1:4320/**. The recorded build uses `data/closeloop-judge-lab.sqlite`; an existing workspace is preserved, and `.env.local` selects the configured port and database. Sponsor keys remain private.
 
-## The live challenge
+## Reproduce the challenge
 
-1. **Bring a new case.** Open Judge lab → New judge case. Let the judge supply an invoice ID, USD gross amount, supported seller/buyer, recorded functional balances and source text. This importer accepts structured facts; it does not claim OCR or autonomous email ingestion. Choose TensorMux live agent and investigate the invoice.
-2. **Show evidence before approval.** Open the invoice. Show actual source, ledger, policy, checker and finding calls. Compare both sides and approve only after review. The demo controller role is simulated. Prepare a workpaper.
-3. **Introduce ambiguity.** Add another invoice source with a different amount. Approval becomes unavailable. A deliberately attempted stale API approval is rejected and recorded; the verified ERROR span is available in Judge lab. Record the controller's authoritative-source choice with a reason, then investigate again. All sources stay visible.
-4. **Change the accepted answer.** Add a late credit with a stable reference/version. Show the stale workpaper and preserved historical journal. A new correction requires another review.
-5. **Terminate a real process.** In Judge lab, choose all invoice bundles and enable pacing. After at least one checkpoint, press **Terminate worker process**. Show the process ID, retained checkpoint count and unchanged ledger hash. Press **Resume unfinished work**. The three-second checkpoint gap is stage pacing, not measured model latency or a provider outage.
-6. **Prove the result.** Review and approve the fresh correction. Retry an approved posting: the same journal is returned. Prepare the revised workpaper and compare frozen source/ledger snapshots. For selected recorded runs, inspect the Neatlogs spans and token totals that were verified through authenticated remote API read-back.
+1. **Create a case.** Open **Judge Lab → New judge case**. Enter an invoice ID, USD gross amount, supported seller and buyer, recorded functional balances, and source text. The importer accepts structured facts; it does not claim OCR or autonomous email ingestion. TensorMux live mode is optional; deterministic rehearsal is available without sponsor keys.
+2. **Inspect evidence before approval.** Open the case and review the source, ledger, policy, checker, and finding records. Compare both sides and approve only after review. The controller role is simulated. Prepare a workpaper.
+3. **Introduce ambiguity.** Add another invoice source with a different amount. Approval becomes unavailable. A deliberately attempted stale API approval is rejected and recorded; the verified ERROR span is available in Judge Lab. Record an authoritative-source choice with a reason, then investigate again. All sources remain visible.
+4. **Change the accepted answer.** Add a late credit with a stable reference and version. Inspect the stale workpaper and preserved historical journal. A new correction requires another review.
+5. **Terminate a real process.** In Judge Lab, choose all invoice bundles and enable pacing. After at least one checkpoint, press **Terminate worker process**. Inspect the process ID, retained checkpoint count, and unchanged ledger hash. Press **Resume unfinished work**. The three-second checkpoint gap is stage pacing, not measured model latency or a provider outage.
+6. **Prove the result.** Review and approve the fresh correction. Retry an approved posting; the same journal is returned. Prepare the revised workpaper and compare frozen source and ledger snapshots. For selected recorded runs, inspect Neatlogs spans and token totals verified through authenticated remote API read-back.
 
-Keep actual latency visible. A full seven-invoice live run can take several minutes. For a short recording, show a recorded uninterrupted challenge segment or transparently edit waiting time; do not imply a faster measured execution. Present the retained proof while offering a fresh case during judging.
+Keep actual latency visible. A full seven-invoice live run can take several minutes. For a short recording, show a recorded uninterrupted challenge segment or transparently edit waiting time; do not imply a faster measured execution. The retained proof can be reviewed alongside a fresh case.
 
 ## Verified example
 
@@ -29,7 +29,7 @@ Evidence: `live-stage-challenge.json`, `live-agent-recovery.json`, `judge-final-
 - Show AO project `closeloop` and real session `closeloop-1`, including its actual design contribution. Do not claim all development happened inside that session.
 - Neatlogs: inspect the persisted spans in Judge lab, then show the same trace IDs in the sponsor dashboard if signed in. A remote API receipt is verified; a dashboard screenshot is a separate artifact.
 - Show Dodo only if a real test account import has succeeded. Its connector tests do not establish live use.
-- Check event rules and required public repository/video/Devpost fields before submission. Nothing has been publicly submitted by this build.
+- Check the event rules and the required public repository, video, and Devpost fields when preparing a submission. The repository contains evidence and setup guidance; public submission status belongs to the project owner.
 
 ## Fresh rehearsal without deleting history
 
