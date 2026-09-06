@@ -133,8 +133,13 @@
 .ao-build-flow b{color:#00d8c8;font:10px "IBM Plex Mono",monospace;letter-spacing:.08em}
 .ao-build-flow span{margin-top:7px;color:#dce3f8;font-size:10px;line-height:1.4}
 .ao-build-flow i{color:#ff9fbd;font-style:normal;font-size:18px}
+.ao-record-locations{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.ao-record-locations>div{padding:10px 12px;background:#101a31;border:1px solid #263555}
+.ao-record-locations b,.ao-record-locations span{display:block}
+.ao-record-locations b{color:#9db0d7;font:9px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.ao-record-locations span{margin-top:5px;color:#dce3f8;font:10px "IBM Plex Mono",monospace;overflow-wrap:anywhere}
 .ao-build-proof>.form-note{margin-top:15px}
 .investigation-control-story{margin:0 0 16px;color:#ffb3c8;font-size:13px;line-height:1.45;font-weight:600}
 .workpaper-cause-chain{grid-column:1/-1;margin:17px 0 0;padding:12px 14px;border-left:2px solid #ff3d78;background:#171225;color:#ffb3c8;font:10px "IBM Plex Mono",monospace;line-height:1.5;letter-spacing:.03em}
 .lab-control-story{margin:-2px 0 17px;color:#ffb3c8;font:10px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase}
-@media(max-width:680px){.ao-build-proof{padding:17px}.ao-build-proof .section-head{display:block}.ao-build-proof .section-head>.mono{display:block;margin-top:10px}.ao-build-flow{display:flex;flex-direction:column;align-items:stretch}.ao-build-flow i{text-align:center;line-height:1}.workpaper-cause-chain{font-size:9px}.home-ao-note{line-height:1.5}}
+@media(max-width:680px){.ao-build-proof{padding:17px}.ao-build-proof .section-head{display:block}.ao-build-proof .section-head>.mono{display:block;margin-top:10px}.ao-build-flow{display:flex;flex-direction:column;align-items:stretch}.ao-build-flow i{text-align:center;line-height:1}.ao-record-locations{grid-template-columns:1fr}.workpaper-cause-chain{font-size:9px}.home-ao-note{line-height:1.5}}
